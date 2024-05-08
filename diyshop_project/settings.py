@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -37,6 +38,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
 ]
 
 MIDDLEWARE = [
@@ -66,6 +71,37 @@ TEMPLATES = [
         },
     },
 ]
+
+AUTHENTICATION_BACKENDS = [
+    # Needed to login by username in Django admin, regardless of `allauth`
+    'django.contrib.auth.backends.ModelBackend',
+    # `allauth` specific authentication methods, such as login by email
+    'allauth.account.auth_backends.AuthenticationBackend',
+]
+
+# allauth custom configuration settings
+ACCOUNT_EMAIL_REQUIRED = True                       # Mandatory email registration
+ACCOUNT_USERNAME_REQUIRED = True                    # Mandatory username registration
+ACCOUNT_PRESERVER_USERNAME_CASING = False           # Don't care for username letter case
+ACCOUNT_AUTHENTICATION_METHOD = 'username_email'    # Both username and email for identification
+ACCOUNT_EMAIL_VERIFICATION = os.environ.get('ACCOUNT_EMAIL_VERIFICATION', 'mandatory')  # Force email verification if not defined otherwise in environment
+ACCOUNT_SIGNUP_EMAIL_ENTER_TWICE = True
+
+LOGIN_URL = '/accounts/login/'
+LOGIN_REDIRECT_URL = '/'
+LOGUT_REDIRECT_URL = '/'     
+
+
+SITE_ID = 1
+
+# email configuration settings
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'    # Temporaly for development 
+#EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+#EMAIL_HOST = os.environ.get('EMAIL_HOST')
+#EMAIL_PORT = 587
+#EMAIL_USE_TLS = True
+#EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
+#EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
 
 WSGI_APPLICATION = 'diyshop_project.wsgi.application'
 
