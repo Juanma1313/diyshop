@@ -5,6 +5,13 @@ from django.utils.html import mark_safe
 
 NO_PARENT_NAME = "ROOT"
 
+@admin.register(Category)
+class CategoryAdmin(admin.ModelAdmin):
+    list_display = (
+        'friendly_name',
+        'name',
+    )
+
 
 class ComponentInLine(SummernoteModelAdminMixin, admin.StackedInline):
     ''' Admin view for inline Componnets of a Thing   '''
@@ -190,5 +197,3 @@ class InstructionsAdmin(SummernoteModelAdmin):
                 ),
         }),
     )
-
-admin.site.register(Category)

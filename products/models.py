@@ -22,6 +22,7 @@ STATUS = ((0, "Draft"), (1, "Published"))
 
 class Thing(models.Model):
     '''Django database model for a Thing or a Component of the diy things '''
+
     category = models.ForeignKey('Category', null=True, blank=True, on_delete=models.SET_NULL)
     parent = models.ForeignKey('self', on_delete=models.CASCADE, blank=True, null=True, related_name='components')
     title = models.CharField(max_length=200, unique=True)
@@ -37,6 +38,8 @@ class Thing(models.Model):
     likes = models.ManyToManyField(User, related_name='thing_likes', blank=True)
 
     class Meta:
+        verbose_name = 'DIY Project'
+        verbose_name_plural = 'DIY Projects'
         ordering = ["created_on"]
 
     def __str__(self):
@@ -48,6 +51,7 @@ class Thing(models.Model):
 
 class Instructions(models.Model):
     '''Django database model for Instructions of the diy things '''
+
     thing = models.ForeignKey(Thing, on_delete=models.CASCADE, related_name="instructions")
 
     def default_Instruction_title():
@@ -57,6 +61,7 @@ class Instructions(models.Model):
     instructions = models.TextField(blank=True, null=False)
 
     class Meta:
+        verbose_name_plural = 'Instructions'
         ordering = ["title"]
 
     def __str__(self):
