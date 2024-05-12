@@ -1,0 +1,106 @@
+[
+    {
+      "pk": 1,
+      "model": "products.category",
+      "fields": {
+        "name": "circuits",
+        "friendly_name": "Circuits"
+      }
+    },
+    {
+      "pk": 2,
+      "model": "products.category",
+      "fields": {
+        "name": "furniture",
+        "friendly_name": "Furniture"
+      }
+    },
+    {
+      "pk": 3,
+      "model": "products.category",
+      "fields": {
+        "name": "animatronics",
+        "friendly_name": "Animatronics"
+      }
+    },
+    {
+      "pk": 4,
+      "model": "products.category",
+      "fields": {
+        "name": "crafts",
+        "friendly_name": "Crafts"
+      }
+    },
+    {
+      "pk": 5,
+      "model": "products.category",
+      "fields": {
+        "name": "tools",
+        "friendly_name": "Tools"
+      }
+    },
+    {
+      "pk": 6,
+      "model": "products.category",
+      "fields": {
+        "name": "sensors",
+        "friendly_name": "Sensors"
+      }
+    },
+    {
+      "pk": 7,
+      "model": "products.category",
+      "fields": {
+        "name": "3dprint",
+        "friendly_name": "3D Printing"
+      }
+    },
+    {
+        "pk": 8,
+        "model": "products.category",
+        "fields": {
+          "name": "gadgets",
+          "friendly_name": "Gadgets"
+        }
+      },
+      {
+        "pk": 9,
+        "model": "products.category",
+        "fields": {
+          "name": "motors",
+          "friendly_name": "Motors"
+        }
+      },
+      {
+      "pk": 10,
+      "model": "products.category",
+      "fields": {
+        "name": "leds",
+        "friendly_name": "Leds"
+      }
+    },
+    {
+        "pk": 11,
+        "model": "products.category",
+        "fields": {
+          "name": "materials",
+          "friendly_name": "Materials"
+        }
+      },
+      {
+        "pk": 12,
+        "model": "products.category",
+        "fields": {
+          "name": "screws",
+          "friendly_name": "Screws & Bolts"
+        }
+      }
+      ,
+      {
+        "pk": 13,
+        "model": "products.category",
+        "fields": {
+          "name": "electrics",
+          "friendly_name": "Electrical Components"
+        }
+      }    ]

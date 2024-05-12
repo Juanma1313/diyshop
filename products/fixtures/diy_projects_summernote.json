@@ -1,0 +1,192 @@
+
+[
+{
+    "model": "django_summernote.attachment",
+    "pk": 1,
+    "fields": {
+        "name": "baby-groot-sentado-guardianes-de-la-galaxia.jpg",
+        "file": "django-summernote/2024-03-05/836423b2-6f97-419a-ad55-3b1c87b2794a_lbaf4n.jpg",
+        "uploaded": "2024-03-05T01:29:48.608Z"
+    }
+},
+{
+    "model": "django_summernote.attachment",
+    "pk": 2,
+    "fields": {
+        "name": "image.png",
+        "file": "django-summernote/2024-03-06/3b2f8477-db48-4e0a-8354-e65ef51a566b_hg4bun.png",
+        "uploaded": "2024-03-06T23:28:31.646Z"
+    }
+},
+{
+    "model": "django_summernote.attachment",
+    "pk": 3,
+    "fields": {
+        "name": "image.png",
+        "file": "django-summernote/2024-03-06/1a1ebb57-cbdf-48c5-b0bf-6e4683ec82aa_qhcfjg.png",
+        "uploaded": "2024-03-06T23:31:37.250Z"
+    }
+},
+{
+    "model": "django_summernote.attachment",
+    "pk": 4,
+    "fields": {
+        "name": "image.png",
+        "file": "django-summernote/2024-03-06/4f489816-5145-4778-8bd9-468d218feb13_usb8n9.png",
+        "uploaded": "2024-03-06T23:34:24.854Z"
+    }
+},
+{
+    "model": "django_summernote.attachment",
+    "pk": 5,
+    "fields": {
+        "name": "image.png",
+        "file": "django-summernote/2024-03-06/689c3ad6-4386-4acb-a86e-c1f7a7083865_e9ykyi.png",
+        "uploaded": "2024-03-06T23:40:10.889Z"
+    }
+},
+{
+    "model": "django_summernote.attachment",
+    "pk": 6,
+    "fields": {
+        "name": "image.png",
+        "file": "django-summernote/2024-03-06/c76e1181-6138-4a28-ab14-f11d8b6673bc_bkyczn.png",
+        "uploaded": "2024-03-06T23:40:46.659Z"
+    }
+},
+{
+    "model": "django_summernote.attachment",
+    "pk": 7,
+    "fields": {
+        "name": "image.png",
+        "file": "django-summernote/2024-03-06/952486ab-af63-4c5d-af9d-db15b74cacfb_wmsjws.png",
+        "uploaded": "2024-03-06T23:42:29.388Z"
+    }
+},
+{
+    "model": "django_summernote.attachment",
+    "pk": 8,
+    "fields": {
+        "name": "image.png",
+        "file": "django-summernote/2024-03-06/d8f0400b-0523-4e59-80ee-788421215f5a_a7p0uh.png",
+        "uploaded": "2024-03-06T23:43:02.008Z"
+    }
+},
+{
+    "model": "django_summernote.attachment",
+    "pk": 9,
+    "fields": {
+        "name": "image.png",
+        "file": "django-summernote/2024-03-06/8867eea7-a1be-4e0c-959d-9f8b219cb495_skxofc.png",
+        "uploaded": "2024-03-06T23:46:29.089Z"
+    }
+},
+{
+    "model": "django_summernote.attachment",
+    "pk": 10,
+    "fields": {
+        "name": "image.png",
+        "file": "django-summernote/2024-03-06/0649da89-ece1-468f-951e-0e9180d53378_jpua1f.png",
+        "uploaded": "2024-03-06T23:48:11.858Z"
+    }
+},
+{
+    "model": "django_summernote.attachment",
+    "pk": 11,
+    "fields": {
+        "name": "image.png",
+        "file": "django-summernote/2024-03-06/3e146d01-e475-4ef1-adb1-34c9778acd9a_wic0c9.png",
+        "uploaded": "2024-03-06T23:49:51.355Z"
+    }
+},
+{
+    "model": "django_summernote.attachment",
+    "pk": 12,
+    "fields": {
+        "name": "image.png",
+        "file": "django-summernote/2024-03-06/7b416484-13a1-4171-995a-d9bd011c6b61_zhbmmr.png",
+        "uploaded": "2024-03-06T23:52:10.369Z"
+    }
+},
+{
+    "model": "django_summernote.attachment",
+    "pk": 13,
+    "fields": {
+        "name": "image.png",
+        "file": "django-summernote/2024-03-06/d5078964-4733-4226-8df8-2738e53f27af_tnfc2r.png",
+        "uploaded": "2024-03-06T23:54:02.187Z"
+    }
+},
+{
+    "model": "django_summernote.attachment",
+    "pk": 14,
+    "fields": {
+        "name": "image.png",
+        "file": "django-summernote/2024-03-06/aa36be2a-f09c-4e38-b182-1a97325e638f_yrf42r.png",
+        "uploaded": "2024-03-06T23:56:44.858Z"
+    }
+},
+{
+    "model": "django_summernote.attachment",
+    "pk": 15,
+    "fields": {
+        "name": "image.png",
+        "file": "django-summernote/2024-03-06/990c0219-0688-46bc-bd8d-513d43b11edc_wtrjwt.png",
+        "uploaded": "2024-03-06T23:58:42.370Z"
+    }
+},
+{
+    "model": "django_summernote.attachment",
+    "pk": 16,
+    "fields": {
+        "name": "image.png",
+        "file": "django-summernote/2024-03-06/dd27c518-748c-4fd3-9f72-a7df232dea36_kbgxsb.png",
+        "uploaded": "2024-03-06T23:59:38.033Z"
+    }
+},
+{
+    "model": "django_summernote.attachment",
+    "pk": 17,
+    "fields": {
+        "name": "image.png",
+        "file": "django-summernote/2024-03-07/eb83045c-a4ea-4dd7-ac07-2b8c0c05b3b5_pjutny.png",
+        "uploaded": "2024-03-07T00:05:45.700Z"
+    }
+},
+{
+    "model": "django_summernote.attachment",
+    "pk": 18,
+    "fields": {
+        "name": "image.png",
+        "file": "django-summernote/2024-03-07/04085583-7022-4726-9eba-eb4bb7ea9378_qilznq.png",
+        "uploaded": "2024-03-07T00:09:07.521Z"
+    }
+},
+{
+    "model": "django_summernote.attachment",
+    "pk": 19,
+    "fields": {
+        "name": "image.png",
+        "file": "django-summernote/2024-03-07/98797655-dbc6-4504-a834-4251d60b152b_c59cf2.png",
+        "uploaded": "2024-03-07T00:11:55.241Z"
+    }
+},
+{
+    "model": "django_summernote.attachment",
+    "pk": 20,
+    "fields": {
+        "name": "secador-cañas_01.png",
+        "file": "django-summernote/2024-04-18/8f3e7a11-4f14-4c2d-b461-b5bb16383344_hmwnt7.png",
+        "uploaded": "2024-04-18T15:30:52.403Z"
+    }
+},
+{
+    "model": "django_summernote.attachment",
+    "pk": 21,
+    "fields": {
+        "name": "secador-cañas_01.png",
+        "file": "django-summernote/2024-04-18/15ccd7a2-666c-473f-9979-e8814d3d5c2e_umuwz1.png",
+        "uploaded": "2024-04-18T15:40:11.440Z"
+    }
+}
+]
