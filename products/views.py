@@ -3,15 +3,15 @@ from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.db.models import Q
 from django.db.models.functions import Lower
+from django.http import HttpResponseRedirect
 
-from .models import Thing, Category
+from .models import Thing, Category, Instructions
 #from .forms import ProductForm
 
 
 def all_products(request):
     """ A view to show all products, including sorting and search queries """
     products = Thing.objects.filter(status=1, parent=None).order_by('-created_on')
-    #products = Thing.objects.all()
     query = None
     categories = None
     sort = None
@@ -59,13 +59,39 @@ def all_products(request):
 
 
 def product_detail(request, product_id):
-    """ A view to show individual product details """
+    ''' Provides with the details for the selected thing.
+    it also creates a dictionary is_component_thing that indicates if there are
+    nested instructions in any of the Thing's Components'''
 
     product = get_object_or_404(Thing, pk=product_id)
+    instructions = product.instructions.order_by("title")
+    components = product.components.filter(status=1).order_by("title")
+    liked = False
+    if product.likes.filter(id=request.user.id).exists():
+        liked = True
+    is_component_thing = {}
+    for i in components:
+        is_component_thing[i.id] = Instructions.objects.filter(thing=i.id).exists()
 
     context = {
         'product': product,
+        'components': components,
+        'instructions': instructions,
+        'is_component_thing': is_component_thing,
+        'liked': liked
+
     }
 
     return render(request, 'products/product_detail.html', context)
 
+def productlike(request, product_id):
+    ''' This view allows for adding/removing a user Like to/from a Thing.
+    If the user like already exists it removes it otherwise it adds it '''
+    if request.POST:        
+        product = get_object_or_404(Thing, pk=product_id)
+        if product.likes.filter(id=request.user.id).exists():
+            product.likes.remove(request.user)
+        else:
+            product.likes.add(request.user)
+
+        return redirect(reverse('product_detail', args=[product_id]))

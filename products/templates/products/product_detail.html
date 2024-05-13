@@ -1,0 +1,199 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_header %}
+    <div class="container header-container">
+        <div class="row">
+            <div class="col"></div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block content %}
+    <div class="overlay"></div>
+    <div class="masthead">
+        <div class="container">
+            <!-- THING HEADER (Title, image, author, date, etc)-->
+            <div class="row g-0">
+                <!--Product Data-->
+                <div class="col-md-6 masthead-text">
+                    <!--Title -->
+                    <h1 class="thing-title">{{ product.title }} </h1>
+                    <!-- Author & Date -->
+                    <p class="thing-subtitle">{{ product.author }} | {{ product.created_on }}</p>
+
+                    <div class="row g-0">
+                        <div class="col-md-6">
+                            <!--Catregory-->
+                            {% if product.category %}
+                            <strong class="thing-subtitle">
+                                <a class="category-link" href="">
+                                    <i class="fas fa-tag text-primary"></i>&nbsp;{{ product.category.friendly_name }}
+                                </a>
+                            </strong>
+                            {% else %}
+                                <small class="fas fa-tag mr-1 text-dark"></i>&nbsp;None
+                            {% endif %}
+                        </div>
+                    </div>
+                    <div class="row g-0">
+                        <div class="col-4">
+                            <!--Thing Likes-->
+                            <strong class="thing-subtitle">
+                                {% if user.is_authenticated %}
+                                    <form class="d-inline" action="{% url 'product_like' product.id %}" method="POST">
+                                        {% csrf_token %}
+                                        {% if liked %}
+                                            <button type="submit" name="product_id" value="{{product.id}}" class="btn-like"><i class="fas fa-heart"></i></button>
+                                        {% else %}
+                                            <button type="submit" name="product_id" value="{{product.id}}" class="btn-like"><i class="far fa-heart"></i></button>
+                                        {% endif %}
+                                    </form>
+                                {% else %}
+                                    <span class="thing-subtitle"><i class="far fa-heart"></i></span>
+                                {% endif %}
+                                <span>{{ product.number_of_likes }}</span>
+                            </strong>
+                        </div>
+                        <div class="col-4">
+                            <!--Rating-->
+                            {% if product.rating %}
+                                <strong class="thing-subtitle"><i class="fas fa-star mr-1 text-warning"></i>&nbsp;{{ product.rating }} / 5</strong>
+                            {% else %}
+                                <small class="thing-subtitle text-muted">No Rating</small>
+                            {% endif %}
+                        </div>
+                    </div>
+                    <div class="row g-0">
+                        <div class="col-4">
+                            <!--Price-->
+                            {% if product.price %}
+                                <strong class="thing-subtitle">€&nbsp;{{ product.price }}</strong>
+                            {% else %}
+                                <small class="thing-subtitle text-muted">Free</small>
+                            {% endif %}
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <!--Thing Components count-->
+                        <div class="col-4">
+                            {% with components.count as total_components %}
+                            <strong class="thing-subtitle text-success">Comp.:&nbsp;</strong>
+                            <span>{{ total_components }}</span>
+                            {% endwith %}
+                        </div>
+                        <!--Thing instructions count-->
+                        <div class="col-4">
+                            {% with instructions.count as total_instructions %}
+                            <strong class="thing-subtitle text-success">Instr.:&nbsp;</strong>
+                            <span>{{ total_instructions }}</span>
+                            {% endwith %}
+                        </div>
+                    </div>
+
+                </div>
+                <div class="d-none d-md-block col-md-6 masthead-image">
+                    <!-- Featured image  -->
+                    {% if "placeholder" in product.featured_image.url %}
+                    {% load static %}
+                    <img src="{% static 'image-not-available.png' %}" alt="No image available" class ="thing-image">
+                    {% else %}
+                    <img src=" {{ product.featured_image.url }}" alt="Featured image" class="thing-image">
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="container">
+        <!-- VIEW THING PRESENTATION -->    
+        <div class="row">
+            <div class="col card mb-4  mt-3 left  top">
+                <div class="card-body">
+                    <p class="card-text ">
+                        {{ product.description | safe }}
+                    </p>
+                </div>
+            </div>
+        </div>
+        <!-- Separator for thing content-->
+        <div class="row">
+            <div class="col">
+                <hr>
+            </div>
+        </div>
+        <!-- VIEW COMPONENTS -->    
+        <div class="row">
+            <div class="col-md-8 card mb-4  mt-3 ">
+                <h3>Components:</h3>
+                <div class="card-body">
+                    <!-- Loop inside the tags to iterate through all instructions -->
+                    {% for component in components %}
+                    <div class="components" style="padding: 10px;">
+                        <!-- The image and the title for the component -->
+                        {% load custom_tags %}
+                        {% is_thing is_component_thing component.id as is_a_thing %}
+                        {% if is_a_thing %}
+                        <a href="{% url 'product_detail' component.id %}" class="post-link">
+                        {% endif %}
+                        <h4 class="font-weight-bold">
+                            {% if "placeholder" in component.featured_image.url %}
+                            {% load static %}
+                            <img src="{% static 'image-not-available.png' %}" alt="No Component image available" class="component-image">
+                            {% else %}
+                            <img src=" {{ component.featured_image.url }}" alt="Component Image" class="component-image">
+                            {% endif %}
+                            {{ component.title }}
+                        </h4>
+                        {% if is_a_thing %}
+                        </a>
+                        {% endif %}
+                        <!-- The text for the instructions -->
+                        <p class="card-text ">
+                            {{ component.description | safe }}
+                        </p>
+                    </div>
+                    <!-- Instructions loop ends here -->
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <hr>
+            </div>
+        </div>
+        <!-- VIEW INSTRUCTIONS -->    
+        <div class="row">
+            <div class="col-md-8 card mb-4  mt-3 ">
+                <h3>Instructions:</h3>
+                <div class="card-body">
+                    <!-- Loop inside the tags to iterate through all instructions -->
+                    {% for step in instructions %}
+                    <div class="instructions" style="padding: 10px;">
+                        <!-- The title for the instructions -->
+                        <h4 class="font-weight-bold">
+                            {{ step.title }}
+                        </h4>
+                        <!-- The text for the instructions -->
+                        <p class="card-text ">
+                            {{ step.instructions | safe }}
+                        </p>
+                    </div>
+                    <!-- Instructions loop ends here -->
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="col-md-4 card mb-4  mt-3 ">
+                <div class="card-body">
+                    <!-- For later -->
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endblock %}
+
+{% block postloadjs %}
+{{ block.super }}
+{% endblock %}
