@@ -29,12 +29,12 @@
                             <div class="image-container">
                                 <!--Image-->
                                 {% if product.featured_image %}
-                                <a href="{}">
+                                <a href="{% url 'product_detail' product.id %}">
                                     <img class="card-img-top index-thing-image" 
                                         src="{{ product.featured_image.url }}" alt="{{ product.title }}">
                                 </a>
                                 {% else %}
-                                <a href="{}">
+                                <a href="{% url 'product_detail' product.id %}">
                                     <img class="card-img-top index-thing-image" 
                                         src="{{ MEDIA_URL }}noimage.png" alt="{{ product.title }}">
                                 </a>
@@ -44,7 +44,7 @@
                                     <p class="author">By {{ product.author }}</p>
                                 </div>
                                 <!--Title-->
-                                <a href="{}" class="thing-link">
+                                <a href="{% url 'product_detail' product.id %}" class="thing-link">
                                     <h4 class="mb-0 card-title text-center fw-bold">{{ product.title }}</h3>
                                 </a>
                             </div>
@@ -52,40 +52,45 @@
                                 <div class="row">
                                     <!--Creation Date-->
                                     <div class="col">
-                                        <p class="card-text text-muted">{{ product.created_on}}
-                                        </p>
+                                        <h6 class="card-text text-center">{{ product.created_on}}</h6>
                                     </div>
-                                    <!--Category-->
+                                </div>
+                                <div class="row">
+                                        <!--Category-->
                                     <div class="col">
                                         {% if product.category %}
-                                        <p class="small mt-1 mb-0">
+                                        <strong class="card-text">
                                             <a class="category-link" href="">
-                                                <i class="fas fa-tag mr-1 text-dark"></i>&nbsp;{{ product.category.friendly_name }}
+                                                <i class="fas fa-tag text-primary"></i>&nbsp;{{ product.category.friendly_name }}
                                             </a>
-                                        </p>
+                                        </strong>
                                         {% endif %}
                                     </div>
                                 </div>
                                 <div class="row">
+                                    <!--Likes-->
                                     <div class="col">
-                                        <p class="card-text text-muted">
+                                        <strong class="card-text">
                                             <i class="fas fa-heart text-danger"></i>&nbsp;{{ product.number_of_likes }}
-                                        </p>
+                                        </strong>
                                     </div>
+                                    <!--Rating-->
                                     <div class="col">
                                         {% if product.rating %}
-                                            <small class="text-muted"><i class="fas fa-star mr-1"></i>{{ product.rating }} / 5</small>
+                                            <strong class="text-text-dark"><i class="fas fa-star mr-1 text-warning"></i>&nbsp;{{ product.rating }}/5</strong>
                                         {% else %}
                                             <small class="text-muted">No Rating</small>
                                         {% endif %}
                                     </div>
+                                </div>
+                                <div class="row">
+                                    <!--Price-->
                                     <div class="col">
                                         {% if product.price %}
-                                            <p class="lead mb-0 text-left font-weight-bold">${{ product.price }}</p>
+                                            <strong class="text-left text-dark">${{ product.price }}</strong>
                                         {% else %}
                                             <small class="text-muted">Free</small>
                                         {% endif %}
-
                                     </div>
                                 </div>
                             </div>
