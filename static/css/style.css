@@ -9,6 +9,16 @@ body {
     color: #000;
     font-family: 'Lato';
 }
+.overlay {
+	height: 100%;
+	width: 100%;
+	top: 0;
+	left: 0;
+	position: fixed;
+    background-color: #a0e6eef3;
+	z-index: -1;
+}
+
 .navbar-logo {
     width:100px;
     height:100px;
@@ -63,7 +73,7 @@ body {
 
 .image-flash {
     position: absolute;
-    bottom: 5%;
+    bottom: 15%;
     min-width: 30%;
     left: -2px;
     background-color: #2523bb;
@@ -110,12 +120,14 @@ body {
     z-index: 100;
 }
 
-.thing-link {
+.thing-link,
+.category-link {
     text-decoration: none;
-    color: #445261;
+    color: #092f57;
 }
 
 .thing-link:hover,
+.category-link:hover,
 .page-link {
     color: #E84610;
 }
@@ -149,7 +161,7 @@ body {
 .link:hover,
 .link:active {
     color: #445261;
-    text-decoration: underline;
+    text-decoration:  underline;
 }
 
 .btn-like {
@@ -167,13 +179,13 @@ body {
 
 /* Featured Image */
 .index-thing-image {
-    height: 500px;
+    height: 350px;
     width: 100%;
     object-fit: cover;
 }
 
 .thing-image {
-    height: 500px;
+    height: 350px;
     width: 100%;
     object-fit: cover;
 }
@@ -196,16 +208,26 @@ body {
 
 /* Index Carousel */
 @media (max-width: 767px) {
+    .header-container {
+        padding-top: 70px;
+    }
+
+    body {
+        height: calc(100vh - 116px);
+    }
+
     .carousel-inner .carousel-item > div {
         display: none;
     }
+
     .carousel-inner .carousel-item > div:first-child {
         display: block;
     }
+
     .user-menu {
         margin-right: 0;
     }
-    }
+}
 
 .carousel-inner .carousel-item.active,
 .carousel-inner .carousel-item-next,
@@ -215,6 +237,16 @@ body {
 
 /* medium and up screens */
 @media (min-width: 768px) {
+    .fixed-top-desktop-only {
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        z-index: 1030;
+    }
+    .header-container {
+        padding-top: 170px;
+    }    
     .carousel-inner .carousel-item-end.active,
     .carousel-inner .carousel-item-next {
       transform: translateX(16%);
