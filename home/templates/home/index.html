@@ -4,24 +4,136 @@
 {% block page_header %}
     <div class="container header-container">
         <div class="row">
-            <div class="col">hola</div>
+            <div class="col"></div>
         </div>
     </div>
 {% endblock %}
 
 {% block content %}
-    <div class="container h-100">
-        <div class="row h-100">
-            <div class="col-7 col-md-6 my-auto">
-                <h1 class="display-5 logo-font text-black">
-                    The new collections are here
-                </h1>
-                <div class="my-5">
-                    <h4>
-                        <a href="" class="shop-now-button btn btn-lg rounded-5 text-uppercase py-3">Shop Now</a>
-                    </h4>
-                </div>
+<!-- Hide background image-->
+<div class="overlay"></div>
+<div class="container-fluid">
+    <div class="row">
+        <!-- DIY Banner -->
+        <div class="container text-center my-3">
+            <div class="row mx-auto justify-content-center">
+                <div id="recipeCarousel" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner" role="listbox">
+                        <div class="carousel-item active">
+                            <div class="col-md-2">
+                                <div class="card">
+                                    <div class="card-img">
+                                        <img src="{% static 'diy-projects-01.jpg' %}" class="img-fluid" alt="carousel Image 1">
+                                    </div>
+                                    <div class="text-banner text-banner-1">Our projects help to expand your mind
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="col-md-2">
+                                <div class="card">
+                                    <div class="text-banner text-banner-2">Experience the feeling of achievement
+                                    </div>
+                                    <div class="card-img">
+                                        <img src="{% static 'diy-projects-02.jpg' %}" class="img-fluid" alt="carousel Image 2">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="col-md-2">
+                                <div class="card">
+                                    <div class="card-img">
+                                        <img src="{% static 'diy-projects-03.jpg' %}" class="img-fluid" alt="carousel Image 3">
+                                    </div>
+                                    <div class="text-banner text-banner-3">There is a project for everyone
+                                    </div>
+                                </div>
+                            </div>
+                      </div>
+                      <div class="carousel-item">
+                            <div class="col-md-2">
+                                <div class="card">
+                                    <div class="text-banner text-banner-4">A perfect activity for your free time
+                                    </div>
+                                    <div class="card-img">
+                                        <img src="{% static 'diy-projects-04.jpg' %}" class="img-fluid" alt="carousel Image 4">
+                                    </div>
+                                </div>
+                            </div>
+                      </div>
+                      <div class="carousel-item">
+                            <div class="col-md-2">
+                                <div class="card">
+                                    <div class="card-img">
+                                        <img src="{% static 'diy-projects-05.jpg' %}" class="img-fluid" alt="carousel Image 5">
+                                    </div>
+                                    <div class="text-banner text-banner-5">All our projects are fun and useful</div>
+                                    </div>
+                            </div>
+                      </div>
+                      <div class="carousel-item">
+                            <div class="col-md-2">
+                                <div class="text-banner text-banner-6">Learn while building our projects
+                                </div>
+                                <div class="card">
+                                    <div class="card-img">
+                                        <img src="{% static 'diy-projects-06.jpg' %}" class="img-fluid" alt="carousel Image 6">
+                                    </div>
+                                </div>
+                            </div>
+                      </div>
+                  </div>
+                  <a class="carousel-control-prev bg-transparent w-aut" href="#recipeCarousel" role="button" data-bs-slide="prev">
+                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  </a>
+                  <a class="carousel-control-next bg-transparent w-aut" href="#recipeCarousel" role="button" data-bs-slide="next">
+                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  </a>
+              </div>
+          </div>
+      </div>
+    </div>
+    <!-- End of banner mark-->
+    <div class="row">
+        <div class="col">
+            <hr>
+        </div>
+    </div>
+</div>
+<div class="container ">
+    <div class="row ">
+        <div class="col-7 col-md-6 my-auto">
+            <h1 class="display-6 logo-font text-black">
+                Share your creations with us
+            </h1>
+            <div class="my-5">
+                <h4>
+                    <a href="{% url 'products' %}" class="go-to-products btn btn-lg rounded-5 text-uppercase py-3">Check out our latest projects</a>
+                </h4>
             </div>
         </div>
     </div>
+</div>
+
+<!-- Carrousel controller-->
+<script>
+let items = document.querySelectorAll('.carousel .carousel-item')
+
+items.forEach((el) => {
+    const minPerSlide = 6
+    let next = el.nextElementSibling
+    for (var i=1; i<minPerSlide; i++) {
+        if (!next) {
+            // wrap carousel by using first child
+            next = items[0]
+            }
+        let cloneChild = next.cloneNode(true)
+        el.appendChild(cloneChild.children[0])
+        next = next.nextElementSibling
+    }
+})
+
+</script>
 {% endblock %}
