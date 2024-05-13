@@ -109,7 +109,7 @@ class ThingAdmin(SummernoteModelAdmin):
     search_fields = ('title', 'description')
     list_filter = (
         ('parent', admin.RelatedOnlyFieldListFilter),
-        'status', 'created_on'
+        'category', 'status', 'created_on'
     )
     # Allows the user to change the selected Things in the list from Draft to Published state and back
     actions = ['publish', 'set_as_draft']
@@ -125,6 +125,7 @@ class ThingAdmin(SummernoteModelAdmin):
         (None, {
             'fields': (
                 ('parent_view', 'title', 'author', 'status'),
+                ('category', 'rating', 'price'),
                 ('slug', 'created', 'updated'), ('featured_image', 'image_display', 'description'),
                 ),
         }),
