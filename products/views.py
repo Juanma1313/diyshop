@@ -11,7 +11,11 @@ from .models import Thing, Category, Instructions
 
 def all_products(request):
     """ A view to show all products, including sorting and search queries """
-    products = Thing.objects.filter(status=1, parent=None).order_by('-created_on')
+    #products = Thing.objects.filter(status=1, parent__isnull=True).order_by('-created_on')
+    # Select all the publiched products that are root or have instructions
+    products = Thing.objects.filter(Q(status=1, parent__isnull=True) | Q(status=1, instructions__isnull=False) ).distinct()
+    #print(str(products.query))
+
     query = None
     categories = None
     sort = None
@@ -21,10 +25,10 @@ def all_products(request):
         if 'sort' in request.GET:
             sortkey = request.GET['sort']
             sort = sortkey
-            if sortkey == 'name':
-                sortkey = 'lower_name'
-                products = products.annotate(lower_name=Lower('name'))
-            if sortkey == 'category':
+            if sortkey == 'title':      # only for title to sort for title in lower case
+                sortkey = 'lower_title'
+                products = products.annotate(lower_name=Lower('title'))
+            if sortkey == 'category':   # only for category to sort for category name
                 sortkey = 'category__name'
             if 'direction' in request.GET:
                 direction = request.GET['direction']
