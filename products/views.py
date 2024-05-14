@@ -25,13 +25,20 @@ def all_products(request):
         if 'sort' in request.GET:
             sortkey = request.GET['sort']
             sort = sortkey
-            if sortkey == 'title':      # only for title to sort for title in lower case
+            if sortkey == 'title':      #title:  to sort by title in lower case
                 sortkey = 'lower_title'
                 products = products.annotate(lower_title=Lower('title'))
-            if sortkey == 'category':   # only for category to sort for category name
+            elif sortkey == 'category': # category: to sort by category name
                 sortkey = 'category__name'
-            if sortkey == 'date':   # only for date to sort by created_on
+            elif sortkey == 'date':     # date: to sort by created_on
                 sortkey = 'created_on'
+            elif sortkey == 'rating':   # rating: to sort by rating
+                sortkey = 'rating'
+            elif sortkey == 'price':    # price: to sort by price
+                sortkey = 'price'
+            else:   #  Unrecogniced sort option 
+                messages.error(request, ("Sort option not available"))
+                return redirect(reverse('products'))
 
             if 'direction' in request.GET:
                 direction = request.GET['direction']
@@ -46,11 +53,15 @@ def all_products(request):
 
         if 'price' in request.GET:
             price = request.GET['price']
-            if float(price)==0:
+            try:    # Verify price value
+                price=str(float(price))
+            except:
+                messages.error(request, ("price not valid"))
+                return redirect(reverse('products'))
+            if price=='0.0':
                 products = products.filter(Q(price=price) | Q(price=None))
             else:
                 products = products.filter(price=price)
-            print(str(products.query))
 
         if 'q' in request.GET:
             query = request.GET['q']

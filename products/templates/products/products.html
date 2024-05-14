@@ -96,7 +96,7 @@
                                     <div class="col">
                                         {% if product.category %}
                                         <strong class="card-text">
-                                            <a class="category-link" href="">
+                                            <a class="category-link" href="{% url 'products' %}?category={{ product.category.name }}">
                                                 <i class="fas fa-tag text-primary"></i>&nbsp;{{ product.category.friendly_name }}
                                             </a>
                                         </strong>
