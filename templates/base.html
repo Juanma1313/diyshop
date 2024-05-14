@@ -43,7 +43,7 @@
     <body>
         <header class="container-fluid fixed-top">
             <!--TOP NAVIGATION-->
-            <div id="topnav" class="navbar row pt-lg-2 d-none d-lg-flex">
+            <div id="topnav" class="navbar row pb-0 pt-lg-2 d-none d-lg-flex">
                 <!--LOGO BRAND BANNER-->
                 <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 text-center text-lg-left">
                     <a href="{% url 'home' %}" class="nav-link main-logo-link">
@@ -56,10 +56,10 @@
                     <form method="GET" action="{% url 'products' %}">
                         <div class="input-group w-100">
                             <!--search text field-->
-                            <input class="form-control border border-black rounded-0" type="text" name="q" placeholder="Search our site">
+                            <input class="form-control border border-black rounded-start-5" type="text" name="q" placeholder="Search our site">
                             <div class="input-group-append">
                                 <!--search button-->
-                                <button class="form-control btn btn-black border border-black rounded-0" type="submit">
+                                <button class="form-control btn btn-black border border-black rounded-end-5" type="submit">
                                     <!--search icon-->
                                     <span class="icon">
                                         <i class="fas fa-search"></i>
@@ -122,8 +122,8 @@
                 </div>
             </div>
             <!--PROJECT SELECTION MENU-->
-            <div class="row ">
-                <nav class="navbar navbar-expand-lg navbar-light w-100">
+            <div class="row">
+                <nav class="p-0 navbar navbar-expand-lg navbar-light w-100">
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>

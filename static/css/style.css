@@ -19,9 +19,14 @@ body {
 	z-index: -1;
 }
 
+a.category-badge > span.badge:hover {
+    background: #212529 !important;
+    color: #fff !important;
+}
+
 .navbar-logo {
-    width:100px;
-    height:100px;
+    width:75px;
+    height:50px;
     object-fit:scale-down;
 }
 
@@ -221,9 +226,9 @@ body {
 }
 
 /* Index Carousel */
-@media (max-width: 767px) {
+@media (max-width: 991px) {
     .header-container {
-        padding-top: 70px;
+        padding-top: 50px;
     }
 
     body {
@@ -250,7 +255,7 @@ body {
 }
 
 /* medium and up screens */
-@media (min-width: 768px) {
+@media (min-width: 992px) {
     .fixed-top-desktop-only {
         position: fixed;
         top: 0;
@@ -259,7 +264,7 @@ body {
         z-index: 1030;
     }
     .header-container {
-        padding-top: 170px;
+        padding-top: 100px;
     }    
     .carousel-inner .carousel-item-end.active,
     .carousel-inner .carousel-item-next {
