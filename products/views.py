@@ -27,9 +27,12 @@ def all_products(request):
             sort = sortkey
             if sortkey == 'title':      # only for title to sort for title in lower case
                 sortkey = 'lower_title'
-                products = products.annotate(lower_name=Lower('title'))
+                products = products.annotate(lower_title=Lower('title'))
             if sortkey == 'category':   # only for category to sort for category name
                 sortkey = 'category__name'
+            if sortkey == 'date':   # only for date to sort by created_on
+                sortkey = 'created_on'
+
             if 'direction' in request.GET:
                 direction = request.GET['direction']
                 if direction == 'desc':
@@ -40,6 +43,14 @@ def all_products(request):
             categories = request.GET['category'].split(',')
             products = products.filter(category__name__in=categories)
             categories = Category.objects.filter(name__in=categories)
+
+        if 'price' in request.GET:
+            price = request.GET['price']
+            if float(price)==0:
+                products = products.filter(Q(price=price) | Q(price=None))
+            else:
+                products = products.filter(price=price)
+            print(str(products.query))
 
         if 'q' in request.GET:
             query = request.GET['q']

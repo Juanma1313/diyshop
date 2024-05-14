@@ -52,8 +52,8 @@
                 Other
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="other-link">
-                <a href="" class="dropdown-item">New Arrivals</a>
-                <a href="" class="dropdown-item">Special Deals</a>
+                <a href="{% url 'products' %}?sort=date&direction=desc" class="dropdown-item">New Arrivals</a>
+                <a href="{% url 'products' %}?price=0.0" class="dropdown-item">Only Free</a>
                 <a href="" class="dropdown-item">All</a>
             </div>
         </li>
