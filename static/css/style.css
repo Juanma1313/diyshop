@@ -301,6 +301,23 @@ a.category-badge > span.badge:hover {
     color: #71cbff;
 }
 
+/* BOOTSTRAP TOAST */
+.message-container {
+    position: fixed;
+    top: 72px;
+    right: 15px;
+    z-index: 99999999999;
+}
+
+.custom-toast {
+    overflow: visible;
+}
+
+.toast-capper {
+    height: 2px;
+}
+
+
 /* MEDIA QUERIES */
 @media (max-width: 767px) {
     .carousel-inner .carousel-item > div {
