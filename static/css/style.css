@@ -9,6 +9,60 @@ body {
     color: #000;
     font-family: 'Lato';
 }
+.logo-font {
+    text-transform: uppercase;
+}
+
+.main-logo-link {
+    width: fit-content;
+}
+
+.shop-now-button {
+    background: black;
+    color: white;
+    min-width: 260px;
+}
+
+.btn-black {
+    background: black;
+    color: white;
+}
+
+.btn-outline-black {
+    background: white;
+    color: black !important; /* use important to override link colors for <a> elements */
+    border: 1px solid black;
+}
+
+.btn-outline-black:hover,
+.btn-outline-black:active,
+.btn-outline-black:focus {
+    background: black;
+    color: white !important;
+}
+
+.shop-now-button:hover,
+.shop-now-button:active,
+.shop-now-button:focus,
+.btn-black:hover,
+.btn-black:active,
+.btn-black:focus {
+    background: #222;
+    color: white;
+}
+
+.text-black {
+    color: #000 !important;
+}
+
+.border-black {
+    border: 1px solid black !important;
+}
+
+.bg-black {
+    background: #000 !important;
+}
+
 .overlay {
 	height: 100%;
 	width: 100%;
@@ -167,7 +221,7 @@ a.category-badge > span.badge:hover {
 }
 
 .thing-title {
-    margin-top: 10%;
+    margin-top: 5%;
     margin-left: 5%;
 }
 
@@ -224,6 +278,13 @@ a.category-badge > span.badge:hover {
     object-fit: cover;
 }
 
+.bag-thing-image {
+    height: 100px;
+    width: 100px;
+    object-fit: cover;
+}
+
+
 .component-image {
     width:100px;
     height:100px;
@@ -240,7 +301,17 @@ a.category-badge > span.badge:hover {
     color: #71cbff;
 }
 
-/* Index Carousel */
+/* MEDIA QUERIES */
+@media (max-width: 767px) {
+    .carousel-inner .carousel-item > div {
+        display: none;
+    }
+
+    .carousel-inner .carousel-item > div:first-child {
+        display: block;
+    }
+}
+
 @media (max-width: 991px) {
     .header-container {
         padding-top: 50px;
@@ -250,13 +321,6 @@ a.category-badge > span.badge:hover {
         height: calc(100vh - 116px);
     }
 
-    .carousel-inner .carousel-item > div {
-        display: none;
-    }
-
-    .carousel-inner .carousel-item > div:first-child {
-        display: block;
-    }
 
     .user-menu {
         margin-right: 0;

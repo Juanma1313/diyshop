@@ -22,24 +22,24 @@
                     <!-- Author & Date -->
                     <p class="thing-subtitle">{{ product.author }} | {{ product.created_on }}</p>
 
-                    <div class="row g-0">
-                        <div class="col-md-6">
+                    <div class="row g-0 thing-subtitle pb-2">
+                        <div class="col-md-12">
                             <!--Catregory-->
                             {% if product.category %}
-                            <strong class="thing-subtitle">
+                            <strong>
                                 <a class="category-link" href="{% url 'products' %}?category={{ product.category.name }}">
                                     <i class="fas fa-tag text-primary"></i>&nbsp;{{ product.category.friendly_name }}
                                 </a>
                             </strong>
                             {% else %}
-                                <small class="fas fa-tag mr-1 text-dark"></i>&nbsp;None
+                                <small class="fas fa-tag mr-1 text-dark"></i>&nbsp;No category
                             {% endif %}
                         </div>
                     </div>
-                    <div class="row g-0">
+                    <div class="row g-0 thing-subtitle">
                         <div class="col-4">
                             <!--Thing Likes-->
-                            <strong class="thing-subtitle">
+                            <strong >
                                 {% if user.is_authenticated %}
                                     <form class="d-inline" action="{% url 'product_like' product.id %}" method="POST">
                                         {% csrf_token %}
@@ -60,19 +60,24 @@
                             {% if product.rating %}
                                 <strong class="thing-subtitle"><i class="fas fa-star mr-1 text-warning"></i>&nbsp;{{ product.rating }} / 5</strong>
                             {% else %}
-                                <small class="thing-subtitle text-muted">No Rating</small>
+                            <strong class="thing-subtitle"><i class="fas fa-star mr-1 text-warning"></i></strong>
+                            <small class="thing-subtitle text-muted">No Rating</small>
                             {% endif %}
                         </div>
                     </div>
                     <div class="row g-0">
-                        <div class="col-4">
-                            <!--Price-->
-                            {% if product.price %}
-                                <strong class="thing-subtitle">€&nbsp;{{ product.price }}</strong>
-                            {% else %}
-                                <small class="thing-subtitle text-muted">Free</small>
-                            {% endif %}
-                        </div>
+                        <!--Price-->
+                        {% if product.price %}
+                            <div class="col-12 p-2">
+                                <strong class="thing-subtitle"><i class="fas fa-euro-sign text-success"></i>&nbsp;{{ product.price }}</strong>
+                            </div>
+                            <!-- Shopping bag controls-->
+                            {% include 'products/includes/bag_form.html' %}
+                        {% else %}
+                            <div class="col-12 pt-4 pb-5">
+                                <strong class="thing-subtitle text-black">Free Access</strong>
+                            </div>
+                        {% endif %}
                     </div>
                     <hr>
                     <div class="row">
