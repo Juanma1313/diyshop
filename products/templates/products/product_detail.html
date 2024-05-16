@@ -142,7 +142,7 @@
                         {% if is_a_thing %}
                         <a href="{% url 'product_detail' component.id %}" class="post-link">
                         {% endif %}
-                        <h4 class="font-weight-bold">
+                        <h4 class="fw-bold">
                             {% if "placeholder" in component.featured_image.url %}
                             {% load static %}
                             <img src="{% static 'image-not-available.png' %}" alt="No Component image available" class="component-image">
@@ -178,7 +178,7 @@
                     {% for step in instructions %}
                     <div class="instructions" style="padding: 10px;">
                         <!-- The title for the instructions -->
-                        <h4 class="font-weight-bold">
+                        <h4 class="fw-bold">
                             {{ step.title }}
                         </h4>
                         <!-- The text for the instructions -->

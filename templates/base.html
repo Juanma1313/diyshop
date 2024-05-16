@@ -74,7 +74,7 @@
                 </div>
                 <!--USER ACCOUNT MENU-->
                 <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
-                    <ul class="list-inline list-unstyled text-center text-lg-right my-0">
+                    <ul class="list-inline list-unstyled text-center text-lg-end my-0">
                         <!--user options-->
                         <li class="list-inline-item dropdown">
                             <!--user icon-->
@@ -108,14 +108,14 @@
                         </li>
                         <!--Shopping bag-->
                         <li class="list-inline-item">
-                            <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link" href="{% url 'view_bag' %}">
+                            <a class="{% if grand_total %}text-warning fw-bold{% else %}text-black{% endif %} nav-link" href="{% url 'view_bag' %}">
                                 <div class="text-center">
                                     <div><i class="fas fa-shopping-bag fa-lg"></i></div>
                                     <p class="my-0">
                                         {% if grand_total %}
-                                            ${{ grand_total|floatformat:2 }}
+                                            €{{ grand_total|floatformat:2 }}
                                         {% else %}
-                                            $0.00
+                                            €0.00
                                         {% endif %}
                                     </p>
                                 </div>
@@ -135,7 +135,7 @@
                 </nav>
             </div>
         </header>
-
+        <!-- TOAST MESSAGES -->
         {% if messages %}
         <div class="message-container">
             {% for message in messages %}
@@ -163,11 +163,9 @@
         {% block postloadjs %}
         {% if messages %}
             <script type="text/javascript">
-                //const toastTrigger = document.getElementById('liveToastBtn')
-                const toastLive = document.getElementById('toast')
-
-                const toastBootstrap = bootstrap.Toast.getOrCreateInstance(toastLive)
-                toastBootstrap.show()
+                const toastElList = document.querySelectorAll('.toast');
+                const toastList = [...toastElList].map(toastEl => new bootstrap.Toast(toastEl));
+                toastList.forEach(toast => toast.show());
             </script>
         {% endif %}
         {% endblock %}
