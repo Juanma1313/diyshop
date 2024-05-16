@@ -56,6 +56,9 @@ INSTALLED_APPS = [
     'products',
     'django_summernote',
     'bag',
+    'checkout',
+    'crispy_forms',
+
 ]
 
 MIDDLEWARE = [
@@ -69,6 +72,8 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'diyshop_project.urls'
+
+CRISPY_TEMPLATE_PACK = 'bootstrap3'
 
 TEMPLATES = [
     {
@@ -87,6 +92,10 @@ TEMPLATES = [
                 'bag.contexts.bag_contents',
                 'django.template.context_processors.media',
             ],
+            'builtins': [
+                'crispy_forms.templatetags.crispy_forms_tags',
+                'crispy_forms.templatetags.crispy_forms_field',
+            ]            
         },
     },
 ]
