@@ -1,4 +1,3 @@
-'''
 from django.conf import settings
 from django.http import HttpResponse
 from django.views.decorators.http import require_POST
@@ -12,7 +11,8 @@ import stripe
 @require_POST
 @csrf_exempt
 def webhook(request):
-    """Listen for webhooks from Stripe"""
+    """Listen for webhooks from Stripe
+    """
     # Setup
     wh_secret = settings.STRIPE_WH_SECRET
     stripe.api_key = settings.STRIPE_SECRET_KEY
@@ -35,6 +35,8 @@ def webhook(request):
     except Exception as e:
         return HttpResponse(content=e, status=400)
 
+    print("webhook event Received")
+
     # Set up a webhook handler
     handler = StripeWH_Handler(request)
 
@@ -54,4 +56,3 @@ def webhook(request):
     # Call the event handler with the event
     response = event_handler(event)
     return response
-'''

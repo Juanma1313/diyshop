@@ -13,28 +13,33 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 from pathlib import Path
 import os
 from django.contrib import messages
-MESSAGE_TAGS = {
-    messages.DEBUG: 'alert-info',
-    messages.INFO: 'alert-info',
-    messages.SUCCESS: 'alert-success',
-    messages.WARNING: 'alert-warning',
-    messages.ERROR: 'alert-danger',
-}
+
+if os.path.isfile("env.py"):
+    import env
+    DEPLOYED = False
+else:
+    DEPLOYED = True
+
+
+DEBUG = os.environ.get('DEVELOPMENT', False)
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+
+TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-$c5*7dnp)!%+n*9sgw3)65ql1=5l_6o42n()2u8-odc=oy(kw$'
+SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS').split(",")
 
 
 # Application definition
@@ -79,8 +84,8 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
-            os.path.join(BASE_DIR, 'templates'),
-            os.path.join(BASE_DIR, 'templates', 'allauth'),
+            TEMPLATES_DIR,
+            os.path.join(TEMPLATES_DIR, 'allauth'),
         ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -118,12 +123,20 @@ ACCOUNT_AUTHENTICATION_METHOD = 'username_email'    # Both username and email fo
 ACCOUNT_EMAIL_VERIFICATION = os.environ.get('ACCOUNT_EMAIL_VERIFICATION', 'mandatory')  # Force email verification if not defined otherwise in environment
 ACCOUNT_SIGNUP_EMAIL_ENTER_TWICE = True
 
+SITE_ID = 1
+
 LOGIN_URL = '/accounts/login/'
 LOGIN_REDIRECT_URL = '/'
 LOGUT_REDIRECT_URL = '/'     
 
+MESSAGE_TAGS = {
+    messages.DEBUG: 'alert-info',
+    messages.INFO: 'alert-info',
+    messages.SUCCESS: 'alert-success',
+    messages.WARNING: 'alert-warning',
+    messages.ERROR: 'alert-danger',
+}
 
-SITE_ID = 1
 
 # email configuration settings
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'    # Temporaly for development 
@@ -139,6 +152,10 @@ WSGI_APPLICATION = 'diyshop_project.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
+
+#DATABASES = {
+#   'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
+#}
 
 DATABASES = {
     'default': {
@@ -180,6 +197,14 @@ USE_L10N = True
 
 USE_TZ = True
 
+# email configuration settings
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = os.environ.get('EMAIL_HOST')
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
+
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
@@ -196,6 +221,17 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+# DIY Shop fees for delivery
 FREE_DELIVERY_THRESHOLD = 50
 STANDARD_DELIVERY_PERCENTAGE = 10
 
+
+# Stripe
+STRIPE_CURRENCY = 'eur' # US Dolar='usd', CCE Euro = 'eur'
+STRIPE_PUBLIC_KEY = os.getenv('STRIPE_PUBLIC_KEY', '')
+STRIPE_SECRET_KEY = os.getenv('STRIPE_SECRET_KEY', '')
+STRIPE_WH_SECRET = os.getenv('STRIPE_WH_SECRET', '')
+
+if DEBUG:
+    import django
+    print(f"Django Version: {django.get_version()} DEBUG MODE")
