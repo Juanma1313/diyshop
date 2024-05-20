@@ -11,35 +11,65 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
 from pathlib import Path
-import os
+from os import getenv, path
 from django.contrib import messages
 
-if os.path.isfile("env.py"):
+''' SECURITY WARNING: 
+The secret data, that can compromise the production system, should be defined 
+locally in BASE_DIR+"/env.py" file for development.
+env.py file has the following form:
+        from os import environ
+        environ["variable_name_1"] = "value_1"
+        environ["variable_name_2"] = "value_2"
+        :   :
+
+The following lines are the names of the enviromental variables that this website requires.
+    "DEVELOPMENT"   --> "True" or "False"
+    "SECRET_KEY"    --> example: "9087zxcv98z798bv^=098zxcv098xzcv09*u2dsd2u+&hddf0^^uj"
+    "ALLOWED_HOSTS" --> example: "127.0.0.1,localhost, diyshop-1c0dad79f0a0.herokuapp.com"
+    "DATABASE_URL"  --> example: "postgres://cmftklgz:gYdAbasasdasdasdsadsad234@dumbo.db.elephantsql.com/cmftklgz"
+    "ACCOUNT_EMAIL_VERIFICATION" --> "none" or "mandatory"
+    "EMAIL_HOST"    --> example: 'smtp.gmail.com'
+    "EMAIL_HOST_USER"   --> example: 'diyshop@gmail.com'
+    "EMAIL_HOST_PASSWORD"   --> example: 'asldknlmalsm'     # gmail servers usually do not accept user passwords but application passwords
+    "STRIPE_PUBLIC_KEY" --> example "pk_test_51PasdfASDFasdfasDFasdFASDFasdfag$%234weADSfGzdgLg9vUarbSvl1IBriGElYtCE0PIjVDJCkVwCM7v4hascasdcSD43"
+    "STRIPE_SECRET_KEY" --> example "sk_test_51PGzdg23re0987asdlkj34ot5245098uwrve09jvlñkwevkjwgSERVWERVwer vwerfQErvñmekfvoieLg9vUarbSvaBPVn0TH8"
+    "STRIPE_WH_SECRET"  --> example "whsec_9ff13b16lñknsadvTWsdafvadv299106f445ef6f269b02236aa87180952ecf8387046f2322cee5d28f"
+        #to run application in local enironment use stripe cli tool command "$ ./stripe listen --forward-to 127.0.0.1:8000/checkout/wh"
+
+IMPORTANT NOTES: 
+    - NEVER allow the env.py file to be pushed to a public development or deployment repositories (Github, GitLab, Bitbucket, etc.)
+    - Do not need to difine "DEVELOPMENT" variable in the production system. By default it will be set to "False" 
+    - In the production environment, this variables must be defined as environmental varibles at the django server 
+        (Heroku, AWS Activate, Google Cloud, etc.)
+'''
+
+
+# Build paths inside the project like this: BASE_DIR / 'subdir'.
+BASE_DIR = Path(__file__).resolve().parent.parent
+
+TEMPLATES_DIR = path.join(BASE_DIR, 'templates')
+
+if path.isfile("env.py"):
     import env
     DEPLOYED = False
 else:
     DEPLOYED = True
 
 
-DEBUG = os.environ.get('DEVELOPMENT', False)
-
-
-# Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = Path(__file__).resolve().parent.parent
-
-TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
+DEBUG = getenv('DEVELOPMENT', False)
 
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ.get('SECRET_KEY')
+SECRET_KEY = getenv('SECRET_KEY', '')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS').split(",")
+ALLOWED_HOSTS = getenv('ALLOWED_HOSTS').split(",")
 
 
 # Application definition
@@ -85,7 +115,7 @@ TEMPLATES = [
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
             TEMPLATES_DIR,
-            os.path.join(TEMPLATES_DIR, 'allauth'),
+            path.join(TEMPLATES_DIR, 'allauth'),
         ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -120,7 +150,7 @@ ACCOUNT_EMAIL_REQUIRED = True                       # Mandatory email registrati
 ACCOUNT_USERNAME_REQUIRED = True                    # Mandatory username registration
 ACCOUNT_PRESERVER_USERNAME_CASING = False           # Don't care for username letter case
 ACCOUNT_AUTHENTICATION_METHOD = 'username_email'    # Both username and email for identification
-ACCOUNT_EMAIL_VERIFICATION = os.environ.get('ACCOUNT_EMAIL_VERIFICATION', 'mandatory')  # Force email verification if not defined otherwise in environment
+ACCOUNT_EMAIL_VERIFICATION = getenv('ACCOUNT_EMAIL_VERIFICATION', 'mandatory')  # Force email verification if not defined otherwise in environment
 ACCOUNT_SIGNUP_EMAIL_ENTER_TWICE = True
 
 SITE_ID = 1
@@ -141,11 +171,11 @@ MESSAGE_TAGS = {
 # email configuration settings
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'    # Temporaly for development 
 #EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-#EMAIL_HOST = os.environ.get('EMAIL_HOST')
+#EMAIL_HOST = getenv('EMAIL_HOST','')
 #EMAIL_PORT = 587
 #EMAIL_USE_TLS = True
-#EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
-#EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
+#EMAIL_HOST_USER = getenv('EMAIL_HOST_USER','')
+#EMAIL_HOST_PASSWORD = getenv('EMAIL_HOST_PASSWORD','')
 
 WSGI_APPLICATION = 'diyshop_project.wsgi.application'
 
@@ -154,7 +184,7 @@ WSGI_APPLICATION = 'diyshop_project.wsgi.application'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
 #DATABASES = {
-#   'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
+#   'default': dj_database_url.parse(getenv("DATABASE_URL",''))
 #}
 
 DATABASES = {
@@ -199,21 +229,21 @@ USE_TZ = True
 
 # email configuration settings
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = os.environ.get('EMAIL_HOST')
+EMAIL_HOST = getenv('EMAIL_HOST')
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
-EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
+EMAIL_HOST_USER = getenv('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = getenv('EMAIL_HOST_PASSWORD')
 
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'), ]
+STATICFILES_DIRS = [path.join(BASE_DIR, 'static'), ]
 
 MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_ROOT = path.join(BASE_DIR, 'media')
 
 
 # Default primary key field type
@@ -228,9 +258,9 @@ STANDARD_DELIVERY_PERCENTAGE = 10
 
 # Stripe
 STRIPE_CURRENCY = 'eur' # US Dolar='usd', CCE Euro = 'eur'
-STRIPE_PUBLIC_KEY = os.getenv('STRIPE_PUBLIC_KEY', '')
-STRIPE_SECRET_KEY = os.getenv('STRIPE_SECRET_KEY', '')
-STRIPE_WH_SECRET = os.getenv('STRIPE_WH_SECRET', '')
+STRIPE_PUBLIC_KEY = getenv('STRIPE_PUBLIC_KEY', '')
+STRIPE_SECRET_KEY = getenv('STRIPE_SECRET_KEY', '')
+STRIPE_WH_SECRET = getenv('STRIPE_WH_SECRET', '')
 
 if DEBUG:
     import django
