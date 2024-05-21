@@ -29,6 +29,7 @@ The following lines are the names of the enviromental variables that this websit
     "ALLOWED_HOSTS" --> example: "127.0.0.1,localhost, diyshop-1c0dad79f0a0.herokuapp.com"
     "DATABASE_URL"  --> example: "postgres://cmftklgz:gYdAbasasdasdasdsadsad234@dumbo.db.elephantsql.com/cmftklgz"
     "ACCOUNT_EMAIL_VERIFICATION" --> "none" or "mandatory"
+    "EMAIL_FROM_DEFAULT" --> example: sales-dep@diyshop.com
     "EMAIL_HOST"    --> example: 'smtp.gmail.com'
     "EMAIL_HOST_USER"   --> example: 'diyshop@gmail.com'
     "EMAIL_HOST_PASSWORD"   --> example: 'asldknlmalsm'     # gmail servers usually do not accept user passwords but application passwords
@@ -169,15 +170,18 @@ MESSAGE_TAGS = {
 
 
 # email configuration settings
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'    # Temporaly for development 
-#EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-#EMAIL_HOST = getenv('EMAIL_HOST','')
-#EMAIL_PORT = 587
-#EMAIL_USE_TLS = True
-#EMAIL_HOST_USER = getenv('EMAIL_HOST_USER','')
-#EMAIL_HOST_PASSWORD = getenv('EMAIL_HOST_PASSWORD','')
+#EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'    # Temporaly for testing
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = getenv('EMAIL_HOST','')
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = getenv('EMAIL_HOST_USER','')
+EMAIL_HOST_PASSWORD = getenv('EMAIL_HOST_PASSWORD','')
+EMAIL_FROM_DEFAULT = getenv('EMAIL_FROM_DEFAULT','')
+
 
 WSGI_APPLICATION = 'diyshop_project.wsgi.application'
+
 
 
 # Database
@@ -227,13 +231,6 @@ USE_L10N = True
 
 USE_TZ = True
 
-# email configuration settings
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = getenv('EMAIL_HOST')
-EMAIL_PORT = 587
-EMAIL_USE_TLS = True
-EMAIL_HOST_USER = getenv('EMAIL_HOST_USER')
-EMAIL_HOST_PASSWORD = getenv('EMAIL_HOST_PASSWORD')
 
 
 # Static files (CSS, JavaScript, Images)

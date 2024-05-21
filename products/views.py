@@ -14,7 +14,6 @@ def all_products(request):
     #products = Thing.objects.filter(status=1, parent__isnull=True).order_by('-created_on')
     # Select all the publiched products that are root or have instructions
     products = Thing.objects.filter(Q(status=1, parent__isnull=True) | Q(status=1, instructions__isnull=False) ).distinct()
-    #print(str(products.query))
 
     query = None
     categories = None
@@ -66,7 +65,6 @@ def all_products(request):
         if 'q' in request.GET:
             query = request.GET['q']
             if not query:
-                print("ERR: No search criteria!")
                 messages.error(request, ("You didn't enter any search criteria!"))
                 return redirect(reverse('products'))
 

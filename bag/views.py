@@ -48,7 +48,6 @@ def add_to_bag(request, item_id):
             bag[item_id] = quantity
             messages.success(request, f'Added {product.title} to your bag')
     request.session['bag'] = bag    # Update sesion's bag
-    print(request.session['bag'])
     return redirect(redirect_url)
 
 def adjust_bag(request, item_id):

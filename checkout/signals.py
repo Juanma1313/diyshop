@@ -9,12 +9,9 @@ def update_on_save(sender, instance, created, **kwargs):
     """ Update order total on lineitem update/create
     """
     instance.order.update_total()
-    print("Procesed 'post_save' signal from 'OrderLineItem'")
-
 
 @receiver(post_delete, sender=OrderLineItem)
 def update_on_delete(sender, instance, **kwargs):
     """ Update order total on lineitem delete
     """
     instance.order.update_total()
-    print("Procesed 'post_delete' signal from 'OrderLineItem'")
