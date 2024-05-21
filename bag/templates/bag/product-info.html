@@ -1,5 +1,5 @@
 <a href="{% url 'product_detail' item.product.id %}">
     <p class="my-0"><strong>{{ item.product.title }}</strong></p>
 </a>
-{% if item.product.has_sizes %}<p class="my-0"><strong>Size: </strong>{{ item.size|upper }}{% endif %}</p>
+{% if item.product.variants %}<p class="my-0"><strong>variant: </strong>{{ item.variant|upper }}{% endif %}</p>
 <p class="my-0 small text-muted">SLUG: {{ item.product.slug|upper }}</p>

@@ -15,28 +15,28 @@ def add_to_bag(request, item_id):
     product = get_object_or_404(Thing, pk=item_id)
     quantity = int(request.POST.get('quantity'))
     redirect_url = request.POST.get('redirect_url')
-    size = None
-    if 'product_size' in request.POST:
-        size = request.POST['product_size']
+    variant = None
+    if 'product_variant' in request.POST:
+        variant = request.POST['product_variant']
     bag = request.session.get('bag', {})    # gets bag from sesion or create one
 
-    if size:
+    if variant:
         if item_id in list(bag.keys()):
-            if size in bag[item_id]['items_by_size'].keys():
-                bag[item_id]['items_by_size'][size] += quantity
+            if variant in bag[item_id]['items_by_variant'].keys():
+                bag[item_id]['items_by_variant'][variant] += quantity
                 messages.success(request,
-                                 (f'Updated size {size.upper()} '
+                                 (f'Updated variant {variant.upper()} '
                                   f'{product.title} quantity to '
-                                  f'{bag[item_id]["items_by_size"][size]}'))
+                                  f'{bag[item_id]["items_by_variant"][variant]}'))
             else:
-                bag[item_id]['items_by_size'][size] = quantity
+                bag[item_id]['items_by_variant'][variant] = quantity
                 messages.success(request,
-                                 (f'Added size {size.upper()} '
+                                 (f'Added variant {variant.upper()} '
                                   f'{product.title} to your bag'))
         else:
-            bag[item_id] = {'items_by_size': {size: quantity}}
+            bag[item_id] = {'items_by_variant': {variant: quantity}}
             messages.success(request,
-                             (f'Added size {size.upper()} '
+                             (f'Added variant {variant.upper()} '
                               f'{product.title} to your bag'))
     else:
         if item_id in list(bag.keys()):
@@ -55,24 +55,24 @@ def adjust_bag(request, item_id):
 
     product = get_object_or_404(Thing, pk=item_id)
     quantity = int(request.POST.get('quantity'))
-    size = None
-    if 'product_size' in request.POST:
-        size = request.POST['product_size']
+    variant = None
+    if 'product_variant' in request.POST:
+        variant = request.POST['product_variant']
     bag = request.session.get('bag', {})
 
-    if size:
+    if variant:
         if quantity > 0:
-            bag[item_id]['items_by_size'][size] = quantity
+            bag[item_id]['items_by_variant'][variant] = quantity
             messages.success(request,
-                             (f'Updated size {size.upper()} '
+                             (f'Updated variant {variant.upper()} '
                               f'{product.title} quantity to '
-                              f'{bag[item_id]["items_by_size"][size]}'))
+                              f'{bag[item_id]["items_by_variant"][variant]}'))
         else:
-            del bag[item_id]['items_by_size'][size]
-            if not bag[item_id]['items_by_size']:
+            del bag[item_id]['items_by_variant'][variant]
+            if not bag[item_id]['items_by_variant']:
                 bag.pop(item_id)
             messages.success(request,
-                             (f'Removed size {size.upper()} '
+                             (f'Removed variant {variant.upper()} '
                               f'{product.title} from your bag'))
     else:
         if quantity > 0:
@@ -94,17 +94,17 @@ def remove_from_bag(request, item_id):
 
     try:
         product = get_object_or_404(Thing, pk=item_id)
-        size = None
-        if 'product_size' in request.POST:
-            size = request.POST['product_size']
+        variant = None
+        if 'product_variant' in request.POST:
+            variant = request.POST['product_variant']
         bag = request.session.get('bag', {})
 
-        if size:
-            del bag[item_id]['items_by_size'][size]
-            if not bag[item_id]['items_by_size']:
+        if variant:
+            del bag[item_id]['items_by_variant'][variant]
+            if not bag[item_id]['items_by_variant']:
                 bag.pop(item_id)
             messages.success(request,
-                             (f'Removed size {size.upper()} '
+                             (f'Removed variant {variant.upper()} '
                               f'{product.title} from your bag'))
         else:
             bag.pop(item_id)

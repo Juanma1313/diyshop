@@ -1,11 +1,11 @@
 <form class="form" action="{% url 'add_to_bag' product.id %}" method="POST">
     {% csrf_token %}
     <div class="row g-0">
-        {% with product.has_sizes as s %}
+        {% with product.variants as s %}
         {% if s %}
             <div class="col-12">
-                <p><strong>Size:</strong></p>
-                <select class="form-control rounded-0 w-50" name="product_size" id='id_product_size'>
+                <p><strong>Variant:</strong></p>
+                <select class="form-control rounded-0 w-50" name="product_variant" id='id_product_variant'>
                     <option value="xs">XS</option>
                     <option value="s">S</option>
                     <option value="m" selected>M</option>
@@ -14,23 +14,32 @@
                 </select>
             </div>
         {% endif %}
-        <div class="col-4">
-            <div class="form-group w-20">
-                <div class="input-group">
-                    <div class="input-group-prepend">
-                        <button class="decrement-qty btn btn-black rounded-start-0" 
+
+        <div class="col-4 px-1 ">
+            <a href="{% url 'products' %}" class="btn btn-outline-black rounded-start-5 w-100 btn-sm">
+                <span class="icon">
+                    <i class="fas fa-chevron-left"></i>
+                </span>
+                <span class="text-uppercase">Keep Shopping</span>
+            </a>
+        </div>
+        <div class="col-4 ">
+            <div class="form-group w-10 h-100">
+                <div class="input-group h-100">
+                    <div class="input-group-prepend h-100">
+                        <button class="decrement-qty btn btn-black rounded-start-1 rounded-end-0 h-100 btn-sm" 
                             data-item_id="{{ product.id }}" id="decrement-qty_{{ product.id }}">
                             <span class="icon">
                                 <i class="fas fa-minus"></i>
                             </span>
                         </button>
                     </div>
-                    <input class="form-control qty_input text-end" type="number"
+                    <input class="form-control qty_input text-end h-100" type="number"
                         name="quantity" value="1" min="1" max="99"
                         data-item_id="{{ product.id }}"
                         id="id_qty_{{ product.id }}">
-                    <div class="input-group-append">
-                        <button class="increment-qty btn btn-black rounded-end-0"
+                    <div class="input-group-append h-100">
+                        <button class="increment-qty btn btn-black rounded-start-0 rounded-end-1 h-100 btn-sm"
                             data-item_id="{{ product.id }}" id="increment-qty_{{ product.id }}">
                             <span class="icon">
                                 <i class="fas fa-plus"></i>
@@ -40,8 +49,8 @@
                 </div>
             </div>
         </div>
-        <div class="col-4">
-            <input type="submit" class="btn btn-black rounded-end-5 text-uppercase" value="Add to Bag">
+        <div class="col-4 px-1">
+            <input type="submit" class="w-100 h-100 btn btn-black rounded-end-5 text-uppercase btn-sm" value="Add to Bag">
         </div>
         <input type="hidden" name="redirect_url" value="{{ request.path }}">
         {% endwith %}

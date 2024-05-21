@@ -69,12 +69,12 @@ def checkout(request):
                         order_line_item.save()
                     else:   # The DIY Project has no specified type
                         # Iterate trough all specified types 
-                        for size, quantity in item_data['items_by_size'].items():
+                        for variant, quantity in item_data['items_by_variant'].items():
                             order_line_item = OrderLineItem(
                                 order=order,
                                 product=product,
                                 quantity=quantity,
-                                product_size=size,
+                                product_variant=variant,
                             )
                             order_line_item.save()
                 except Thing.DoesNotExist:

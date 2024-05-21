@@ -53,7 +53,7 @@
                         <!--Product Information-->
                         <div class="col-7">
                             <p class="my-0"><strong>{{ item.product.title }}</strong></p>
-                            <p class="my-0 small">Type: {% if item.product.has_sizes %}{{ item.size|upper }}{% else %}N/A{% endif %}</p>
+                            <p class="my-0 small">Variant: {% if item.product.variants %}{{ item.variant|upper }}{% else %}N/A{% endif %}</p>
                             <p class="my-0 small text-muted">Qty: {{ item.quantity }}</p>
                         </div>
                         <!--Product Subtotaln-->

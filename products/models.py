@@ -30,13 +30,12 @@ class Thing(models.Model):
     author = models.ForeignKey(User, on_delete=models.CASCADE, related_name="owner")
     featured_image_url = models.URLField(max_length=1024, null=True, blank=True)
     featured_image = models.ImageField(null=True, blank=True)
-
     description = models.TextField(blank=True)
     updated_on = models.DateTimeField(auto_now=True)
     created_on = models.DateTimeField(auto_now_add=True)
     status = models.IntegerField(choices=STATUS, default=0)
     likes = models.ManyToManyField(User, related_name='thing_likes', blank=True)
-    has_sizes = models.BooleanField(default=False, null=True, blank=True)
+    variants = models.BooleanField(default=False, null=True, blank=True)
     price = models.DecimalField(max_digits=6, decimal_places=2, null=True)
     rating = models.DecimalField(max_digits=6, decimal_places=2, null=True, blank=True)
 
