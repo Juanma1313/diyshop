@@ -1,5 +1,5 @@
 .order-history {
-    max-height: 416px; /* height of profile form + submit button */
+    max-height: 424px; /* height of profile form + submit button */
     overflow-y: auto;
 }
 
@@ -18,4 +18,9 @@
 
 #id_default_country option:first-child {
     color: #aab7c4;
+}
+
+/* '.form-*' classes are deprecated in bootstrap 5 */
+.form-group {
+    margin-bottom: 1rem;
 }
