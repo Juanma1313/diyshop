@@ -91,13 +91,15 @@
                             <!--user menu-->
                             <div class="dropdown-menu border-0" aria-labelledby="user-options">
                                 {% if request.user.is_authenticated %}
-                                    {% if request.user.is_superuser %}
+                                    {% if request.user.is_superuser or request.user.is_staff%}
                                         <!--management option-->
-                                        <a href="{% url 'add_product' %}" class="dropdown-item">Projects Management</a>
+                                        <a href="/admin" class="dropdown-item">Admin</a>
+                                        <a href="{% url 'add_product' %}" class="dropdown-item">Add Project</a>
                                     {% endif %}
                                     <!--user profile-->
                                     <a href="{% url 'profile' %}" class="dropdown-item">My Profile</a>
                                     <!--user logout-->
+                                    <a href="{% url 'account_email' %}" class="dropdown-item">E-mail </a>
                                     <a href="{% url 'account_logout' %}" class="dropdown-item">Sign Out</a>
                                 {% else %}
                                     <!--user loging/registration-->
@@ -161,7 +163,7 @@
         {% endblock %}
 
         <!-- Footer -->
-        <footer class="container-fluid fixed-bottom footer mt-auto py-3 dark-bg">
+        <footer class="container-fluid fixed-bottom footer mt-auto py-3 dark-bg d-none d-sm-block">
             <p class="m-0 text-center text-white">Made for Code Institute</p>
             <p class="m-0 text-center text-white">Follow us: 
                 <a href="https://facebook.com" target="_blank" rel="noopener"

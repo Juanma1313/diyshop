@@ -1,0 +1,91 @@
+{% if product.price %}
+    <!-- Price Anounce-->
+    <div class="col-12 p-2">
+        <strong class="thing-subtitle"><i class="fas fa-euro-sign text-success"></i>&nbsp;{{ product.price }}</strong>
+    </div>
+    
+    <!-- Shopping bag controls-->
+    <form class="form" action="{% url 'add_to_bag' product.id %}" method="POST">
+        {% csrf_token %}
+        <div class="row g-0">
+            <!-- Variant Selection-->
+            {% with product.variants as s %}
+            {% if s %}
+                <div class="col-12">
+                    <p><strong>Variant:</strong></p>
+                    <select class="form-control rounded-0 w-50" name="product_variant" id='id_product_variant'>
+                        <option value="v1" selected>Variant 1</option>
+                        <option value="V2">Variant 2</option>
+                        <option value="v3" selected>Variant 3</option>
+                        <option value="v4">Variant 4</option>
+                        <option value="v5">Variant 5</option>
+                    </select>
+                </div>
+            {% endif %}
+
+            <!-- Keep Shopping button-->
+            <div class="col-4 px-1 ">
+                <a href="{{request.META.HTTP_REFERER|escape}}" class="btn btn-outline-black rounded-start-5 w-100 btn-sm">
+                    <span class="icon">
+                        <i class="fas fa-chevron-left"></i>
+                    </span>
+                    <span class="text-uppercase">Back</span>
+                </a>
+            </div>
+            <!-- Quantity selection buttons-->
+            <div class="col-4 ">
+                <div class="form-group w-10 h-100">
+                    <div class="input-group h-100">
+                        <div class="input-group-prepend h-100">
+                            <button class="decrement-qty btn btn-black rounded-start-1 rounded-end-0 h-100 btn-sm" 
+                                data-item_id="{{ product.id }}" id="decrement-qty_{{ product.id }}">
+                                <span class="icon">
+                                    <i class="fas fa-minus"></i>
+                                </span>
+                            </button>
+                        </div>
+                        <input class="form-control qty_input text-end h-100" type="number"
+                            name="quantity" value="1" min="1" max="99"
+                            data-item_id="{{ product.id }}"
+                            id="id_qty_{{ product.id }}">
+                        <div class="input-group-append h-100">
+                            <button class="increment-qty btn btn-black rounded-start-0 rounded-end-1 h-100 btn-sm"
+                                data-item_id="{{ product.id }}" id="increment-qty_{{ product.id }}">
+                                <span class="icon">
+                                    <i class="fas fa-plus"></i>
+                                </span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Add to bag button-->
+            <div class="col-4 px-1">
+                <input type="submit" class="w-100 h-100 btn btn-black rounded-end-5 text-uppercase btn-sm" value="Add to Bag">
+            </div>
+            <input type="hidden" name="redirect_url" value="{{ request.path }}">
+            {% endwith %}
+        </div>
+    </form>
+{% else %}
+    <!-- Free Access announce-->
+    <div class="col-12 p-2">
+        <strong class="thing-subtitle text-black">Free Access</strong>
+    </div>
+    <!-- Shopping bag controls-->
+    <div class="row g-0">
+        <!-- Keep Shopping button-->
+        <div class="col-4 px-1 ">
+            <a href="{{request.META.HTTP_REFERER|escape}}" class="btn btn-outline-black rounded-5 w-100 btn-sm">
+                <span class="icon">
+                    <i class="fas fa-chevron-left"></i>
+                </span>
+                <span class="text-uppercase">Back</span>
+            </a>
+        </div>
+    </div>
+
+{% endif %}
+
+{% include 'products/includes/quantity_input_script.html' %}
+

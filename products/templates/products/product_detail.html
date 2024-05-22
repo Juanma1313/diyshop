@@ -60,43 +60,43 @@
                             {% if product.rating %}
                                 <strong class="thing-subtitle"><i class="fas fa-star mr-1 text-warning"></i>&nbsp;{{ product.rating }} / 5</strong>
                             {% else %}
-                            <strong class="thing-subtitle"><i class="fas fa-star mr-1 text-warning"></i></strong>
-                            <small class="thing-subtitle text-muted">No Rating</small>
+                                <strong class="thing-subtitle"><i class="fas fa-star mr-1 text-warning"></i></strong>
+                                <small class="thing-subtitle text-muted">No Rating</small>
                             {% endif %}
                         </div>
                     </div>
                     <div class="row g-0">
                         <!--Price-->
-                        {% if product.price %}
-                            <div class="col-12 p-2">
-                                <strong class="thing-subtitle"><i class="fas fa-euro-sign text-success"></i>&nbsp;{{ product.price }}</strong>
-                            </div>
-                            <!-- Shopping bag controls-->
-                            {% include 'products/includes/bag_form.html' %}
-                        {% else %}
-                            <div class="col-12 pt-4 pb-5">
-                                <strong class="thing-subtitle text-black">Free Access</strong>
-                            </div>
-                        {% endif %}
+                        {% include 'products/includes/product_detail_price.html' %}
                     </div>
                     <hr>
                     <div class="row">
                         <!--Thing Components count-->
-                        <div class="col-4">
+                        <div class="col-6">
                             {% with components.count as total_components %}
-                            <strong class="thing-subtitle text-success">Comp.:&nbsp;</strong>
+                            <strong class="thing-subtitle text-success">Components:&nbsp;</strong>
                             <span>{{ total_components }}</span>
                             {% endwith %}
                         </div>
                         <!--Thing instructions count-->
-                        <div class="col-4">
+                        <div class="col-6">
                             {% with instructions.count as total_instructions %}
-                            <strong class="thing-subtitle text-success">Instr.:&nbsp;</strong>
+                            <strong class="thing-subtitle text-success">Instructions:&nbsp;</strong>
                             <span>{{ total_instructions }}</span>
                             {% endwith %}
                         </div>
                     </div>
-
+                    <!-- edit/delete buttons -->
+                    {% if request.user.is_superuser or request.user.is_staff%}
+                    <div class="row">
+                        <div class="col text-center">
+                            <small >
+                                <a href="{% url 'edit_product' product.id %}">Edit</a> | 
+                                <a class="text-danger" href="{% url 'delete_product' product.id %}">Delete</a>
+                            </small>
+                        </div>
+                    </div>
+                    {% endif %}
                 </div>
                 <div class="d-none d-md-block col-md-6 masthead-image">
                     <!-- Featured image  -->
@@ -196,6 +196,8 @@
                 </div>
             </div>
         </div>
+        <!--room for scrolling -->
+        <div class="row py-5"></div>
     </div>
     <div class="btt-button shadow-sm rounded-5 border border-black">
         <a class="btt-link d-flex h-100">

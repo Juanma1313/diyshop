@@ -16,25 +16,25 @@
             <div class="col-12 col-md-6">
                 <hr>
                 <h2 class="logo-font mb-4">Projects Management</h2>
-                <h5 class="text-muted">Add a DIY Project</h5>
+                <h5 class="text-muted">Edit a DIY Project</h5>
                 <hr>
             </div>
         </div>
 
         <div class="row">
             <div class="col-12 col-md-6">
-                <form method="POST" action="{% url 'add_product' %}" class="form mb-2" enctype="multipart/form-data">
+                <form method="POST" action="{% url 'edit_product' product.id %}" class="form mb-2" enctype="multipart/form-data">
                     {% csrf_token %}
                     {% for field in form %}
-                        {% if field.name != 'featured_image' %}
+                        {% if field.name != 'image' %}
                             {{ field | as_crispy_field }}
                         {% else %}
                             {{ field }}
                         {% endif %}
                     {% endfor %}
                     <div class="text-end">
-                        <a class="btn btn-outline-black rounded-start-5" href="{% url 'products' %}">Cancel</a>
-                        <button class="btn btn-black rounded-end-5" type="submit">Add DIY Project</button>
+                        <a class="btn btn-outline-black rounded-start-5" href="{{request.META.HTTP_REFERER|escape}}">Cancel</a>
+                        <button class="btn btn-black rounded-end-5" type="submit">Update DIY Project</button>
                     </div>
                 </form>
             </div>            
