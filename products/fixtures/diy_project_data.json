@@ -6,7 +6,7 @@
         "category": 3,
         "parent": null,
         "title": "Terminator T-850 animatronic",
-        "slug": "t850",
+        "sku": "t850",
         "author": [
             "juanma"
         ],
@@ -24,7 +24,7 @@
         "category": 3,
         "parent": 1,
         "title": "Terminator T-850 animatronic eye",
-        "slug": "t850eye",
+        "sku": "t850eye",
         "author": [
             "juanma"
         ],
@@ -42,7 +42,7 @@
         "category": 3,
         "parent": null,
         "title": "Baby Groot Webcam",
-        "slug": "Groot",
+        "sku": "Groot",
         "author": [
             "juanma"
         ],
@@ -60,7 +60,7 @@
         "category": 3,
         "parent": 3,
         "title": "Baby Groot Animatronic Eye",
-        "slug": "grooteye",
+        "sku": "grooteye",
         "author": [
             "juanma"
         ],
@@ -78,7 +78,7 @@
         "category": 3,
         "parent": 1,
         "title": "T850 Neck",
-        "slug": "t850neck",
+        "sku": "t850neck",
         "author": [
             "juanma"
         ],
@@ -96,7 +96,7 @@
         "category": 5,
         "parent": null,
         "title": "Soldering Fumes Extractor",
-        "slug": "fumes",
+        "sku": "fumes",
         "author": [
             "juanma"
         ],
@@ -114,7 +114,7 @@
         "category": 9,
         "parent": 6,
         "title": "Fumes Extractor Fan",
-        "slug": "fumesfan",
+        "sku": "fumesfan",
         "author": [
             "juanma"
         ],
@@ -132,7 +132,7 @@
         "category": 11,
         "parent": 6,
         "title": "Fumes extractor Filter",
-        "slug": "fumesfilter",
+        "sku": "fumesfilter",
         "author": [
             "juanma"
         ],
@@ -150,7 +150,7 @@
         "category": 1,
         "parent": 6,
         "title": "Fumes Extractor PSU",
-        "slug": "fumespsu",
+        "sku": "fumespsu",
         "author": [
             "juanma"
         ],
@@ -168,7 +168,7 @@
         "category": 11,
         "parent": 6,
         "title": "Fumes Extractor Aluminium Profile",
-        "slug": "fumesprofile",
+        "sku": "fumesprofile",
         "author": [
             "juanma"
         ],
@@ -186,7 +186,7 @@
         "category": 12,
         "parent": 6,
         "title": "Fumes Extractor Bolts and Nuts",
-        "slug": "fumesbolts",
+        "sku": "fumesbolts",
         "author": [
             "juanma"
         ],
@@ -204,7 +204,7 @@
         "category": 13,
         "parent": 6,
         "title": "Fumes Extractor Electrics",
-        "slug": "fumeselectrics",
+        "sku": "fumeselectrics",
         "author": [
             "juanma"
         ],
@@ -222,7 +222,7 @@
         "category": 7,
         "parent": 6,
         "title": "Fumes Extractor 3D Printed Parts",
-        "slug": "fumesprint3d",
+        "sku": "fumesprint3d",
         "author": [
             "juanma"
         ],
@@ -240,7 +240,7 @@
         "category": 7,
         "parent": 13,
         "title": "Fumes Extractor Base",
-        "slug": "fumesbase",
+        "sku": "fumesbase",
         "author": [
             "juanma"
         ],
@@ -258,7 +258,7 @@
         "category": 7,
         "parent": 13,
         "title": "Fumes Extractor cover",
-        "slug": "fumescover",
+        "sku": "fumescover",
         "author": [
             "juanma"
         ],
@@ -276,7 +276,7 @@
         "category": 7,
         "parent": 13,
         "title": "Fumes Extractor foot",
-        "slug": "fumesfoot",
+        "sku": "fumesfoot",
         "author": [
             "juanma"
         ],
@@ -294,7 +294,7 @@
         "category": 7,
         "parent": 13,
         "title": "Fumes Extractor encolsure",
-        "slug": "fumesenclosure",
+        "sku": "fumesenclosure",
         "author": [
             "juanma"
         ],
@@ -312,7 +312,7 @@
         "category": 7,
         "parent": 13,
         "title": "Fumes Extractor Front Grid",
-        "slug": "fumesfrontgrid",
+        "sku": "fumesfrontgrid",
         "author": [
             "juanma"
         ],
@@ -330,7 +330,7 @@
         "category": 7,
         "parent": 13,
         "title": "Fumes Extractor back Grid",
-        "slug": "fumesbackgrid",
+        "sku": "fumesbackgrid",
         "author": [
             "juanma"
         ],
@@ -348,7 +348,7 @@
         "category": 7,
         "parent": 13,
         "title": "Fumes Extractor Border",
-        "slug": "fumesborder",
+        "sku": "fumesborder",
         "author": [
             "juanma"
         ],
@@ -366,7 +366,7 @@
         "category": 7,
         "parent": 13,
         "title": "Fumes Extractor Knob",
-        "slug": "fumesknob",
+        "sku": "fumesknob",
         "author": [
             "juanma"
         ],
@@ -384,7 +384,7 @@
         "category": 5,
         "parent": null,
         "title": "Reed Dryer for Bassoon",
-        "slug": "reed-dryer-for-bassoon",
+        "sku": "reed-dryer-for-bassoon",
         "author": [
             "juanma"
         ],
@@ -402,7 +402,7 @@
         "category": 7,
         "parent": 22,
         "title": "Reed Dryer Base",
-        "slug": "reed-dryer-base",
+        "sku": "reed-dryer-base",
         "author": [
             "juanma"
         ],
@@ -420,7 +420,7 @@
         "category": 7,
         "parent": 22,
         "title": "Reed Dryer Mandrel",
-        "slug": "reed-dryer-mandrel",
+        "sku": "reed-dryer-mandrel",
         "author": [
             "juanma"
         ],
@@ -438,7 +438,7 @@
         "category": 12,
         "parent": 22,
         "title": "Reed Dryer Screws",
-        "slug": "reed-dryer-screw",
+        "sku": "reed-dryer-screw",
         "author": [
             "juanma"
         ],

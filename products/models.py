@@ -2,6 +2,11 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.db.models.functions import RowNumber
 import time
+import uuid
+
+# Generate an initial random number for the SKU to avoid repetitions
+def sku_default():
+    return uuid.uuid4().hex.upper()
 
 class Category(models.Model):
 
@@ -26,7 +31,7 @@ class Thing(models.Model):
     category = models.ForeignKey('Category', null=True, blank=True, on_delete=models.SET_NULL)
     parent = models.ForeignKey('self', on_delete=models.CASCADE, blank=True, null=True, related_name='components')
     title = models.CharField(max_length=200, unique=True)
-    slug = models.SlugField(max_length=200, unique=True)
+    sku = models.CharField(max_length=200, unique=True, default=sku_default)
     author = models.ForeignKey(User, on_delete=models.CASCADE, related_name="owner")
     featured_image_url = models.URLField(max_length=1024, null=True, blank=True)
     featured_image = models.ImageField(null=True, blank=True, default='noimage.png')

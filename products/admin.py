@@ -43,7 +43,7 @@ class ComponentInLine(SummernoteModelAdminMixin, admin.StackedInline):
         }),
         ('Description', {
             'classes': ('collapse',),
-            'fields': (('slug', 'created', 'updated'), 'description',),
+            'fields': (('sku', 'created', 'updated'), 'description',),
         }),
     )
 
@@ -126,7 +126,7 @@ class ThingAdmin(SummernoteModelAdmin):
             'fields': (
                 ('parent_view', 'title', 'author', 'status'),
                 ('category', 'rating', 'price'),
-                ('slug', 'created', 'updated'), ('featured_image', 'image_display', 'description'),
+                ('sku', 'created', 'updated'), ('featured_image', 'image_display', 'description'),
                 ),
         }),
     )
@@ -136,9 +136,6 @@ class ThingAdmin(SummernoteModelAdmin):
 
     # allow for description to be edited as WSWG RTF doc
     summernote_fields = ('description')   # Edit the field as WSYWYG editor
-
-    # fills slug field automatically from title
-    prepopulated_fields = {'slug': ('title',)}
 
 
 @admin.register(Instructions)
