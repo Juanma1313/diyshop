@@ -1,0 +1,1 @@
+web: gunicorn diyshop_project.wsgi:application

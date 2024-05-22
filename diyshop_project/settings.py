@@ -8,13 +8,9 @@ https://docs.djangoproject.com/en/3.2/topics/settings/
 
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
-"""
 
-from pathlib import Path
-from os import getenv, path
-from django.contrib import messages
-
-''' SECURITY WARNING: 
+=============================================================================
+SECURITY WARNING: 
 The secret data, that can compromise the production system, should be defined 
 locally in BASE_DIR+"/env.py" file for development.
 env.py file has the following form:
@@ -43,8 +39,11 @@ IMPORTANT NOTES:
     - Do not need to difine "DEVELOPMENT" variable in the production system. By default it will be set to "False" 
     - In the production environment, this variables must be defined as environmental varibles at the django server 
         (Heroku, AWS Activate, Google Cloud, etc.)
-'''
-
+"""
+from pathlib import Path
+from os import getenv, path
+from django.contrib import messages
+import dj_database_url
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -187,15 +186,15 @@ WSGI_APPLICATION = 'diyshop_project.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-#DATABASES = {
-#   'default': dj_database_url.parse(getenv("DATABASE_URL",''))
-#}
+# DATABASES = {
+#    'default': dj_database_url.parse(getenv("DATABASE_URL",''))
+# }
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
+   'default': {
+       'ENGINE': 'django.db.backends.sqlite3',
+       'NAME': BASE_DIR / 'db.sqlite3',
+   }
 }
 
 
