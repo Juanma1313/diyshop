@@ -20,19 +20,24 @@ env.py file has the following form:
         :   :
 
 The following lines are the names of the enviromental variables that this website requires.
-    "DEVELOPMENT"   --> "True" or "False"
-    "SECRET_KEY"    --> example: "9087zxcv98z798bv^=098zxcv098xzcv09*u2dsd2u+&hddf0^^uj"
-    "ALLOWED_HOSTS" --> example: "127.0.0.1,localhost, diyshop-1c0dad79f0a0.herokuapp.com"
-    "DATABASE_URL"  --> example: "postgres://cmftklgz:gYdAbasasdasdasdsadsad234@dumbo.db.elephantsql.com/cmftklgz"
-    "ACCOUNT_EMAIL_VERIFICATION" --> "none" or "mandatory"
-    "EMAIL_FROM_DEFAULT" --> example: sales-dep@diyshop.com
-    "EMAIL_HOST"    --> example: 'smtp.gmail.com'
-    "EMAIL_HOST_USER"   --> example: 'diyshop@gmail.com'
-    "EMAIL_HOST_PASSWORD"   --> example: 'asldknlmalsm'     # gmail servers usually do not accept user passwords but application passwords
-    "STRIPE_PUBLIC_KEY" --> example "pk_test_51PasdfASDFasdfasDFasdFASDFasdfag$%234weADSfGzdgLg9vUarbSvl1IBriGElYtCE0PIjVDJCkVwCM7v4hascasdcSD43"
-    "STRIPE_SECRET_KEY" --> example "sk_test_51PGzdg23re0987asdlkj34ot5245098uwrve09jvlñkwevkjwgSERVWERVwer vwerfQErvñmekfvoieLg9vUarbSvaBPVn0TH8"
-    "STRIPE_WH_SECRET"  --> example "whsec_9ff13b16lñknsadvTWsdafvadv299106f445ef6f269b02236aa87180952ecf8387046f2322cee5d28f"
+    DEVELOPMENT   --> "True" or "False"
+    SECRET_KEY    --> example: "9087zxcv98z798bv^=098zxcv098xzcv09*u2dsd2u+&hddf0^^uj"
+    ALLOWED_HOSTS --> example: "127.0.0.1,localhost, diyshop-1c0dad79f0a0.herokuapp.com"
+    DATABASE_URL  --> example: "postgres://cmftklgz:gYdAbasasdasdasdsadsad234@dumbo.db.elephantsql.com/cmftklgz"
+    ACCOUNT_EMAIL_VERIFICATION --> "none" or "mandatory"
+    EMAIL_FROM_DEFAULT --> example: "sales-dep@diyshop.com"
+    EMAIL_HOST    --> example: "smtp.gmail.com"
+    EMAIL_HOST_USER   --> example: "diyshop@gmail.com"
+    EMAIL_HOST_PASSWORD   --> example: "asldknlmalsm"     # gmail servers usually do not accept user passwords but application passwords
+    STRIPE_PUBLIC_KEY --> example: "pk_test_51PasdfASDFasdfasDFasdFASDFasdfag$%234weADSfGzdgLg9vUarbSvl1IBriGElYtCE0PIjVDJCkVwCM7v4hascasdcSD43"
+    STRIPE_SECRET_KEY --> example: "sk_test_51PGzdg23re0987asdlkj34ot5245098uwrve09jvlñkwevkjwgSERVWERVwer vwerfQErvñmekfvoieLg9vUarbSvaBPVn0TH8"
+    STRIPE_WH_SECRET  --> example: "whsec_9ff13b16lñknsadvTWsdafvadv299106f445ef6f269b02236aa87180952ecf8387046f2322cee5d28f"
         #to run application in local enironment use stripe cli tool command "$ ./stripe listen --forward-to 127.0.0.1:8000/checkout/wh"
+    USE_AWS     --> "True" or "False"
+    AWS_STORAGE_BUCKET_NAME --> example: "diyshop"
+    AWS_S3_REGION_NAME      --> example: "us-west-1"
+    AWS_ACCESS_KEY_ID       --> example: "KAIAXYKJQI5SCKKCUDVN                    "
+    AWS_SECRET_ACCESS_KEY   --> example: "iP87W4SDFD/6RWQyiasdf134134feqwwef4EU86U"
 
 IMPORTANT NOTES: 
     - NEVER allow the env.py file to be pushed to a public development or deployment repositories (Github, GitLab, Bitbucket, etc.)
@@ -56,7 +61,7 @@ if path.isfile("env.py"):
 else:
     DEPLOYED = True
 
-
+# SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = getenv('DEVELOPMENT', False)
 
 
@@ -66,10 +71,8 @@ DEBUG = getenv('DEVELOPMENT', False)
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = getenv('SECRET_KEY', '')
 
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
 
-ALLOWED_HOSTS = getenv('ALLOWED_HOSTS').split(",")
+ALLOWED_HOSTS = getenv('ALLOWED_HOSTS',",").split(",")
 
 
 # Application definition
@@ -94,6 +97,7 @@ INSTALLED_APPS = [
     'checkout',
     'profiles',
     'crispy_forms',
+    'storages',
 ]
 
 MIDDLEWARE = [
@@ -187,9 +191,20 @@ WSGI_APPLICATION = 'diyshop_project.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-DATABASES = {
-    'default': dj_database_url.parse(getenv("DATABASE_URL",''))
-}
+
+DATABASE_URL = getenv("DATABASE_URL",False)
+if DATABASE_URL:
+    DATABASES = {
+        'default': dj_database_url.parse(DATABASE_URL)
+    }
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': path.join(BASE_DIR, 'db.sqlite3'),
+        }
+    }
+
 
 #DATABASES = {
 #   'default': {
@@ -242,6 +257,26 @@ STATICFILES_DIRS = [path.join(BASE_DIR, 'static'), ]
 MEDIA_URL = '/media/'
 MEDIA_ROOT = path.join(BASE_DIR, 'media')
 
+USE_AWS = bool(getenv("USE_AWS",False))
+if USE_AWS:
+    # AWS S3 Bucket Configuration
+    AWS_STORAGE_BUCKET_NAME = getenv("AWS_STORAGE_BUCKET_NAME","")
+    AWS_S3_REGION_NAME = getenv("AWS_S3_REGION_NAME","")
+    AWS_ACCESS_KEY_ID = getenv("AWS_ACCESS_KEY_ID","")
+    AWS_SECRET_ACCESS_KEY = getenv("AWS_SECRET_ACCESS_KEY","")
+    AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
+    # Static and media files
+    STATICFILES_STORAGE = "custom_storages.StaticStorage"
+    STATICFILES_LOCATION = "static"
+    DEFAULT_FILE_STORAGE = "custom_storages.MediaStorage"
+    MEDIAFILES_LOCATION = 'media'
+
+    # Override static and media URLs in production
+    STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{STATICFILES_LOCATION}/'
+    MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{MEDIAFILES_LOCATION}/'
+
+
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
@@ -249,7 +284,7 @@ MEDIA_ROOT = path.join(BASE_DIR, 'media')
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # DIY Shop fees for delivery
-FREE_DELIVERY_THRESHOLD = 50
+FREE_DELIVERY_THRESHOLD = 150
 STANDARD_DELIVERY_PERCENTAGE = 10
 
 
