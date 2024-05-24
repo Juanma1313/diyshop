@@ -50,12 +50,12 @@ class StripeWH_Handler:
         bag = intent.metadata.bag
         save_info = intent.metadata.save_info
 
-        # Get the Charge object 
+        # Get the Charge object
         stripe_charge = stripe.Charge.retrieve(
             intent.latest_charge
         )
 
-        billing_details = stripe_charge.billing_details 
+        billing_details = stripe_charge.billing_details
         shipping_details = intent.shipping
         grand_total = round(stripe_charge.amount / 100, 2)
 
@@ -111,7 +111,7 @@ class StripeWH_Handler:
             return HttpResponse(
                 content=f'Webhook received: {event["type"]} | SUCCESS: Verified order already in database',
                 status=200)
-        else: # No, the Order was not created in views.checkout() on time, let's create the Order here
+        else:  # No, the Order was not created in views.checkout() on time, let's create the Order here
             order = None
             try:
                 order = Order.objects.create(

@@ -11,12 +11,12 @@ from .forms import ProductForm
 
 def all_products(request):
     """ A view to show all products, including sorting and search queries """
-    #products = Thing.objects.filter(status=1, parent__isnull=True).order_by('-created_on')
+    # products = Thing.objects.filter(status=1, parent__isnull=True).order_by('-created_on')
     # Select all the publiched products that are root or have instructions
     if request.user.is_superuser or request.user.is_staff:
-        products = Thing.objects.filter(Q(parent__isnull=True) | Q(instructions__isnull=False) ).distinct()
+        products = Thing.objects.filter(Q(parent__isnull=True) | Q(instructions__isnull=False)).distinct()
     else:
-        products = Thing.objects.filter(Q(status=1, parent__isnull=True) | Q(status=1, instructions__isnull=False) ).distinct()
+        products = Thing.objects.filter(Q(status=1, parent__isnull=True) | Q(status=1, instructions__isnull=False)).distinct()
 
     query = None
     categories = None
@@ -27,18 +27,18 @@ def all_products(request):
         if 'sort' in request.GET:
             sortkey = request.GET['sort']
             sort = sortkey
-            if sortkey == 'title':      #title:  to sort by title in lower case
+            if sortkey == 'title':       # title:  to sort by title in lower case
                 sortkey = 'lower_title'
                 products = products.annotate(lower_title=Lower('title'))
-            elif sortkey == 'category': # category: to sort by category name
+            elif sortkey == 'category':  # category: to sort by category name
                 sortkey = 'category__name'
-            elif sortkey == 'date':     # date: to sort by created_on
+            elif sortkey == 'date':      # date: to sort by created_on
                 sortkey = 'created_on'
-            elif sortkey == 'rating':   # rating: to sort by rating
+            elif sortkey == 'rating':    # rating: to sort by rating
                 sortkey = 'rating'
-            elif sortkey == 'price':    # price: to sort by price
+            elif sortkey == 'price':     # price: to sort by price
                 sortkey = 'price'
-            else:   #  Unrecogniced sort option 
+            else:   # Unrecogniced sort option
                 messages.error(request, ("Sort option not available"))
                 return redirect(reverse('products'))
 
@@ -56,11 +56,11 @@ def all_products(request):
         if 'price' in request.GET:
             price = request.GET['price']
             try:    # Verify price value
-                price=str(float(price))
-            except:
+                price = str(float(price))
+            except Exception:
                 messages.error(request, ("price not valid"))
                 return redirect(reverse('products'))
-            if price=='0.0':
+            if price == '0.0':
                 products = products.filter(Q(price=price) | Q(price=None))
             else:
                 products = products.filter(price=price)
@@ -112,10 +112,11 @@ def product_detail(request, product_id):
 
     return render(request, 'products/product_detail.html', context)
 
+
 def productlike(request, product_id):
     ''' This view allows for adding/removing a user Like to/from a Thing.
     If the user like already exists it removes it otherwise it adds it '''
-    if request.POST:        
+    if request.POST:
         product = get_object_or_404(Thing, pk=product_id)
         if product.likes.filter(id=request.user.id).exists():
             product.likes.remove(request.user)
@@ -123,6 +124,7 @@ def productlike(request, product_id):
             product.likes.add(request.user)
 
         return redirect(reverse('product_detail', args=[product_id]))
+
 
 @login_required
 def add_product(request):
@@ -150,6 +152,8 @@ def add_product(request):
     }
 
     return render(request, template, context)
+
+
 @login_required
 def edit_product(request, product_id):
     """ Edit a DIY Project in the store """

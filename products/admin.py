@@ -5,6 +5,7 @@ from django.utils.html import mark_safe
 
 NO_PARENT_NAME = "ROOT"
 
+
 @admin.register(Category)
 class CategoryAdmin(admin.ModelAdmin):
     list_display = (
@@ -127,7 +128,7 @@ class ThingAdmin(SummernoteModelAdmin):
                 ('parent_view', 'title', 'author', 'status'),
                 ('category', 'rating', 'price'),
                 ('sku', 'created', 'updated'), ('featured_image', 'image_display', 'description'),
-                ),
+            ),
         }),
     )
 
@@ -192,6 +193,6 @@ class InstructionsAdmin(SummernoteModelAdmin):
         ('Instructions', {
             'fields': (
                 ('thing', 'image_display', 'title',), ('instructions'),
-                ),
+            ),
         }),
     )

@@ -4,9 +4,11 @@ from django.db.models.functions import RowNumber
 import time
 import uuid
 
+
 # Generate an initial random number for the SKU to avoid repetitions
 def sku_default():
     return uuid.uuid4().hex.upper()
+
 
 class Category(models.Model):
 
@@ -21,6 +23,7 @@ class Category(models.Model):
 
     def get_friendly_name(self):
         return self.friendly_name
+
 
 STATUS = ((0, "Draft"), (1, "Published"))
 
@@ -73,4 +76,3 @@ class Instructions(models.Model):
 
     def __str__(self):
         return str(self.title)
-

@@ -10,8 +10,8 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 
 =============================================================================
-SECURITY WARNING: 
-The secret data, that can compromise the production system, should be defined 
+SECURITY WARNING:
+The secret data, that can compromise the production system, should be defined
 locally in BASE_DIR+"/env.py" file for development.
 env.py file has the following form:
         from os import environ
@@ -39,10 +39,10 @@ The following lines are the names of the enviromental variables that this websit
     AWS_ACCESS_KEY_ID       --> example: "KAIAXYKJQI5SCKKCUDVN                    "
     AWS_SECRET_ACCESS_KEY   --> example: "iP87W4SDFD/6RWQyiasdf134134feqwwef4EU86U"
 
-IMPORTANT NOTES: 
+IMPORTANT NOTES:
     - NEVER allow the env.py file to be pushed to a public development or deployment repositories (Github, GitLab, Bitbucket, etc.)
-    - Do not need to difine "DEVELOPMENT" variable in the production system. By default it will be set to "False" 
-    - In the production environment, this variables must be defined as environmental varibles at the django server 
+    - Do not need to difine "DEVELOPMENT" variable in the production system. By default it will be set to "False"
+    - In the production environment, this variables must be defined as environmental varibles at the django server
         (Heroku, AWS Activate, Google Cloud, etc.)
 """
 from pathlib import Path
@@ -72,7 +72,7 @@ DEBUG = getenv('DEVELOPMENT', False)
 SECRET_KEY = getenv('SECRET_KEY', '')
 
 
-ALLOWED_HOSTS = getenv('ALLOWED_HOSTS',",").split(",")
+ALLOWED_HOSTS = getenv('ALLOWED_HOSTS', ",").split(",")
 
 
 # Application definition
@@ -135,7 +135,7 @@ TEMPLATES = [
             'builtins': [
                 'crispy_forms.templatetags.crispy_forms_tags',
                 'crispy_forms.templatetags.crispy_forms_field',
-            ]            
+            ]
         },
     },
 ]
@@ -162,7 +162,7 @@ SITE_ID = 1
 
 LOGIN_URL = '/accounts/login/'
 LOGIN_REDIRECT_URL = '/'
-LOGUT_REDIRECT_URL = '/'     
+LOGUT_REDIRECT_URL = '/'
 
 MESSAGE_TAGS = {
     messages.DEBUG: 'alert-info',
@@ -174,25 +174,21 @@ MESSAGE_TAGS = {
 
 
 # email configuration settings
-#EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'    # Temporaly for testing
+# EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'    # Temporaly for testing
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = getenv('EMAIL_HOST','')
+EMAIL_HOST = getenv('EMAIL_HOST', '')
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-EMAIL_HOST_USER = getenv('EMAIL_HOST_USER','')
-EMAIL_HOST_PASSWORD = getenv('EMAIL_HOST_PASSWORD','')
-DEFAULT_FROM_EMAIL = getenv('DEFAULT_FROM_EMAIL','noreplay@')
-
+EMAIL_HOST_USER = getenv('EMAIL_HOST_USER', '')
+EMAIL_HOST_PASSWORD = getenv('EMAIL_HOST_PASSWORD', '')
+DEFAULT_FROM_EMAIL = getenv('DEFAULT_FROM_EMAIL', 'noreplay@')
 
 WSGI_APPLICATION = 'diyshop_project.wsgi.application'
-
-
 
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-
-DATABASE_URL = getenv("DATABASE_URL",False)
+DATABASE_URL = getenv("DATABASE_URL", False)
 if DATABASE_URL:
     DATABASES = {
         'default': dj_database_url.parse(DATABASE_URL)
@@ -206,12 +202,12 @@ else:
     }
 
 
-#DATABASES = {
+# DATABASES = {
 #   'default': {
 #       'ENGINE': 'django.db.backends.sqlite3',
 #       'NAME': BASE_DIR / 'db.sqlite3',
 #   }
-#}
+# }
 
 
 # Password validation
@@ -246,8 +242,6 @@ USE_L10N = True
 
 USE_TZ = True
 
-
-
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
@@ -257,7 +251,7 @@ STATICFILES_DIRS = [path.join(BASE_DIR, 'static'), ]
 MEDIA_URL = '/media/'
 MEDIA_ROOT = path.join(BASE_DIR, 'media')
 
-USE_AWS = bool(getenv("USE_AWS",False))
+USE_AWS = bool(getenv("USE_AWS", False))
 if USE_AWS:
     # Cache control
     AWS_S3_OBJECT_PARAMETERS = {
@@ -265,10 +259,10 @@ if USE_AWS:
         'CacheControl': 'max-age=94608000',
     }
     # AWS S3 Bucket Configuration
-    AWS_STORAGE_BUCKET_NAME = getenv("AWS_STORAGE_BUCKET_NAME","")
-    AWS_S3_REGION_NAME = getenv("AWS_S3_REGION_NAME","")
-    AWS_ACCESS_KEY_ID = getenv("AWS_ACCESS_KEY_ID","")
-    AWS_SECRET_ACCESS_KEY = getenv("AWS_SECRET_ACCESS_KEY","")
+    AWS_STORAGE_BUCKET_NAME = getenv("AWS_STORAGE_BUCKET_NAME", "")
+    AWS_S3_REGION_NAME = getenv("AWS_S3_REGION_NAME", "")
+    AWS_ACCESS_KEY_ID = getenv("AWS_ACCESS_KEY_ID", "")
+    AWS_SECRET_ACCESS_KEY = getenv("AWS_SECRET_ACCESS_KEY", "")
     AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
     # Static and media files
     STATICFILES_STORAGE = "custom_storages.StaticStorage"
@@ -280,9 +274,6 @@ if USE_AWS:
     STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{STATICFILES_LOCATION}/'
     MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{MEDIAFILES_LOCATION}/'
 
-
-
-
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
@@ -292,9 +283,8 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 FREE_DELIVERY_THRESHOLD = 150
 STANDARD_DELIVERY_PERCENTAGE = 10
 
-
 # Stripe
-STRIPE_CURRENCY = 'eur' # US Dolar='usd', CCE Euro = 'eur'
+STRIPE_CURRENCY = 'eur'  # US Dolar='usd', CCE Euro = 'eur'
 STRIPE_PUBLIC_KEY = getenv('STRIPE_PUBLIC_KEY', '')
 STRIPE_SECRET_KEY = getenv('STRIPE_SECRET_KEY', '')
 STRIPE_WH_SECRET = getenv('STRIPE_WH_SECRET', '')

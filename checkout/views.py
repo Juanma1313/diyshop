@@ -15,6 +15,7 @@ from bag.contexts import bag_contents
 import stripe
 import json
 
+
 @require_POST
 def cache_checkout_data(request):
     try:
@@ -31,6 +32,7 @@ def cache_checkout_data(request):
                                  'processed right now. Please try '
                                  'again later.'))
         return HttpResponse(content=e, status=400)
+
 
 def checkout(request):
     stripe_public_key = settings.STRIPE_PUBLIC_KEY
@@ -68,7 +70,7 @@ def checkout(request):
                         )
                         order_line_item.save()
                     else:   # The DIY Project has no specified type
-                        # Iterate trough all specified types 
+                        # Iterate trough all specified types
                         for variant, quantity in item_data['items_by_variant'].items():
                             order_line_item = OrderLineItem(
                                 order=order,
@@ -85,7 +87,7 @@ def checkout(request):
                     order.delete()
                     return redirect(reverse('view_bag'))
 
-            # Save the info to the user's profile 
+            # Save the info to the user's profile
             request.session['save_info'] = 'save-info' in request.POST
             return redirect(reverse('checkout_success', args=[order.order_number]))
         else:
@@ -97,7 +99,7 @@ def checkout(request):
         if not bag:
             messages.error(request, "There's nothing in your bag at the moment")
             return redirect(reverse('products'))
-        
+
         current_bag = bag_contents(request)
         total = current_bag['grand_total']
         stripe_total = round(total * 100)
@@ -141,6 +143,7 @@ def checkout(request):
     }
 
     return render(request, template, context)
+
 
 def checkout_success(request, order_number):
     """ Handle successful checkouts
