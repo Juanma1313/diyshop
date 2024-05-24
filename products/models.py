@@ -82,8 +82,8 @@ class Instructions(models.Model):
 
     def default_Instruction_title():
         now = time.localtime()
-        return f"I-{now.tm_year}-{now.tm_mon}-{now.tm_mday}_\
-            {now.tm_hour}:{now.tm_min}:{now.tm_sec}"
+        return (f"I-{now.tm_year}-{now.tm_mon}-{now.tm_mday}_"
+                f"{now.tm_hour}:{now.tm_min}:{now.tm_sec}")
 
     thing = models.ForeignKey(
         Thing, on_delete=models.CASCADE, related_name="instructions")

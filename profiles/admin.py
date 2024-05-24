@@ -37,3 +37,9 @@ class UserProfileAdmin(admin.ModelAdmin):
     )
 
     ordering = ('user',)
+
+    def get_form(self, request, obj=None, **kwargs):
+        form = super().get_form(request, obj, **kwargs)
+        form.base_fields['user'].widget.can_change_related = False
+        form.base_fields['user'].widget.can_add_related = False
+        return form

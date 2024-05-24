@@ -101,15 +101,15 @@ class ThingAdmin(SummernoteModelAdmin):
     @admin.display(description="Image")
     def image_display_list(self, instance):
         return mark_safe(
-            '<img src="{}" alt ="Thing Image" style="width:100px;\
-            height:100px;object-fit:scale-down;" />'
+            '<img src="{}" alt ="Thing Image" style="width:100px;'
+            'height:100px;object-fit:scale-down;" />'
             .format(instance.featured_image.url))
 
     @admin.display(description="Image")
     def image_display(self, instance):
         return mark_safe(
-            '<img src="{}" alt ="Thing Image" style="width:300px;\
-            object-fit:scale-down;" />'
+            '<img src="{}" alt ="Thing Image" style="width:300px;'
+            'object-fit:scale-down;" />'
             .format(instance.featured_image.url))
 
     # organize the list fields of Things
@@ -185,15 +185,15 @@ class InstructionsAdmin(SummernoteModelAdmin):
     @admin.display(description="Image")
     def image_display_list(self, instance):
         return mark_safe(
-            '<img src="{}" alt ="Thing Image" style="width:100px;height:100px;\
-            object-fit:scale-down;" />'
+            '<img src="{}" alt ="Thing Image" style="width:100px;height:100px;'
+            'object-fit:scale-down;" />'
             .format(instance.thing.featured_image.url))
 
     @admin.display(description="Image")
     def image_display(self, instance):
         return mark_safe(
-            '<img src="{}" alt ="Thing Image" style="width:300px;\
-            object-fit:scale-down;" />'
+            '<img src="{}" alt ="Thing Image" style="width:300px;'
+            'object-fit:scale-down;" />'
             .format(instance.thing.featured_image.url))
 
     # organize the list fields of Things
