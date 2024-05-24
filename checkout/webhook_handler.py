@@ -74,13 +74,16 @@ class StripeWH_Handler:
                 profile.default_country = shipping_details.address.country
                 profile.default_postcode = shipping_details.address.postal_code
                 profile.default_town_or_city = shipping_details.address.city
-                profile.default_street_address1 = shipping_details.address.line1
-                profile.default_street_address2 = shipping_details.address.line2
+                profile.default_street_address1 = (
+                    shipping_details.address.line1)
+                profile.default_street_address2 = (
+                    shipping_details.address.line2)
                 profile.default_county = shipping_details.address.state
                 profile.save()
 
         # REDUNDANT ATTEMPT FOR THE ORDER TO BE SAVED TO DATABASE
-        # This is in case the views.checkout() fails to create the Order due to multiple possible reasons.
+        # This is in case the views.checkout() fails to create the
+        # Order due to multiple possible reasons.
         # Search 5 times the database for the Order to be created
         order_exists = False
         attempt = 1
@@ -105,13 +108,17 @@ class StripeWH_Handler:
             except Order.DoesNotExist:
                 attempt += 1
                 time.sleep(1)   # One seccond delay for next search attempt
-        if order_exists:  # Ok, the Order was already created in views.checkout()
+        if order_exists:
+            # Ok, the Order was already created in views.checkout()
             self._send_confirmation_email(order)
 
             return HttpResponse(
-                content=f'Webhook received: {event["type"]} | SUCCESS: Verified order already in database',
+                content=f'Webhook received: {event["type"]} \
+                    | SUCCESS: Verified order already in database',
                 status=200)
-        else:  # No, the Order was not created in views.checkout() on time, let's create the Order here
+        else:
+            # No, the Order was not created in views.checkout() on time,
+            # let's create the Order here
             order = None
             try:
                 order = Order.objects.create(
@@ -138,7 +145,8 @@ class StripeWH_Handler:
                         )
                         order_line_item.save()
                     else:
-                        for variant, quantity in item_data['items_by_variant'].items():
+                        for variant, quantity in \
+                                item_data['items_by_variant'].items():
                             order_line_item = OrderLineItem(
                                 order=order,
                                 product=product,

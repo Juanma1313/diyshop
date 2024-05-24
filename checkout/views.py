@@ -1,5 +1,6 @@
 
-from django.shortcuts import render, redirect, reverse, get_object_or_404, HttpResponse
+from django.shortcuts import (
+    render, redirect, reverse, get_object_or_404, HttpResponse)
 from django.views.decorators.http import require_POST
 from django.contrib import messages
 from django.conf import settings
@@ -54,7 +55,8 @@ def checkout(request):
 
         order_form = OrderForm(form_data)
         if order_form.is_valid():
-            order = order_form.save(commit=False)   # Request stripe to generate order.stripe_pid but avoid final commit.
+            # Request Stripe to generate stripe_pid but avoid final commit.
+            order = order_form.save(commit=False)
             pid = request.POST.get('client_secret').split('_secret')[0]
             order.stripe_pid = pid
             order.original_bag = json.dumps(bag)
@@ -62,16 +64,18 @@ def checkout(request):
             for item_id, item_data in bag.items():
                 try:
                     product = Thing.objects.get(id=item_id)
-                    if isinstance(item_data, int):  # Check if the DIY Project has specified type
+                    # Check if the DIY Project has specified type
+                    if isinstance(item_data, int):
                         order_line_item = OrderLineItem(
                             order=order,
                             product=product,
                             quantity=item_data,
                         )
                         order_line_item.save()
-                    else:   # The DIY Project has no specified type
+                    else:  # The DIY Project has no specified type
                         # Iterate trough all specified types
-                        for variant, quantity in item_data['items_by_variant'].items():
+                        for variant, quantity in \
+                                item_data['items_by_variant'].items():
                             order_line_item = OrderLineItem(
                                 order=order,
                                 product=product,
@@ -81,7 +85,7 @@ def checkout(request):
                             order_line_item.save()
                 except Thing.DoesNotExist:
                     messages.error(request, (
-                        "One of the products in your bag wasn't found in our database."
+                        "A product in your bag wasn't found in our database."
                         "Please contact us for help!")
                     )
                     order.delete()
@@ -89,15 +93,18 @@ def checkout(request):
 
             # Save the info to the user's profile
             request.session['save_info'] = 'save-info' in request.POST
-            return redirect(reverse('checkout_success', args=[order.order_number]))
+            return redirect(
+                reverse('checkout_success', args=[order.order_number]))
         else:
-            messages.error(request, ('There was an error with your form. '
-                                     'Please double check your information.'))
+            messages.error(
+                request, ('There was an error with your form. '
+                          'Please double check your information.'))
 
     else:
         bag = request.session.get('bag', {})
         if not bag:
-            messages.error(request, "There's nothing in your bag at the moment")
+            messages.error(
+                request, "There's nothing in your bag at the moment")
             return redirect(reverse('products'))
 
         current_bag = bag_contents(request)

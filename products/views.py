@@ -11,12 +11,17 @@ from .forms import ProductForm
 
 def all_products(request):
     """ A view to show all products, including sorting and search queries """
-    # products = Thing.objects.filter(status=1, parent__isnull=True).order_by('-created_on')
-    # Select all the publiched products that are root or have instructions
+
     if request.user.is_superuser or request.user.is_staff:
-        products = Thing.objects.filter(Q(parent__isnull=True) | Q(instructions__isnull=False)).distinct()
+        # Select all the products that are root or have instructions
+        products = Thing.objects.filter(
+            Q(parent__isnull=True) | Q(instructions__isnull=False)).distinct()
     else:
-        products = Thing.objects.filter(Q(status=1, parent__isnull=True) | Q(status=1, instructions__isnull=False)).distinct()
+        # Select only the publiched products that are root or have instructions
+        products = Thing.objects.filter(
+            Q(status=1,
+              parent__isnull=True) | Q(status=1,
+                                       instructions__isnull=False)).distinct()
 
     query = None
     categories = None
@@ -27,7 +32,7 @@ def all_products(request):
         if 'sort' in request.GET:
             sortkey = request.GET['sort']
             sort = sortkey
-            if sortkey == 'title':       # title:  to sort by title in lower case
+            if sortkey == 'title':       # title: to sort by title in lowercase
                 sortkey = 'lower_title'
                 products = products.annotate(lower_title=Lower('title'))
             elif sortkey == 'category':  # category: to sort by category name
@@ -68,10 +73,12 @@ def all_products(request):
         if 'q' in request.GET:
             query = request.GET['q']
             if not query:
-                messages.error(request, ("You didn't enter any search criteria!"))
+                messages.error(
+                    request, ("You didn't enter any search criteria!"))
                 return redirect(reverse('products'))
 
-            queries = Q(title__icontains=query) | Q(description__icontains=query)
+            queries = (
+                Q(title__icontains=query) | Q(description__icontains=query))
             products = products.filter(queries)
 
     current_sorting = f'{sort}_{direction}'
@@ -99,7 +106,8 @@ def product_detail(request, product_id):
         liked = True
     is_component_thing = {}
     for i in components:
-        is_component_thing[i.id] = Instructions.objects.filter(thing=i.id).exists()
+        is_component_thing[i.id] = (
+            Instructions.objects.filter(thing=i.id).exists())
 
     context = {
         'product': product,

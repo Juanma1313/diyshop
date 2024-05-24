@@ -1,4 +1,7 @@
-from django.shortcuts import render, redirect, reverse, HttpResponse, get_object_or_404
+from django.shortcuts import (
+    render, redirect, reverse,
+    HttpResponse, get_object_or_404)
+
 from django.contrib import messages
 
 from products.models import Thing
@@ -19,16 +22,16 @@ def add_to_bag(request, item_id):
     variant = None
     if 'product_variant' in request.POST:
         variant = request.POST['product_variant']
-    bag = request.session.get('bag', {})    # gets bag from sesion or create one
+    bag = request.session.get('bag', {})   # gets bag from sesion or create one
 
     if variant:
         if item_id in list(bag.keys()):
             if variant in bag[item_id]['items_by_variant'].keys():
                 bag[item_id]['items_by_variant'][variant] += quantity
-                messages.success(request,
-                                 (f'Updated variant {variant.upper()} '
-                                  f'{product.title} quantity to '
-                                  f'{bag[item_id]["items_by_variant"][variant]}'))
+                messages.success(request, (
+                    f'Updated variant {variant.upper()} '
+                    f'{product.title} quantity to '
+                    f'{bag[item_id]["items_by_variant"][variant]}'))
             else:
                 bag[item_id]['items_by_variant'][variant] = quantity
                 messages.success(request,

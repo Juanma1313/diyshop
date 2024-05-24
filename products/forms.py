@@ -10,7 +10,10 @@ class ProductForm(forms.ModelForm):
         model = Thing
         fields = '__all__'
 
-    featured_image = forms.ImageField(label='Featured_Image', required=False, widget=CustomClearableFileInput)
+    featured_image = forms.ImageField(
+        label='Featured_Image',
+        required=False,
+        widget=CustomClearableFileInput)
 
     description = forms.CharField(widget=SummernoteWidget())
 

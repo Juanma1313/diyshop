@@ -19,31 +19,58 @@ env.py file has the following form:
         environ["variable_name_2"] = "value_2"
         :   :
 
-The following lines are the names of the enviromental variables that this website requires.
-    DEVELOPMENT   --> "True" or "False"
-    SECRET_KEY    --> example: "9087zxcv98z798bv^=098zxcv098xzcv09*u2dsd2u+&hddf0^^uj"
-    ALLOWED_HOSTS --> example: "127.0.0.1,localhost, diyshop-1c0dad79f0a0.herokuapp.com"
-    DATABASE_URL  --> example: "postgres://cmftklgz:gYdAbasasdasdasdsadsad234@dumbo.db.elephantsql.com/cmftklgz"
-    ACCOUNT_EMAIL_VERIFICATION --> "none" or "mandatory"
-    EMAIL_FROM_DEFAULT --> example: "sales-dep@diyshop.com"
-    EMAIL_HOST    --> example: "smtp.gmail.com"
-    EMAIL_HOST_USER   --> example: "diyshop@gmail.com"
-    EMAIL_HOST_PASSWORD   --> example: "asldknlmalsm"     # gmail servers usually do not accept user passwords but application passwords
-    STRIPE_PUBLIC_KEY --> example: "pk_test_51PasdfASDFasdfasDFasdFASDFasdfag$%234weADSfGzdgLg9vUarbSvl1IBriGElYtCE0PIjVDJCkVwCM7v4hascasdcSD43"
-    STRIPE_SECRET_KEY --> example: "sk_test_51PGzdg23re0987asdlkj34ot5245098uwrve09jvlñkwevkjwgSERVWERVwer vwerfQErvñmekfvoieLg9vUarbSvaBPVn0TH8"
-    STRIPE_WH_SECRET  --> example: "whsec_9ff13b16lñknsadvTWsdafvadv299106f445ef6f269b02236aa87180952ecf8387046f2322cee5d28f"
-        #to run application in local enironment use stripe cli tool command "$ ./stripe listen --forward-to 127.0.0.1:8000/checkout/wh"
-    USE_AWS     --> "True" or "False"
-    AWS_STORAGE_BUCKET_NAME --> example: "diyshop"
-    AWS_S3_REGION_NAME      --> example: "us-west-1"
-    AWS_ACCESS_KEY_ID       --> example: "KAIAXYKJQI5SCKKCUDVN                    "
-    AWS_SECRET_ACCESS_KEY   --> example: "iP87W4SDFD/6RWQyiasdf134134feqwwef4EU86U"
+The following lines are the names of the enviromental variables required.
+    DEVELOPMENT
+        Values: "True" or "False"
+    SECRET_KEY
+        Example: "9087zxcv98z798bv^=098zxcv098xzcv09*u2dsd2u+&hddf0^^uj"
+    ALLOWED_HOSTS
+        Example: "127.0.0.1,localhost, diyshop-1c0dad79f0a0.herokuapp.com"
+    DATABASE_URL
+        Example: "postgres://cmftklgz:gYdAbasasdasdasdsadsad234@dumbo.db.elep\
+            hantsql.com/cmftklgz"
+    ACCOUNT_EMAIL_VERIFICATION
+        Values: "none" or "mandatory"
+    EMAIL_FROM_DEFAULT
+        Example: "sales-dep@diyshop.com"
+    EMAIL_HOST
+        Example: "smtp.gmail.com"
+    EMAIL_HOST_USER
+        Example: "diyshop@gmail.com"
+    EMAIL_HOST_PASSWORD
+        Example: "asldknlmalsm"
+        Note:  gmail smtp servers do not accept user passwords
+                but application passwords can be used.
+    STRIPE_PUBLIC_KEY
+        Example: "pk_test_51PasdfASDFasdfasDFasdFASDFasdfag$%234weADSfGzdgLg9\
+            vUarbSvl1IBriGElYtCE0PIjVDJCkVwCM7v4hascasdcSD43"
+    STRIPE_SECRET_KEY
+        Example: "sk_test_51PGzdg23re0987asdlkj34ot5245098uwrve09jvlñkwevkjwg\
+            SERVWERVwervwerfQErvñmekfvoieLg9vUarbSvaBPVn0TH8"
+    STRIPE_WH_SECRET
+        Example: "whsec_9ff13b16lñknsadvTWsdafvadv299106f445ef6f269b02236aa87\
+            180952ecf8387046f2322cee5d28f"
+        Note:To run application in local enironment use stripe cli tool command
+            "$ ./stripe listen --forward-to 127.0.0.1:8000/checkout/wh"
+    USE_AWS
+        Values: "True" or "False"
+    AWS_STORAGE_BUCKET_NAME
+        Example: "diyshop"
+    AWS_S3_REGION_NAME
+        Example: "us-west-1"
+    AWS_ACCESS_KEY_ID
+        Example: "KAIAXYKJQI5SCKKCUDVN"
+    AWS_SECRET_ACCESS_KEY
+        Example: "iP87W4SDFD/6RWQyiasdf134134feqwwef4EU86U"
 
 IMPORTANT NOTES:
-    - NEVER allow the env.py file to be pushed to a public development or deployment repositories (Github, GitLab, Bitbucket, etc.)
-    - Do not need to difine "DEVELOPMENT" variable in the production system. By default it will be set to "False"
-    - In the production environment, this variables must be defined as environmental varibles at the django server
-        (Heroku, AWS Activate, Google Cloud, etc.)
+    - NEVER allow the env.py file to be pushed to a public development or
+        deployment repositories (Github, GitLab, Bitbucket, etc.)
+    - Do not need to difine "DEVELOPMENT" variable in the production system.
+        It will be set to "False" by default
+    - In the production environment, this variables must be defined as
+        environmental varibles at the django server in services like Heroku,
+        AWS Activate, Google Cloud, etc.
 """
 from pathlib import Path
 from os import getenv, path
@@ -151,11 +178,13 @@ AUTHENTICATION_BACKENDS = [
 ]
 
 # allauth custom configuration settings
-ACCOUNT_EMAIL_REQUIRED = True                       # Mandatory email registration
-ACCOUNT_USERNAME_REQUIRED = True                    # Mandatory username registration
-ACCOUNT_PRESERVER_USERNAME_CASING = False           # Don't care for username letter case
-ACCOUNT_AUTHENTICATION_METHOD = 'username_email'    # Both username and email for identification
-ACCOUNT_EMAIL_VERIFICATION = getenv('ACCOUNT_EMAIL_VERIFICATION', 'mandatory')  # Force email verification if not defined otherwise in environment
+ACCOUNT_EMAIL_REQUIRED = True              # Mandatory email registration
+ACCOUNT_USERNAME_REQUIRED = True           # Mandatory username registration
+ACCOUNT_PRESERVE_USERNAME_CASING = False   # ignore username letter case
+ACCOUNT_AUTHENTICATION_METHOD = 'username_email'  # login with username|email
+# Force email verification if not defined otherwise in environment
+ACCOUNT_EMAIL_VERIFICATION = getenv('ACCOUNT_EMAIL_VERIFICATION', 'mandatory')
+# Let the user type in their email address twice to avoid typo’s.
 ACCOUNT_SIGNUP_EMAIL_ENTER_TWICE = True
 
 SITE_ID = 1
@@ -173,8 +202,9 @@ MESSAGE_TAGS = {
 }
 
 
-# email configuration settings
-# EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'    # Temporaly for testing
+# Email configuration settings
+# Use the following EMAIL_BACKEND setting for testing
+# EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = getenv('EMAIL_HOST', '')
 EMAIL_PORT = 587
@@ -214,18 +244,14 @@ else:
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
 
 AUTH_PASSWORD_VALIDATORS = [
-    {
-        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
-    },
-    {
-        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
-    },
-    {
-        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
-    },
-    {
-        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
-    },
+    {'NAME': 'django.contrib.auth.password_validation.\
+        UserAttributeSimilarityValidator', },
+    {'NAME': 'django.contrib.auth.password_validation.\
+        MinimumLengthValidator', },
+    {'NAME': 'django.contrib.auth.password_validation.\
+        CommonPasswordValidator', },
+    {'NAME': 'django.contrib.auth.password_validation.\
+        NumericPasswordValidator', },
 ]
 
 

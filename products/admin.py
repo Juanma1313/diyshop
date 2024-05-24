@@ -1,6 +1,7 @@
 from django.contrib import admin
 from .models import Category, Thing, Instructions
-from django_summernote.admin import SummernoteModelAdmin, SummernoteModelAdminMixin
+from django_summernote.admin import SummernoteModelAdmin, \
+    SummernoteModelAdminMixin
 from django.utils.html import mark_safe
 
 NO_PARENT_NAME = "ROOT"
@@ -19,7 +20,7 @@ class ComponentInLine(SummernoteModelAdminMixin, admin.StackedInline):
     model = Thing
     fk_name = "parent"
 
-    # creates wrappers for the read-only fields, so they can be part of fieldsets
+    # creates wrappers for the read-only fields, so they can be in fieldsets
     readonly_fields = ('created', 'updated', 'parent_view')
 
     @admin.display(description="Created")
@@ -49,7 +50,7 @@ class ComponentInLine(SummernoteModelAdminMixin, admin.StackedInline):
     )
 
     extra = 0   # No initial form displayed if no data defined
-    show_change_link = True   # allow to edit Component with the Thing Admin form
+    show_change_link = True   # allows editing Component with Thing Admin form
     summernote_fields = ('description')   # Edit the field as WSYWYG editor
 
 
@@ -65,7 +66,7 @@ class InstructionsInLine(SummernoteModelAdminMixin, admin.StackedInline):
             'fields': (('title',), ('instructions',),),
         }),
     )
-    show_change_link = True   # allow to edit Component with the Thing Admin form
+    show_change_link = True  # allows Component editing with Thing Admin form
     summernote_fields = ('instructions')      # Edit the field as WSYWYG editor
 
 
@@ -78,7 +79,7 @@ class ThingAdmin(SummernoteModelAdmin):
     save_as_continue = False
     save_on_top = True
 
-    # creates wrappers for the read-only fields, so they can be part of fieldsets
+    # creates wrappers for the read-only fields, so they can be in fieldsets
     readonly_fields = ('created', 'updated', 'parent_view', 'image_display')
 
     @admin.display(description="Created")
@@ -99,20 +100,28 @@ class ThingAdmin(SummernoteModelAdmin):
     # Prepare the featured_image to be displayed as image
     @admin.display(description="Image")
     def image_display_list(self, instance):
-        return mark_safe('<img src="{}" alt ="Thing Image" style="width:100px;height:100px;object-fit:scale-down;" />'.format(instance.featured_image.url))
+        return mark_safe(
+            '<img src="{}" alt ="Thing Image" style="width:100px;\
+            height:100px;object-fit:scale-down;" />'
+            .format(instance.featured_image.url))
 
     @admin.display(description="Image")
     def image_display(self, instance):
-        return mark_safe('<img src="{}" alt ="Thing Image" style="width:300px;object-fit:scale-down;" />'.format(instance.featured_image.url))
+        return mark_safe(
+            '<img src="{}" alt ="Thing Image" style="width:300px;\
+            object-fit:scale-down;" />'
+            .format(instance.featured_image.url))
 
     # organize the list fields of Things
-    list_display = ('title', 'image_display_list', 'author', 'parent_view', 'created_on', 'updated_on', 'status', )
+    list_display = (
+        'title', 'image_display_list', 'author', 'parent_view', 'created_on',
+        'updated_on', 'status', )
     search_fields = ('title', 'description')
     list_filter = (
         ('parent', admin.RelatedOnlyFieldListFilter),
         'category', 'status', 'created_on'
     )
-    # Allows the user to change the selected Things in the list from Draft to Published state and back
+    # Allows the user to togle Things between Draft and Published states
     actions = ['publish', 'set_as_draft']
 
     def publish(self, request, queryset):
@@ -127,12 +136,13 @@ class ThingAdmin(SummernoteModelAdmin):
             'fields': (
                 ('parent_view', 'title', 'author', 'status'),
                 ('category', 'rating', 'price'),
-                ('sku', 'created', 'updated'), ('featured_image', 'image_display', 'description'),
+                ('sku', 'created', 'updated'),
+                ('featured_image', 'image_display', 'description'),
             ),
         }),
     )
 
-    # allows to include components and instructions to be added to the edited Thing
+    # allows to inline include components and instructions in ThingAdmin form
     inlines = [ComponentInLine, InstructionsInLine]
 
     # allow for description to be edited as WSWG RTF doc
@@ -149,8 +159,9 @@ class InstructionsAdmin(SummernoteModelAdmin):
     save_on_top = True
     summernote_fields = ('instructions')      # Edit the field as WSYWYG editor
 
-    # creates wrappers for the read-only fields, so they can be part of fieldsets
-    readonly_fields = ('created', 'updated', 'parent_view', 'image_display', 'thing_title')
+    # creates wrappers for the read-only fields, so they can be in fieldsets
+    readonly_fields = (
+        'created', 'updated', 'parent_view', 'image_display', 'thing_title')
 
     @admin.display(description="Created")
     def created(self, instance):
@@ -173,14 +184,21 @@ class InstructionsAdmin(SummernoteModelAdmin):
 
     @admin.display(description="Image")
     def image_display_list(self, instance):
-        return mark_safe('<img src="{}" alt ="Thing Image" style="width:100px;height:100px;object-fit:scale-down;" />'.format(instance.thing.featured_image.url))
+        return mark_safe(
+            '<img src="{}" alt ="Thing Image" style="width:100px;height:100px;\
+            object-fit:scale-down;" />'
+            .format(instance.thing.featured_image.url))
 
     @admin.display(description="Image")
     def image_display(self, instance):
-        return mark_safe('<img src="{}" alt ="Thing Image" style="width:300px;object-fit:scale-down;" />'.format(instance.thing.featured_image.url))
+        return mark_safe(
+            '<img src="{}" alt ="Thing Image" style="width:300px;\
+            object-fit:scale-down;" />'
+            .format(instance.thing.featured_image.url))
 
     # organize the list fields of Things
-    list_display = ('parent_view', 'thing_title', 'image_display_list', 'title',)
+    list_display = (
+        'parent_view', 'thing_title', 'image_display_list', 'title',)
     list_display_links = ('title',)
     search_fields = ('title', 'instructions',)
     list_filter = (
