@@ -143,6 +143,24 @@ a.category-badge > span.badge:hover {
     min-width: 260px;
 }
 
+.go-to-products:hover,
+.go-to-products:active,
+.go-to-products:focus {
+    color: black !important;
+    background: white !important;
+    border: 1px solid black;
+}
+
+/* Email subscription form */
+#mc_embed_signup form {
+    padding: 10px 0 10px 3%;
+    position: relative;
+    text-align: left;
+
+
+}
+
+
 .icon {
     align-items: center;
     display: inline-flex;

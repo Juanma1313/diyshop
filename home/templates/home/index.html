@@ -110,12 +110,63 @@
             </h1>
             <div class="my-5">
                 <h4>
-                    <a href="{% url 'products' %}?sort=date&direction=desc" class="go-to-products btn btn-lg rounded-5 text-uppercase py-3">Check out our latest projects</a>
+                    <a href="{% url 'products' %}?sort=date&direction=desc" class="btn go-to-products btn-lg rounded-5 text-uppercase py-3">Check out our latest projects</a>
                 </h4>
             </div>
         </div>
     </div>
 </div>
+<!-- STAY IN TOUCH -->
+<div class="container-wrapper">
+    <div class="container quotes-container content-container">
+        <section class="footer">
+            <div class="row">
+                <div class="col-12 page-header mb-4">
+                    <h2 class="text-uppercase">Stay in touch:</h2>
+                    <hr class="block-divider block-divider--short">
+                </div>
+            </div>
+            <!-- Facebook page link-->
+            <div class="row">
+                <div class="col-12 col-md-6">
+                    <h3>Social</h3>
+                    <p>Keep up to date with all our latest offers</p>
+                    <a href="https://www.facebook.com/profile.php?id=61559945799160" target="_blank"><i class="fab fa-facebook-square"></i> Follow us on Facebook!</a>
+                </div>
+                <!-- Email subscription form -->
+                <div class="col-12 col-md-6">
+                    <div>
+                        <form action="subscribe/" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate"  novalidate>
+                            {% csrf_token %}
+                            <div id="mc-embed_signup_scroll">
+                                <h2>Subscribe to our monthly newsletter!</h2>
+                                <p>Get exclusive offers and discount codes just by subscribing</p>
+                                <div class="indicates-required"><span class="asterisk">*</span> indicates required</div>
+                                <div class="mc-field-group">
+                                    <label for="mce-EMAIL">Email Address <span class="asterisk">*</span>
+                                    </label>
+                                    <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL">
+                                </div>
+                                <div id="mce-responses" class="clear">
+                                    <div class="response" id="mce-error-response" style="display:none"> </div>
+                                    <div class="response" id="mce-success-response" style="display:none"> </div>
+                                </div>  
+                                <!-- for bots-->
+                                <div style="position: absolute; left: -5000px;" aria-hidden="true">
+                                    <input type="text" name="b_emaillksjdlsdjlkj" tabindex="-1">
+                                </div>
+                                <div class="clear"><input type="submit" value="Subscribe" id="mc-embedded-subscribe" class="btn btn-outline-black rounded-5" >
+                                </div>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+<!-- /.footer -->
 
 <!-- Carrousel controller-->
 <script>

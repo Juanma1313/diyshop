@@ -85,11 +85,14 @@ TEMPLATES_DIR = path.join(BASE_DIR, 'templates')
 if path.isfile("env.py"):
     import env
     DEPLOYED = False
+    print(">>> Using Local Environment File env.py <<<")
 else:
     DEPLOYED = True
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = getenv('DEVELOPMENT', False)
+DEVELOPMENT = getenv('DEVELOPMENT', False)
+
+DEBUG = getenv('DEBUG', DEVELOPMENT)
 
 
 # Quick-start development settings - unsuitable for production
@@ -205,7 +208,12 @@ MESSAGE_TAGS = {
 # Email configuration settings
 # Use the following EMAIL_BACKEND setting for testing
 # EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+if DEVELOPMENT:
+    EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+    print(">>> DEVELOPMENT MODE: Email backed uses console <<<")
+else:
+    EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+
 EMAIL_HOST = getenv('EMAIL_HOST', '')
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
@@ -230,14 +238,7 @@ else:
             'NAME': path.join(BASE_DIR, 'db.sqlite3'),
         }
     }
-
-
-# DATABASES = {
-#   'default': {
-#       'ENGINE': 'django.db.backends.sqlite3',
-#       'NAME': BASE_DIR / 'db.sqlite3',
-#   }
-# }
+    print(">>> DATABASE_URL note defined: Using Local SQLite3 Database <<<")
 
 
 # Password validation
@@ -303,6 +304,11 @@ if USE_AWS:
     # Override static and media URLs in production
     STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{STATICFILES_LOCATION}/'
     MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{MEDIAFILES_LOCATION}/'
+else:
+    print(">> local static and media files <<")
+    STATICFILES_STORAGE = (
+        'django.contrib.staticfiles.storage.StaticFilesStorage')
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
@@ -321,4 +327,4 @@ STRIPE_WH_SECRET = getenv('STRIPE_WH_SECRET', '')
 
 if DEBUG:
     import django
-    print(f"Django Version: {django.get_version()} DEBUG MODE")
+    print(f">>> DEBUG MODE: Django Version: {django.get_version()} <<<")
