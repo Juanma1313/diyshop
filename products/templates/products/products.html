@@ -112,7 +112,7 @@
                                         {% if product.rating %}
                                             <strong class="text-text-dark"><i class="fas fa-star mr-1 text-warning"></i>&nbsp;{{ product.rating }}/5</strong>
                                         {% else %}
-                                            <small class="text-muted">No Rating</small>
+                                            <small class="text-muted"><i class="fas fa-star mr-1 text-warning"></i>&nbsp;No Rating</small>
                                         {% endif %}
                                     </div>
                                 </div>
@@ -122,7 +122,7 @@
                                         {% if product.price %}
                                             <strong class="text-text-dark"><i class="fas fa-euro-sign text-success"></i>&nbsp;{{ product.price }}</strong>
                                         {% else %}
-                                            <small class="text-muted">Free</small>
+                                            <strong class="text-muted">Free</strong>
                                         {% endif %}
                                     </div>
                                     <!-- edit/delete buttons -->

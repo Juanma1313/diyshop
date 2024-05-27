@@ -51,17 +51,6 @@ body {
     color: white;
 }
 
-.text-black {
-    color: #000 !important;
-}
-
-.border-black {
-    border: 1px solid black !important;
-}
-
-.bg-black {
-    background: #000 !important;
-}
 
 .overlay {
 	height: 100%;
@@ -119,6 +108,12 @@ a.category-badge > span.badge:hover {
     font-size: 1.4rem;
     font-weight: 700;
     color: #8bfdf7;
+}
+
+.main-nav-text {
+    font-family: Lato, sans-serif;
+    font-weight: 400;
+    color: whitesmoke;
 }
 
 .thin {
@@ -395,7 +390,7 @@ a.category-badge > span.badge:hover {
 
 @media (max-width: 991px) {
     .header-container {
-        padding-top: 50px;
+        padding-top: 60px;
     }
 
     body {

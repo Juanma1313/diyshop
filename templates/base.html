@@ -46,7 +46,7 @@
     <body>
         <header class="container-fluid fixed-top">
             <!--TOP NAVIGATION-->
-            <div id="topnav" class="navbar row pb-0 pt-lg-2 d-none d-lg-flex">
+            <div id="topnav" class="navbar row pb-0 pt-lg-2 d-none d-lg-flex px-3">
                 <!--LOGO BRAND BANNER-->
                 <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 text-center text-lg-left">
                     <a href="{% url 'home' %}" class="nav-link main-logo-link">
@@ -78,7 +78,7 @@
                         <!--user options-->
                         <li class="list-inline-item dropdown">
                             <!--user icon-->
-                            <a class="text-black nav-link" href="#" id="user-options" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <a class="{% if request.user.is_authenticated %}text-warning fw-bold{% else %}text-white{% endif %} nav-link" href="#" id="user-options" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <div class="text-center">
                                     <div><i class="fas fa-user fa-lg"></i></div>
                                     {% if request.user.is_authenticated %}
@@ -91,7 +91,7 @@
                             <!--user menu-->
                             <div class="dropdown-menu border-0" aria-labelledby="user-options">
                                 {% if request.user.is_authenticated %}
-                                    {% if request.user.is_superuser or request.user.is_staff%}
+                                    {% if request.user.is_superuser or request.user.is_staff %}
                                         <!--management option-->
                                         <a href="/admin" class="dropdown-item">Admin</a>
                                     {% endif %}
@@ -111,7 +111,7 @@
                         </li>
                         <!--Shopping bag-->
                         <li class="list-inline-item">
-                            <a class="{% if grand_total %}text-warning fw-bold{% else %}text-black{% endif %} nav-link" href="{% url 'view_bag' %}">
+                            <a class="{% if grand_total %}text-warning fw-bold{% else %}text-white{% endif %} nav-link" href="{% url 'view_bag' %}">
                                 <div class="text-center">
                                     <div><i class="fas fa-shopping-bag fa-lg"></i></div>
                                     <p class="my-0">
@@ -129,9 +129,9 @@
             </div>
             <!--PROJECT SELECTION MENU-->
             <div class="row">
-                <nav class="p-0 navbar navbar-expand-lg navbar-light w-100">
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
+                <nav class="navbar navbar-expand-lg   w-100 px-3">
+                    <button class="navbar-toggler text-white" type="button" data-bs-toggle="collapse" data-bs-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon bg-white"></span>
                     </button>
                     {% include 'includes/mobile-top-header.html' %}
                     {% include 'includes/main-nav.html' %}
@@ -164,7 +164,7 @@
         {% endblock %}
 
         <!-- Footer -->
-        <footer class="container-fluid fixed-bottom footer mt-auto py-3 dark-bg d-none d-sm-block">
+        <footer class="container-fluid fixed-bottom footer mt-auto py-3 dark-bg d-none d-lg-block">
             <p class="m-0 text-center text-white">Developed for the Code Institute's Assessment</p>
             <p class="m-0 text-center text-white">Our social media: 
                 <a href="https://www.facebook.com/profile.php?id=61559945799160" target="_blank" rel="noopener"

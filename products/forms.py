@@ -10,13 +10,17 @@ class ProductForm(forms.ModelForm):
     class Meta:
         model = Thing
         fields = '__all__'
+        widgets = {
+            'description': SummernoteWidget(),
+            # 'description': SummernoteInplaceWidget(),
+        }
 
     featured_image = forms.ImageField(
         label='Featured_Image',
         required=False,
         widget=CustomClearableFileInput)
 
-    description = forms.CharField(widget=SummernoteWidget())
+#    description = forms.CharField(widget=SummernoteInplaceWidget())
 
     def __init__(self, *args, **kwargs):
         # Search for request parameter and eliminate it for the parent class

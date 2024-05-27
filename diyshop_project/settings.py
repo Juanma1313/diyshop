@@ -245,18 +245,14 @@ else:
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
 
 AUTH_PASSWORD_VALIDATORS = [
-    {'NAME':
-     'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
-     },
-    {'NAME':
-     'django.contrib.auth.password_validation.MinimumLengthValidator',
-     },
-    {'NAME':
-     'django.contrib.auth.password_validation.CommonPasswordValidator',
-     },
-    {'NAME':
-     'django.contrib.auth.password_validation.NumericPasswordValidator',
-     },
+    {'NAME': "django.contrib.auth.password_validation"
+        ".UserAttributeSimilarityValidator", },
+    {'NAME': "django.contrib.auth.password_validation"
+        ".MinimumLengthValidator", },
+    {'NAME': "django.contrib.auth.password_validation"
+        ".CommonPasswordValidator", },
+    {'NAME': "django.contrib.auth.password_validation"
+        ".NumericPasswordValidator", },
 ]
 
 
@@ -324,6 +320,32 @@ STRIPE_CURRENCY = 'eur'  # US Dolar='usd', CCE Euro = 'eur'
 STRIPE_PUBLIC_KEY = getenv('STRIPE_PUBLIC_KEY', '')
 STRIPE_SECRET_KEY = getenv('STRIPE_SECRET_KEY', '')
 STRIPE_WH_SECRET = getenv('STRIPE_WH_SECRET', '')
+
+SUMMERNOTE_CONFIG = {
+    # Using SummernoteWidget - iframe mode, default
+    'iframe': True,
+
+    'summernote': {
+        'airMode': False,
+        'width': '100%',
+        'height': '480',
+        'lang': None,
+
+        # Toolbar customization
+        # https://summernote.org/deep-dive/#custom-toolbar-popover
+        'toolbar': [
+            ['style', ['style']],
+            ['font', ['bold', 'underline', 'clear']],
+            ['fontname', ['fontname']],
+            ['color', ['color']],
+            ['para', ['ul', 'ol', 'paragraph']],
+            ['table', ['table']],
+            ['insert', ['link', 'picture', 'video']],
+            ['view', ['fullscreen', 'codeview', 'help']],
+        ],
+    },
+
+}
 
 if DEBUG:
     import django
