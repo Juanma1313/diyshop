@@ -137,12 +137,10 @@ def productlike(request, product_id):
 @login_required
 def add_product(request):
     """ Add a product to the store """
-    if not request.user.is_superuser and not request.user.is_staff:
-        messages.error(request, 'Sorry, unauthorized operation.')
-        return redirect(reverse('home'))
 
     if request.method == 'POST':
-        form = ProductForm(request.POST, request.FILES)
+        form = ProductForm(data=request.POST, files=request.FILES,
+                           request=request)
         if form.is_valid():
             product = form.save()
             messages.success(request, 'Successfully added DIY Project!')
@@ -152,7 +150,9 @@ def add_product(request):
                            ('Failed to add DIY Project. '
                             'Please ensure the information is valid.'))
     else:
-        form = ProductForm()
+        # we need to send the request to the form so it can adapt to the user
+        form = ProductForm(data=request.GET, files=request.FILES,
+                           request=request)
 
     template = 'products/add_product.html'
     context = {
@@ -165,13 +165,17 @@ def add_product(request):
 @login_required
 def edit_product(request, product_id):
     """ Edit a DIY Project in the store """
-    if not request.user.is_superuser and not request.user.is_staff:
+
+    product = get_object_or_404(Thing, pk=product_id)
+    if not request.user.is_superuser \
+            and not request.user.is_staff \
+            and request.user != product.author:
         messages.error(request, 'Sorry, unauthorized operation.')
         return redirect(reverse('home'))
 
-    product = get_object_or_404(Thing, pk=product_id)
     if request.method == 'POST':
-        form = ProductForm(request.POST, request.FILES, instance=product)
+        form = ProductForm(data=request.POST, files=request.FILES,
+                           instance=product)
         if form.is_valid():
             form.save()
             messages.success(request, 'Successfully updated DIY Project!')
@@ -181,7 +185,9 @@ def edit_product(request, product_id):
                            ('Failed to update DIY Project. '
                             'Please ensure the information is valid.'))
     else:
-        form = ProductForm(instance=product)
+        # we need to send the request to the form so it can adapt to the user
+        form = ProductForm(instance=product, request=request)
+        # form = ProductForm(instance=product)
         messages.info(request, f'You are editing {product.title}')
 
     template = 'products/edit_product.html'

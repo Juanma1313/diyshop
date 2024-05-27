@@ -126,7 +126,7 @@
                                         {% endif %}
                                     </div>
                                     <!-- edit/delete buttons -->
-                                    {% if request.user.is_superuser or request.user.is_staff%}
+                                    {% if request.user.is_superuser or request.user.is_staff or request.user == product.author %}
                                     <div class="col text-end">
                                         <small >
                                             <a href="{% url 'edit_product' product.id %}">Edit</a> | 
