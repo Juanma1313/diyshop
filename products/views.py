@@ -175,7 +175,7 @@ def edit_product(request, product_id):
 
     if request.method == 'POST':
         form = ProductForm(data=request.POST, files=request.FILES,
-                           instance=product)
+                           instance=product, request=request)
         if form.is_valid():
             form.save()
             messages.success(request, 'Successfully updated DIY Project!')

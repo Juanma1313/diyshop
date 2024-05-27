@@ -34,7 +34,6 @@ CRUD functionality to manage the content of the repository.
 
 Access the website  [DIY Site](https://diyshop-e5a99a0c89cb.herokuapp.com/) Deployed on Heroku service
 
-
 # Table of Contents
 
 - [Introduction](#introduction)
@@ -112,7 +111,7 @@ There are four types of users segregated by their role and purpose.
 - For Creators and administrators, The user interface should be clear,
   flexible and functional.
 
-### Customer requirements for users
+### Initial Customer requirements for users
 
 The following are the customer requirements that are part of the user
 stories list for the initial delivery iteration backlog.
@@ -149,18 +148,28 @@ stories list for the initial delivery iteration backlog.
 | 39   | 33    | Change state published/Draft a DIY project    |           |         | x       | x     |
 | 39   | 34    | Change state published/Draft a component      |           |         | x       | x     |
 
-### Other requirements
+#### Other requirements
 
-- There should be a main landing page to display the content.
-- There should be an administrator page for manage users and content.
-- Web pages should be able to be used from desktops and mobile devices
-- Content and user informations should be stored in Elephant
-  PostgreSQL servers
-- Multimedia content (Images, videos, data files, etc) should be
-  stored in Cloudinary servers.
-- The web site should be able to be deployed on Heroku servers from
-  GitHub
-- The project should be develop under Agile methodology.
+There should be a main landing page to display the content.
+
+There should be an administrator page for manage users and content.
+
+Web pages should be able to be used from desktops and mobile devices
+
+Content and user informations should be stored in Elephant
+PostgreSQL servers
+
+Multimedia content (Images, videos, data files, etc) should be
+stored in Cloudinary servers.
+
+The web site should be able to be deployed on Heroku servers from
+GitHub
+
+The project should be develop under Agile methodology.
+
+
+### Customer requirements for users for second sprint
+
 
 ### Development plan
 
