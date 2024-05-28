@@ -2,23 +2,15 @@
 
 # Introduction
 
-The DIY site, as a first stage,  was intended to be a repository of small-scale construction projects, designed so that anyone can carry them out by following the
-instructions posted on the repository in a genuine Do-It-Yourself style.
+The DIY site, as a first stage,  was intended to be a repository of small-scale construction projects, designed so that anyone can carry them out by following the instructions posted on the repository in a genuine Do-It-Yourself style.
 
 The DIY Shop, as the second stage, implementes a fully functional E-Commerce solution that allows users tu upload/download/manage their own content, allowing the owner to sell the parts and materials that users may need to acomplice the published DIY Projects.
 
-Public access to this website can be made completely anonymous, allowing
-the users to browse the entire published repository, and encouraging
-them to register on a permanent basis, which will also allow users to
-mark which projects are their favourites.
+Public access to this website can be made completely anonymous, allowing the users to browse the entire published repository, and encouraging them to register on a permanent basis, which will also allow users to mark which projects are their favourites.
 
-In the first stage of implementation, people of any age and skill level
-could explore the projects named "Things" that are publicly presented in
-this repository, and use the DIY project published instructions to replicate them. The contents of the projects (things) were uploaded into the repository by the
-creator users whom require private access with certain privileges, assigned by
-an administrator, in order to access the repository management system.
+In the first stage of implementation, people of any age and skill level could explore the projects named "Things" that are publicly presented in this repository, and use the DIY project published instructions to replicate them. The contents of the projects (things) were uploaded into the repository by the creator users whom require private access with certain privileges, assigned by an administrator, in order to access the repository management system.
 
-In this second fase, we expand the initial implementation to include E-Commerce functionality, including features like user profiles, shopping kart, online payment, e-mail confirmation, allow users to add content trough website pages, sofisticated message notification for the user, product search capabilities, product navigation using categories, links to Facebookbusines page and newsleter subscription.
+In this second fase, we expand the initial implementation to include E-Commerce functionality, including features like user profiles, shopping kart, online payment, e-mail confirmation, allow users to add content trough website pages, sofisticated message notification for the user, product search capabilities, product navigation using categories, links to Facebook busines page and newsleter subscription.
 
 From a technical standpoint, this site is implemented in Python, JavaScript, HTML and CSS languages, on the Django framework and using MVC design. It includes user authentication, email validation and full CRUD functionality to manage the content of the repository.
 
@@ -106,37 +98,36 @@ There are four types of users segregated by their role and purpose.
 The following are the customer requirements that are part of the user
 stories list for the initial delivery iteration backlog.
 
-|                                                 |       |                                               |           |         |         |       |
-| ----------------------------------------------- | ----- | --------------------------------------------- | --------- | ------- | ------- | ----- |
-| Epic                                            | Story | Requirements for users                        | Anonymous | Regular | Creator | Admin |
-| [#38](https://github.com/Juanma1313/DYS/issues/38) | 12    | Register an account using e-mail and password | x         |         |         |       |
-| [#38](https://github.com/Juanma1313/DYS/issues/38) | 13    | Validate own e-mail                           |           | x       | x       | x     |
-| [#38](https://github.com/Juanma1313/DYS/issues/38) | 14    | Login in main page with e-mail and password   | x         | x       | x       | x     |
-| [#38](https://github.com/Juanma1313/DYS/issues/38) | 15    | Change e-mail                                 |           | x       | x       | x     |
-| [#38](https://github.com/Juanma1313/DYS/issues/38) | 16    | Delete own e-mail account                     |           |         | x       | x     |
-| [#37](https://github.com/Juanma1313/DYS/issues/37) | 17    | Register own account using user and password  |           |         |         | x     |
-| [#37](https://github.com/Juanma1313/DYS/issues/37) | 17    | Login in admin page with user and password    |           |         | x       | x     |
-| [#37](https://github.com/Juanma1313/DYS/issues/37) | 17    | Change own user data (name, lastname)         |           |         | x       | x     |
-| [#38](https://github.com/Juanma1313/DYS/issues/38) | 18    | Change own password                           |           | x       | x       | x     |
-| [#37](https://github.com/Juanma1313/DYS/issues/37) | 17    | Delete own user-account                       |           |         |         | x     |
-| [#38](https://github.com/Juanma1313/DYS/issues/38) | 35    | Sign out/log out                              |           | x       | x       | x     |
-| [#37](https://github.com/Juanma1313/DYS/issues/37) | 17    | Administrate users and password               |           |         |         | x     |
-| [#41](https://github.com/Juanma1313/DYS/issues/41) | 19    | view list of published DIY projects           | x         | x       | x       | x     |
-| [#41](https://github.com/Juanma1313/DYS/issues/41) | 20    | View details of a published DIY project       | x         | x       | x       | x     |
-| [#41](https://github.com/Juanma1313/DYS/issues/41) | 21    | View published components of a DIY project    | x         | x       | x       | x     |
-| [#41](https://github.com/Juanma1313/DYS/issues/41) | 20    | View instructions of a DIY project            | x         | x       | x       | x     |
-| [#38](https://github.com/Juanma1313/DYS/issues/38) | 22    | Mark a DIY project as own favourite           |           | x       | x       | x     |
-| [#39](https://github.com/Juanma1313/DYS/issues/39) | 23/24 | Create a DIY project and its details          |           |         | x       | x     |
-| [#39](https://github.com/Juanma1313/DYS/issues/39) | 26    | Create components (DIY subprojects)           |           |         | x       | x     |
-| [#39](https://github.com/Juanma1313/DYS/issues/39) | 25    | Create instructions                           |           |         | x       | x     |
-| [#39](https://github.com/Juanma1313/DYS/issues/39) | 27    | Modify a DIY project and its details          |           |         | x       | x     |
-| [#39](https://github.com/Juanma1313/DYS/issues/39) | 28    | Modify a component and its details            |           |         | x       | x     |
-| [#39](https://github.com/Juanma1313/DYS/issues/39) | 29    | Modify the instructions of a DIY project      |           |         | x       | x     |
-| [#39](https://github.com/Juanma1313/DYS/issues/39) | 30    | Delete a DIY project and its details          |           |         | x       | x     |
-| [#39](https://github.com/Juanma1313/DYS/issues/39) | 31    | Delete a component                            |           |         | x       | x     |
-| [#39](https://github.com/Juanma1313/DYS/issues/39) | 32    | Delete instructions                           |           |         | x       | x     |
-| [#39](https://github.com/Juanma1313/DYS/issues/39) | 33    | Change state published/Draft a DIY project    |           |         | x       | x     |
-| [#39](https://github.com/Juanma1313/DYS/issues/39) | 34    | Change state published/Draft a component      |           |         | x       | x     |
+| Epic                                                | Story | Requirements for users                        | Anonymous | Regular | Creator | Admin |
+| --------------------------------------------------- | ----- | --------------------------------------------- | --------- | ------- | ------- | ----- |
+| [#38](https://github.com/Juanma1313/diyshop/issues/38) | 12    | Register an account using e-mail and password | x         |         |         |       |
+| [#38](https://github.com/Juanma1313/diyshop/issues/38) | 13    | Validate own e-mail                           |           | x       | x       | x     |
+| [#38](https://github.com/Juanma1313/diyshop/issues/38) | 14    | Login in main page with e-mail and password   | x         | x       | x       | x     |
+| [#38](https://github.com/Juanma1313/diyshop/issues/38) | 15    | Change e-mail                                 |           | x       | x       | x     |
+| [#38](https://github.com/Juanma1313/diyshop/issues/38) | 16    | Delete own e-mail account                     |           |         | x       | x     |
+| [#37](https://github.com/Juanma1313/diyshop/issues/37) | 17    | Register own account using user and password  |           |         |         | x     |
+| [#37](https://github.com/Juanma1313/diyshop/issues/37) | 17    | Login in admin page with user and password    |           |         | x       | x     |
+| [#37](https://github.com/Juanma1313/diyshop/issues/37) | 17    | Change own user data (name, lastname)         |           |         | x       | x     |
+| [#38](https://github.com/Juanma1313/diyshop/issues/38) | 18    | Change own password                           |           | x       | x       | x     |
+| [#37](https://github.com/Juanma1313/diyshop/issues/37) | 17    | Delete own user-account                       |           |         |         | x     |
+| [#38](https://github.com/Juanma1313/diyshop/issues/38) | 35    | Sign out/log out                              |           | x       | x       | x     |
+| [#37](https://github.com/Juanma1313/diyshop/issues/37) | 17    | Administrate users and password               |           |         |         | x     |
+| [#41](https://github.com/Juanma1313/diyshop/issues/41) | 19    | view list of published DIY projects           | x         | x       | x       | x     |
+| [#41](https://github.com/Juanma1313/diyshop/issues/41) | 20    | View details of a published DIY project       | x         | x       | x       | x     |
+| [#41](https://github.com/Juanma1313/diyshop/issues/41) | 21    | View published components of a DIY project    | x         | x       | x       | x     |
+| [#41](https://github.com/Juanma1313/diyshop/issues/41) | 20    | View instructions of a DIY project            | x         | x       | x       | x     |
+| [#38](https://github.com/Juanma1313/diyshop/issues/38) | 22    | Mark a DIY project as own favourite           |           | x       | x       | x     |
+| [#39](https://github.com/Juanma1313/diyshop/issues/39) | 23/24 | Create a DIY project and its details          |           |         | x       | x     |
+| [#39](https://github.com/Juanma1313/diyshop/issues/39) | 26    | Create components (DIY subprojects)           |           |         | x       | x     |
+| [#39](https://github.com/Juanma1313/diyshop/issues/39) | 25    | Create instructions                           |           |         | x       | x     |
+| [#39](https://github.com/Juanma1313/diyshop/issues/39) | 27    | Modify a DIY project and its details          |           |         | x       | x     |
+| [#39](https://github.com/Juanma1313/diyshop/issues/39) | 28    | Modify a component and its details            |           |         | x       | x     |
+| [#39](https://github.com/Juanma1313/diyshop/issues/39) | 29    | Modify the instructions of a DIY project      |           |         | x       | x     |
+| [#39](https://github.com/Juanma1313/diyshop/issues/39) | 30    | Delete a DIY project and its details          |           |         | x       | x     |
+| [#39](https://github.com/Juanma1313/diyshop/issues/39) | 31    | Delete a component                            |           |         | x       | x     |
+| [#39](https://github.com/Juanma1313/diyshop/issues/39) | 32    | Delete instructions                           |           |         | x       | x     |
+| [#39](https://github.com/Juanma1313/diyshop/issues/39) | 33    | Change state published/Draft a DIY project    |           |         | x       | x     |
+| [#39](https://github.com/Juanma1313/diyshop/issues/39) | 34    | Change state published/Draft a component      |           |         | x       | x     |
 
 #### Other requirements
 
@@ -157,24 +148,41 @@ GitHub
 
 The project should be develop under Agile methodology.
 
-### Customer requirements for users for second sprint
+### Customer requirements for users for second stage
+
+| Epic                                                | Story | Requirements for users                     | Anonymous | Regular | Creator | Admin |
+| --------------------------------------------------- | ----- | ------------------------------------------ | --------- | ------- | ------- | ----- |
+| [#39](https://github.com/Juanma1313/diyshop/issues/39) | 23    | Create a DIY project                       |           |         | x       | x     |
+| [#39](https://github.com/Juanma1313/diyshop/issues/39) | 24    | Create a DIY project  details             |           |         | x       | x     |
+| [#39](https://github.com/Juanma1313/diyshop/issues/39) | 26    | Create components (DIY subprojects)        |           |         | x       | x     |
+| [#39](https://github.com/Juanma1313/diyshop/issues/39) | 25    | Create instructions                        |           |         | x       | x     |
+| [#39](https://github.com/Juanma1313/diyshop/issues/39) | 27    | Modify a DIY project and its details       |           |         | x       | x     |
+| [#39](https://github.com/Juanma1313/diyshop/issues/39) | 28    | Modify a component and its details         |           |         | x       | x     |
+| [#39](https://github.com/Juanma1313/diyshop/issues/39) | 29    | Modify the instructions of a DIY project   |           |         | x       | x     |
+| [#39](https://github.com/Juanma1313/diyshop/issues/39) | 30    | Delete a DIY project and its details       |           |         | x       | x     |
+| [#39](https://github.com/Juanma1313/diyshop/issues/39) | 31    | Delete a component                         |           |         | x       | x     |
+| [#39](https://github.com/Juanma1313/diyshop/issues/39) | 32    | Delete instructions                        |           |         | x       | x     |
+| [#39](https://github.com/Juanma1313/diyshop/issues/39) | 33    | Change state published/Draft a DIY project |           |         | x       | x     |
+| [#39](https://github.com/Juanma1313/diyshop/issues/39) | 34    | Change state published/Draft a component   |           |         | x       | x     |
+
+
+
+
 
 ### Development plan
 
-Since development must be managed under the agile methodology.
-`Epics`, and their corresponding `user stories` must be defined and,
-when needed, meet a consensus between the developers and the project
-owner through agreed acceptance criteria. Also, from a more technical
-point of view, development tasks and their corresponding `story points` are defined in order to better evaluate the development effort.
-The following information lists all these issues. Please follow the
-links to access the full information stored on github.
+[Development plan for first stage (DIY Site)](https://github.com/Juanma1313/diyshop#development-plan)
 
-#### [#37](https://github.com/Juanma1313/DYS/issues/37) EPIC: Setup initial development environment
+Following the same guidelines applied in the first stage, the development must be managed under the agile methodology.
+***Epics***, and their corresponding ***user stories*** must be defined and, when needed, meet a consensus between the developers and the project owner through agreed acceptance criteria. Also, from a more technical point of view, development tasks and their corresponding ***story points*** are defined in order to better evaluate the development effort.
+The following information lists all these issues. Please follow the links to access the full information stored on github.
+
+#### [#1](https://github.com/Juanma1313/diyshop/issues/1) EPIC: Setup initial development environment
 
 As a **developer**, I can **setup initial environment**, so that
 **The website can be developed**
 
-##### [#36](https://github.com/Juanma1313/DYS/issues/36) USER STORY: Create Development Environment
+##### [#2](https://github.com/Juanma1313/diyshop/issues/2) USER STORY: Create Development Environment
 
 As **developer**, I can **setup the development environment**,
 so that **I can start developing the website**
@@ -182,1096 +190,537 @@ so that **I can start developing the website**
 ###### Tasks
 
 - [X] Task 1 – Install Visual Studio Code in local environment
-- [X] Task 2 – Create website Github repository and start remote
-  environment
-- [X] Task 3 – Install Django and all required libraries for runtime
-  and development of the website
+- [X] Task 2 – Create website Github repository and start remote  environment
+- [X] Task 3 – Install Django and all required libraries for runtime and development of the website
 - [X] Task 4 – Create Django project and application
-- [X] Task 5 - Create database in ElepantSQL servers
-- [X] Task 6 - Create media storage in Cloudinary servers
-- [X] Task 7 – create env.py and add all security risk keys
-- [X] Task 8 - Migrate Django project to use the new database and
-  media storage
-- [X] Task 9 - Setup Heroku service for the website
-- [X] Task 10 – Setup automatic deployment from Github on Heroku
-  servers
+- [X] Task 5 - Create local database structures in SQLite3
+- [X] Task 6 - Create fixtures from deployed DIY Site database and media storage
+- [X] Task 7 - Upload fixtures to new database
 
-###### Story Points: 8
+###### Story Points: 13
 
-##### [#17](https://github.com/Juanma1313/DYS/issues/17) USER STORY: Administrate users
+##### [#3](https://github.com/Juanma1313/diyshop/issues/3) USER STORY: Administrate users
 
-As **Administrator**, I can **Create/modify/delete user accounts
-and their privileges**, so that **I can assign who signs in on the
-website and who can create or modify content**
-
----
+As **Administrator**, I can **Create/modify/delete user accounts and their privileges**, so that **I can assign who signs in on the website and who can create or modify content**
 
 ###### Acceptance Criteria
 
 - Acceptance Criteria 1
-
-**Given** that I am an `Administrator` user
-
-**When** I am in any website page
-
-**Then** I can access the admin web page selecting the `Admin`
-option in the user menu
-
+  **Given** that I am an `Administrator` user
+  **When** I am in any website page
+  **Then** I can access the admin web page selecting the `Admin` option in the user menu
 - Acceptance Criteria 2
-
-**Given** that I am an `Administrator` user
-
-**When** I am in admin website page
-
-**Then** I can add/delete/modify any user
-
-- Acceptance Criteria 2
-
-**Given** that I am an `Administrator` user
-
-**When** I am in admin website page
-
-**Then** I can add/delete/modify any user group
-
-- Acceptance Criteria 2
-
-**Given** that I am an `Administrator` user
-
-**When** I am in admin website page
-
-**Then** I can add/delete/modify any privilege of any user and any
-group
-
+  **Given** that I am an `Administrator` user
+  **When** I am in admin website page
+  **Then** I can add/delete/modify any user
 - Acceptance Criteria 3
-
-**Given** that I am an `Administrator` user
-
-**When** I am in admin website page
-
-**Then** I can add/delete/modify any privilege of any user and any
-group
+  **Given** that I am an `Administrator` user
+  **When** I am in admin website page
+  **Then** I can add/delete/modify any privilege of any user and any group
 
 ###### Tasks
 
-- [X] Task 1 - Install and setup Django's allauth and its accounts
-  and interfaces, extensions.
+- [X] Task 1 - Install and setup Django's allauth and its accounts and interfaces, extensions.
 - [X] Task 2 - Create at least one administrator account
-- [X] Task 3 - Customize allauth templates to the website base
-  template
-- [X] Task 4 - Create `Content Creators` user group with necessary
-  privileges for content creators
+- [X] Task 3 - Customize allauth templates to the website base template
+- [X] Task 4 - Create `Content Creators` user group with necessary  privileges for content creators
 
 ###### Story Points: 8
 
-#### [#39](https://github.com/Juanma1313/DYS/issues/39) EPIC: DIY Project creation and management
+#### [#4](https://github.com/Juanma1313/diyshop/issues/4) EPIC: DIY Project creation and management
 
-As a **content creator**, I can **add/modify/delete DIY
-projects**, so that **the DIY Projects can be published and access
-by users in the website**
+As a **user**, I can **add/modify/delete my own DIY projects**, so that **my DIY Projects can be published and access by other users on the website**
 
-##### [#40](https://github.com/Juanma1313/DYS/issues/40) USER STORY: Register users as Content Creators
+##### [#5](https://github.com/Juanma1313/diyshop/issues/5) USER STORY: Create a DIY project
 
-As **Administrator**, I can **Give privileges to users to became
-Content Creators**, so that **This content creators can handle DIY
-projects**
-
----
+As **registered user**, I can **Create a DIY project**, so that **I can publish it and share it on the website**
 
 ###### Acceptance Criteria
 
 - Acceptance Criteria 1
-
-**Given** that I am an administrator
-
-**When** a user is designed as Content Creator
-
-**Then** I can assign this user to the Content Creator user group
-
+  **Given** that I am a `Registered User`
+  **When** I am in any website page
+  **Then** I can access the `Add Project` option in the user menu
 - Acceptance Criteria 2
-
-**Given** that I am an administrator
-
-**When** a user is no longer designed as Content Creator
-
-**Then** I can revoke their Content Creator user privileges
-
+  **Given** that I am a `Registered User`
+  **When** I click on the `Add Project`option in the user menu
+  **Then** I can create a new DIY Project
 - Acceptance Criteria 3
-
-**Given** that I am a Content Creator
-
-**When** I want to create/modify/delete a DIY Project
-
-**Then** I have sufficient privileges to perform those tasks
+  **Given** that I am a `Registered User`
+  **When** I have created a new DIY Project
+  **Then** The Created date, Modified_Date and Parent fields are
+  automatically created for this DIY project
 
 ###### Tasks
 
-- [X] Task 1 Create ` Content Creators` users group
-- [X] Task 2 Assign sufficient privileges to the ` Content Creators` users group
-- [X] Task 3 Assign designated users to the ` Content Creators`
-  users group
+- [X] Task 1 - Allow the `Add Project` option in the user menu in
+  the base template for the main website
+- [X] Task 2 - Allow the creation of new `Thing` for registered users
+
+###### Story Points: 8
+
+##### [#6](https://github.com/Juanma1313/diyshop/issues/6) USER STORY: Create DIY project details
+
+As **Registered User**, I can **create the DIY project details**, so that **project can have a featured image and description**
+
+###### Acceptance Criteria
+
+- Acceptance Criteria 1
+  **Given** that I am a `Registered User`
+  **When** I have created a new DIY Project (`Thing`)
+  **Then** I can assign a Title, Status, and Featured Image
+- Acceptance Criteria 2
+  **Given** that I am a `Registered User`
+  **When** I have created a new DIY Project (`Thing`)
+  **Then** I can edit a WSWG document to the description
+- Acceptance Criteria 3
+  **Given** that I am a `Registered User`
+  **When** I have created a new DIY Project (`Thing`)
+  **Then** I need to use a Save button to permanently store the changes in the database
+
+###### Tasks
+
+- [X] Task 1 - Install Django Summernote extension for adding  embedded WSWG editing functionality.
+- [X] Task 2 - Create the products/forms.ProductForm to accommodate all detail fields for the new `Thing`
+- [X] Task 3 - Create the add_product template to accommodate the new ProductForm
+
+###### Story Points: 8
+
+##### [#7](https://github.com/Juanma1313/diyshop/issues/7) USER STORY: Create Instructions
+
+As **Registered User**, I can **create project instructions for my DIY Projects**, so that **the users can read and follow them**
+
+###### Acceptance Criteria
+
+- Acceptance Criteria 1
+  **Given** that I am a `Registered User`
+  **When** I am in any website page
+  **Then** I can access the `Add Instructions` option in the user menu
+- Acceptance Criteria 2
+  **Given** that I am a `Registered User`
+  **When** I click on the `Add Instructions` option in the user menu
+  **Then** I can create a new `Instructions` element
+- Acceptance Criteria 3
+  **Given** that I am a `Registered User`
+  **When** I have created a new `Instructions` element
+  **Then** I must assign the `Instructions` element to one of my existing DIY Projects
+
+###### Tasks
+
+- [ ] Task 1 - Allow the `Add Instructions` option in the user menu in the base template for the main website
+- [ ] Task 2 - create a product/views.add_instructions to allow the creation of new `Instructions` element for registered users
+- [ ] Task 3 - create the product/forms.ProductInstructions form to accommodate the Instructions data including Summernote edit functionality to the  `instructions` field to allow for the WSWG edit features.
+- [ ] Task 4 - create the product add_instructions template to accommodate the product/forms.ProductInstructions form to present the page to the user.
+
+###### Story Points: 8
+
+##### [#8](https://github.com/Juanma1313/diyshop/issues/8) USER STORY: Create component
+
+As **Registered User**, I can **create components for my DIY Projects**, so that **a user can view and gather the building blocks to fulfil the project**
+
+###### Acceptance Criteria
+
+- Acceptance Criteria 1
+  **Given** that I am a `Registered User`
+  **When** I have created a DIY Project (`Thing`)
+  **Then** I can assign it to any of my existing DIY Project
+
+###### Tasks
+
+- [ ] Task 1 - Modify the products/forms.ProductForm to allow assigning a parent DIY Project to the current `Thing`, making it a component of the parent DIY Project. The Parent DIY Project must belong to the registered user.
 
 ###### Story Points: 3
 
-##### [#23](https://github.com/Juanma1313/DYS/issues/23) USER STORY: Create a DIY project
+##### [#9](https://github.com/Juanma1313/diyshop/issues/9) USER STORY: Modify a DIY project details
 
-As **content creator**, I can **Create a DIY project**, so that
-**I can publish it and share it on the website**
-
----
+As **Registered User**, I can **modify the DIY project details**, so that **the project can be corrected or upgraded**
 
 ###### Acceptance Criteria
 
 - Acceptance Criteria 1
-
-**Given** that I am a `Creator` user (member of the `Content Creator` group)
-
-**When** I am in any website page
-
-**Then** I can access the admin web page selecting the `Admin`
-option in the user menu
-
+  **Given** that I am a `Registered User`
+  **When** I am viewing my  DIY Project (Thing)
+  **Then** I can use a button to bring a  page to modify my DIY Project
 - Acceptance Criteria 2
-
-**Given** that I am a `Creator` user (member of the `Content Creator` group)
-
-**When** I am in admin website page
-
-**Then** I can create a new DIY Project
-
+  **Given** that I am a `Registered User`
+  **When** I am modifying my DIY Project (Thing)
+  **Then** I can change the Title, Author, Status, and Featured Image
 - Acceptance Criteria 3
-
-**Given** that I am a `Creator` user (member of the `Content Creator` group)
-
-**When** I have created a new DIY Project
-
-**Then** The Created date, Modified_Date and Parent fields are
-automatically created for this DIY project
+  **Given** that I am a `Registered User`
+  **When** I am modifying my DIY Project (Thing)
+  **Then** I can edit a WSWG document to the description
 
 ###### Tasks
 
-- [X] Task 1 - Allow the `Admin` option menu in the user menu in
-  the base template for Staff users (from group `Content Creators`)
-- [X] Task 2 - Create at least one user from the `Content Creator`
-  user group and the `Staff` flag enabled
-- [X] Task 3 - Create the DIY Project object model (`Thing`) that
-  will be used to instantiate each `Thing` and each `Component`
-- [X] Task 4 - Create the Admin view for the DIY Project
-  (`ThingAdmin`)
-
-###### Story Points: 8
-
-##### [#24](https://github.com/Juanma1313/DYS/issues/24) USER STORY: Create DIY project details
-
-As **content creator**, I can **create the DIY project
-details**, so that **project can have a featured image and
-description**
-
----
-
-###### Acceptance Criteria
-
-- Acceptance Criteria 1
-
-**Given** that I am a `Creator` user (member of the `Content Creator` group)
-
-**When** I have created a new DIY Project (`Thing`)
-
-**Then** I can assign a Title, Author, Status, and Featured Image
-
-- Acceptance Criteria 2
-
-**Given** that I am a `Creator` user (member of the `Content Creator` group)
-
-**When** I have created a new DIY Project (`Thing`)
-
-**Then** I can edit a WSWG document to the description
-
-- Acceptance Criteria 3
-
-**Given** that I am a `Creator` user (member of the `Content Creator` group)
-
-**When** I have created a new DIY Project (`Thing`)
-
-**Then** Slug field should be assign/updated automatically.
-
-- Acceptance Criteria 4
-
-**Given** that I am a `Creator` user (member of the `Content Creator` group)
-
-**When** I have created a new DIY Project (`Thing`)
-
-**Then** I need to use a Save button to permanently store the
-changes in the database
-
-###### Tasks
-
-- [X] Task 1 - Install Django Summernote extension for adding
-  embedded WSWG editing functionality.
-- [X] Task 2 - Modify the DIY Project Admin view (`ThingAdmin`) to
-  accommodate all detail fields
-- [X] Task 3 - Add the modifiable fields to the fieldsets in the DIY
-  Project Admin view (`ThingAdmin`) to allow updating of these fields.
-
-###### Story Points: 8
-
-##### [#25](https://github.com/Juanma1313/DYS/issues/25) USER STORY: Create Instructions
-
-As **content creator**, I can **create a list of project
-instructions**, so that **the users can read and follow them**
-
----
-
-###### Acceptance Criteria
-
-- Acceptance Criteria 1
-
-**Given** that I am a `Creator` user (member of the `Content Creator` group)
-
-**When** I am modifying a DIY Project (`Thing`)
-
-**Then** I can create a new `instructions` element that will be
-automatically assigned to the current DIY Project
-
-###### Tasks
-
-- [X] Task 1 - Create the DIY Instructions class model
-  (`Instructions`) that will be used to instantiate each
-  `instructions` object
-- [X] Task 2 - Modify the DIY Project object model 'Thing' to include
-  the instructions model
-- [X] Task 2 - Create the DIY Component Admin view
-  (`InstructionsInLine`) to handle new instructions elements as a list.
-- [X] Task 3 - Add inline admin view `InstructionsInLine` to the
-  DIY Project Admin view (`ThingAdmin`) to allow new instructions
-  elements to be added as a list.
+- [X] Task 1 - Create the edit_product template to accomodate for the product/forms.ProductForm form and allow to update the DIY Project details
+- [X] Task 2 - Modify the products and product_detail templates to provide 'edit'  button to the user's own DIY projects.
 
 ###### Story Points: 5
 
-##### [#26](https://github.com/Juanma1313/DYS/issues/26) USER STORY: Create component
+##### [#10](https://github.com/Juanma1313/diyshop/issues/10) USER STORY: Modify component
 
-As **content creator**, I can **create a list of components**,
-so that **a user can view and gather the building blocks to fulfil the
-project**
-
----
+As **Registered User**, I can **modify my component's details**, so that **my components can be corrected or upgraded**
 
 ###### Acceptance Criteria
 
 - Acceptance Criteria 1
-
-**Given** that I am a `Creator` user (member of the `Content Creator` group)
-
-**When** I am modifying a DIY Project (`Thing`)
-
-**Then** I can create a new component that will be automatically
-assigned to the current DIY Project
-
-###### Tasks
-
-- [X] Task 1 - Modify the DIY Project object model 'Thing' to include
-  a relation to itself as `components`
-- [X] Task 1 - Create the DIY Component Admin view
-  (`ComponentInLine`) to handle new components as a list.
-- [X] Task 2 - Add inline admin view `ComponentInLine` to the DIY
-  Component Admin view (`ComponentInLine`) to allow new components to be
-  added as a list.
-
-###### Story Points: 5
-
-##### [#27](https://github.com/Juanma1313/DYS/issues/27) USER STORY: Modify a project details
-
-As **content creator**, I can **modify the DIY project
-details**, so that **the project can be corrected or upgraded**
-
----
-
-###### Acceptance Criteria
-
-- Acceptance Criteria 1
-
-**Given** that I am a `Creator` user (member of the `Content Creator` group)
-
-**When** I am modifying a DIY Project (Thing)
-
-**Then** I can change the Title, Author, Status, and Featured Image
-
+  **Given** that I am a `Registered User`
+  **When** I am viewing one of my Components (`Thing`)
+  **Then** I can select a `edit` button to change the details
 - Acceptance Criteria 2
-
-**Given** that I am a `Creator` user (member of the `Content Creator` group)
-
-**When** I am modifying a DIY Project (Thing)
-
-**Then** I can edit a WSWG document to the description
+  **Given** that I am a `Registered User`
+  **When** I am modifying my Component (`Thing`)
+  **Then** I can edit the description with a WSWG built-in editor
+- Acceptance Criteria
+  **Given** that I am a `Registered User`
+  **When** I am modifying my DIY Project (`Thing`)
+  **Then** I must use a `Save` button to permanently store the changes in the database
 
 ###### Tasks
 
-- Built in #24
+- built in [#9](https://github.com/Juanma1313/diyshop/issues/9)
 
 ###### Story Points: 0
 
-##### [#28](https://github.com/Juanma1313/DYS/issues/28) USER STORY: Modify component
+##### [#11](https://github.com/Juanma1313/diyshop/issues11/) USER STORY: Modify instructions
 
-As **content creator**, I can **modify the component details**,
-so that **the component can be corrected or upgraded**
-
----
+As **Registered User**, I can **modify my Instructions elements**, so that **the DIY Project can be corrected or upgraded**
 
 ###### Acceptance Criteria
 
 - Acceptance Criteria 1
-
-**Given** that I am a `Creator` user (member of the `Content Creator` group)
-
-**When** I am modifying a DIY Project (`Thing`)
-
-**Then** I can change the title of the Instructions element
-
+  **Given** that I am a `Registered User`
+  **When** I am viewing a DIY Project (`Thing`)
+  **Then** I can select the `edit`button of the Instructions element to change the Instructions
 - Acceptance Criteria 2
-
-**Given** that I am a `Creator` user (member of the `Content Creator` group)
-
-**When** I am modifying a DIY Project (`Thing`)
-
-**Then** I can change the content of Instructions with a WSWG
-built-in editor
-
-- Acceptance Criteria
-
-**Given** that I am a `Creator` user (member of the `Content Creator` group)
-
-**When** I am modifying a DIY Project (`Thing`)
-
-**Then** I need to use a `Save` button to permanently store the
-changes in the database
+  **Given** that I am a `Registered User`
+  **When** I am modifying an Instructions element
+  **Then** I can change the content of Instructions with a WSWG built-in editor
+- Acceptance Criteria 3
+  **Given** that I am a `Registered User`
+  **When** I am modifying an Instructions element
+  **Then** I must use a `Save` button to permanently store the changes in the database
 
 ###### Tasks
 
-- built in #24
-
-- [X] Task 1 - Add Summernote edit functionality to the
-  `description` field in inline DIY Component Admin view
-  (`ComponentInLine') to allow for the WSWG edit features in the DIY
-  Component list.
-- [X] Task 4 - Add the modifiable fields to the fieldsets in the
-  inline DIY Component Admin view (`ComponentInLine`) to allow updating
-  of these fields.
-
-###### Story Points:3
-
-##### [#29](https://github.com/Juanma1313/DYS/issues29/) USER STORY: Modify instructions
-
-As **content creator**, I can **modify the project
-instructions**, so that **the project can be corrected or
-upgraded**
-
----
-
-###### Acceptance Criteria
-
-- Acceptance Criteria 1
-
-**Given** that I am a `Creator` user (member of the `Content Creator` group)
-
-**When** I am modifying a DIY Project (`Thing`)
-
-**Then** I can change the title of the Instructions element
-
-- Acceptance Criteria 2
-
-**Given** that I am a `Creator` user (member of the `Content Creator` group)
-
-**When** I am modifying a DIY Project (`Thing`)
-
-**Then** I can change the content of Instructions with a WSWG
-built-in editor
-
-- Acceptance Criteria
-
-**Given** that I am a `Creator` user (member of the `Content Creator` group)
-
-**When** I am modifying a DIY Project (`Thing`)
-
-**Then** I need to use a `Save` button to permanently store the
-changes in the database
-
-###### Tasks
-
-- [X] Task 1 - Add Summernote edit functionality to the
-  `instructions` field in DIY Instructions Admin view
-  (`InstructionsAdmin') to allow for the WSWG edit features.
-- [X] Task 2 - Add the `title` and `instructions` fields to the
-  fieldsets in the DIY Instructions Admin view (`InstructionsAdmin`) to
-  allow updating of these fields.
-- [X] Task 3 - Add Summernote edit functionality to the
-  `instructions` field in inline DIY Instructions Admin view
-  (`InstructionsInLine') to allow for the WSWG edit features in the DIY
-  Project Details Instructions list.
-- [X] Task 4 - Add the `title` and `instructions` fields to the
-  fieldsets in the inline DIY Instructions Admin view
-  (`InstructionsInLine`) to allow updating of these fields.
+- [ ] Task 1 - create a products/views.edit_Instructions to query the Instructions data in the database
+- [ ] Task 2 - Create the edit_Instructions template to accommodate  product/forms.ProductInstructions to allow updating of Instructions fields.
 
 ###### Story Points: 5
 
-##### [#30](https://github.com/Juanma1313/DYS/issues/30) USER STORY: Delete a project
+##### [#12](https://github.com/Juanma1313/diyshop/issues/12) USER STORY: Delete a project
 
-As **content creator**, I can **delete a DIY project**, so that
+As **Register User**, I can **delete my DIY project**, so that
 **the project does no longer exist on the website**
 
----
-
 ###### Acceptance Criteria
 
 - Acceptance Criteria 1
-
-**Given** that I am a `Creator` user (member of the `Content Creator` group)
-
-**When** I select a DIY project from the DIY Projects list in the
-admin website page
-
-**Then** I can delete all the selected projects
-
+  **Given** that I am a `Register User`
+  **When** I select a DIY projectof my own from the DIY Projects list
+  **Then** I can delete the selected DIY Project
 - Acceptance Criteria 2
-
-**Given** that I am a `Creator` user (member of the `Content Creator` group)
-
-**When** I am modifying a DIY Project in admin website page
-
-**Then** I can delete the current DIY Project
-
+  **Given** that I am a `Register User`
+  **When** I am modifying my DIY Project in the website
+  **Then** I can delete the current DIY Project
 - Acceptance Criteria 3
-
-**Given** that I am a `Creator` user (member of the `Content Creator` group)
-
-**When** I have requested to delete one or more DIY projects
-
-**Then** I will have to explicitly confirm the deletion
+  **Given** that I am a `Register User`
+  **When** I have requested to delete one or more DIY projects of my own
+  **Then** I will have to explicitly confirm the deletion
 
 ###### Tasks
 
-Built in #23
+- [X] Task 1 - create a products/views.delete_product allow to query the deletion of the selected DIY Project from the database.
+- [X] Task 2 - Modify the products and product_detail templates to provide 'delete'  button to the user's own DIY projects.
 
-###### Story Points: 0
+###### Story Points: 3
 
-##### [#31](https://github.com/Juanma1313/DYS/issues/31) USER STORY: Delete component
+##### [#13](https://github.com/Juanma1313/diyshop/issues/13) USER STORY: Delete a owned Components
 
-As **content creator**, I can **delete a component**, so that
-**the component does no longer exist on the website**
-
----
+As **Registered User**, I can **delete a component**, so that **the component does no longer exist on the website**
 
 ###### Acceptance Criteria
 
 - Acceptance Criteria 1
-
-**Given** that I am a `Creator` user (member of the `Content Creator` group)
-
-**When** I am modifying a DIY Project (`Thing`)
-
-**Then** I can delete an existing DIY Component from the current DIY
-Project
-
+  **Given** that I am a `Registered User`
+  **When** I am viewing my DIY Components `Things`
+  **Then** I can delete an existing DIY Component
 - Acceptance Criteria 2
-
-**Given** that I am a `Creator` user (member of the `Content Creator` group)
-
-**When** I have requested to delete one or more DIY Components
-
-**Then** I will have to explicitly confirm the deletion
+  **Given** that I am a `Registered User`
+  **When** I have requested to delete one or more DIY Components
+  **Then** I will have to explicitly confirm the deletion
 
 ###### Tasks
 
-Built in #26
+Built in [#12](https://github.com/Juanma1313/diyshop/issues/12)
 
-###### Story Points: 0
+###### Story Points: 3
 
-##### [#32](https://github.com/Juanma1313/DYS/issues/32) USER STORY: Delete Instructions
+##### [#14](https://github.com/Juanma1313/diyshop/issues/14) USER STORY: Delete owned Instructions elements
 
-As **content creator**, I can **delete project instructions**,
-so that **those instructions do no longer exist on the website**
-
----
+As **Registered User**, I can **delete my Instructions elements**,
+so that **those Instructions elements do no longer exist on the website**
 
 ###### Acceptance Criteria
 
 - Acceptance Criteria 1
-
-**Given** that I am a `Creator` user (member of the `Content Creator` group)
-
-**When** I am modifying a DIY Project (`Thing`)
-
-**Then** I can delete an existing Instructions element from the
-current DIY Project
-
+  **Given** that I am a `Registered User`
+  **When** I am viewing my DIY Project (`Thing`)
+  **Then** I can delete an existing Instructions element from the
+  current DIY Project
 - Acceptance Criteria 2
-
-**Given** that I am a `Creator` user (member of the `Content Creator` group)
-
-**When** I have requested to delete one or more Instructions
-elements
-
-**Then** I will have to explicitly confirm the deletion
+  **Given** that I am a `Registered User`
+  **When** I have requested to delete one or more Instructions
+  elements
+  **Then** I will have to explicitly confirm the deletion
 
 ###### Tasks
 
-Built in #25
-
-###### Story Points: 0
-
-##### [#33](https://github.com/Juanma1313/DYS/issues/33) USER STORY: Change project Published status
-
-As **content creator**, I can **change a project published status
-**, so that **the project is available to users when marked as
-published or hidden when it is marked as draft**
-
----
-
-###### Acceptance Criteria
-
-- Acceptance Criteria 1
-
-**Given** that I am a `Creator` user (member of the `Content Creator` group)
-
-**When** I have selected one or more DIY Projects from the DIY
-projects list
-
-**Then** I can toggle the published flag `Status` so that the DIY
-Project can be shown or hidden from viewing users.
-
-###### Tasks
-
-- [X] Task 1 - Modify the DIY Project Admin view (`ThingAdmin`) to
-  update the `status` field
-- [X] Task 2 - Add `publish` and `set_as_draft` actions to the
-  DIY Project Admin view
+- [X] Task 1 - create a products/views.delete_instructions allowing to query the deletion of the selected Instructions element from the database.
+- [X] Task 2 - Modify the edit_Instructions, edit_product, and product_detail templates to provide 'delete' button to the user's own DIY projects.
 
 ###### Story Points: 5
 
-##### [#34](https://github.com/Juanma1313/DYS/issues/34) USER STORY: Change component published status
+##### [#15](https://github.com/Juanma1313/diyshop/issues/15) USER STORY: Change own DIY Project Published status
 
-As **content creator**, I can **change a component published
+As **Registered User**, I can **change my DIY Project published status
+**, so that **the DIY Project is available to other users when marked as
+`Published` or hidden when it is marked as `Draft`**
+
+###### Acceptance Criteria
+
+- Acceptance Criteria 1
+  **Given** That I am a `Registered User`
+  **When** I am creating or modifying a DIY Project
+  **Then** I can toggle the published flag `Status` so that the DIY Project can be shown or hidden from viewing users.
+
+###### Tasks
+
+Built in [#6](https://github.com/Juanma1313/diyshop/issues/6) and [#9](https://github.com/Juanma1313/diyshop/issues/9)
+
+###### Story Points: 0
+
+##### [#16](https://github.com/Juanma1313/diyshop/issues/16) USER STORY: Change own DIY Component published status
+
+As **Registered User**, I can **change my DIY Component published
 status**, so that **the component information is available to users
-when marked as published or hidden when it is marked as draft**
-
----
+when marked as `Published` or hidden when it is marked as `Draft`**
 
 ###### Acceptance Criteria
 
 - Acceptance Criteria 1
-
-**Given** that I am a `Creator` user (member of the `Content Creator` group)
-
-**When** I have selected a component from a DIY Project
-
-**Then** I can toggle the published flag `Status` so that this
-Component from the DIY Project can be shown or hidden from viewing
-users.
+  **Given** that I am a `Registered User`
+  **When** I am creating or modifying a DIY Component
+  **Then** I can toggle the published flag `Status` so that this
+  Component can be shown or hidden from viewing
+  users.
 
 ###### Tasks
 
-- [X] Task 1 - Modify the DIY Component Admin view
-  (`ComponentInLiner`) to update the `status` field
+Built in [#15](https://github.com/Juanma1313/diyshop/issues/15)
 
-###### Story Points: 1
+###### Story Points: 0
 
-#### [#41](https://github.com/Juanma1313/DYS/issues/41) EPIC: View DIY Projects
 
-As a **user**, I can **access the published DIY Projects**, so
-that **I can follow their instructions and replicate them**
 
-##### [#19](https://github.com/Juanma1313/DYS/issues/19) USER STORY: View list of published projects
+#### [#17](https://github.com/Juanma1313/diyshop/issues/17) EPIC: Searching DIY Projects
+As a **user**, I can **sort, filter and search for DIY projects**, to **better find the ones that suit me best**.
 
-As **user**, I can **view a list of published projects**, so
-that **I can choose what projects to view in detail**
+##### [#18](https://github.com/Juanma1313/diyshop/issues/18) USER STORY: Manage DIY Projects Categories
 
----
+As **Administrator**, I can **create/modify/delete categories to classify the DIY Projects in the database**, so that **users can filtrate DIY Projects by the categories of their interest**
 
 ###### Acceptance Criteria
 
 - Acceptance Criteria 1
-
-**Given** that I am a user
-
-**When** I am in any website page
-
-**Then** I can access the website home page clicking on the website
-logo or brand name
+  **Given** that I am a `Administrator`
+  **When** I want a new Category to classify DIY Projects
+  **Then** I can use the admin interface to add it to the list of Categories.
 
 - Acceptance Criteria 2
-
-**Given** that I am a user
-
-**When** I am in the home website page
-
-**Then** I can view the list of all the published DIY Projects
+  **Given** that I am a `Administrator`
+  **When** I create  a new Category
+  **Then** I assign an internal lowercase name to be used by the application, and a friendly name that will be shown in the webpage.
 
 - Acceptance Criteria 3
-
-**Given** The list of all the published DIY Projects is displayed
-
-**When** each DIY project is displayed
-
-**Then** The Title, featured pictured, author, published date and
-number of likes should be displayed
+  **Given** that I am a `Administrator`
+  **When** I need to modify a Category
+  **Then** I can use the admin interface to edit the internal and the friendly name.
 
 - Acceptance Criteria 4
+  **Given** that I am a `Administrator`
+  **When** I need to delete a Category
+  **Then** I can use the admin interface to delete the selected Category
 
-**Given** that I am a user
-
-**When** I select a DIY Projects from the DIY Project list
-
-**Then** I get redirected to the selected DIY Project details
-webpage
+- Acceptance Criteria 5
+  **Given** that I am a `Administrator`
+  **When** I have deleted a Category
+  **Then** The DIY Projects that had that Category, stays without Category.
 
 ###### Tasks
 
-- [X] Task 1 - Add a paginated list of DIY Published projects to the
-  index template
+- [X] Task 1 – Create product.Category class model that will be used to instantiate each Category object
+- [X] Task 2 – Modify the DIY Project object model 'Thing' to include the Category model 
+- [X] Task 3 – Create the admin.CategoryAdmin view to handle Category elements in the Admin user interface.
 
 ###### Story Points: 5
 
-##### [#20](https://github.com/Juanma1313/DYS/issues/20) USER STORY: View details of a DIY project
+##### [#19](https://github.com/Juanma1313/diyshop/issues/19) USER STORY: Filter DIY Projects by Categories
 
-As **user**, I can **Access the details of the selected DIY
-project**, so that **I can view the components and the
-instructions**
-
----
+As **user**, I can **filter DIY Projects by Categories**, so that **I can narrow down the DIY Projects I want to review based on categories of their interest**
 
 ###### Acceptance Criteria
 
 - Acceptance Criteria 1
-
-**Given** that I am a user
-
-**When** I am redirected to the DIY Project details website page
-
-**Then** I can view the DIY Project's Title, featured image, author,
-Published date, Description, number of components, number of
-Instructions, Number of likes, the components list and the Instructions
-list
-
-- Acceptance Criteria 2
-
-**Given** that I am a user
-
-**When** viewing the components list
-
-**Then** I can see each component's title, featured image, and
-description
-
-- Acceptance Criteria 3
-
-**Given** that I am a user
-
-**When** viewing the instructions list
-
-**Then** I can see each instruction's title, and its content
+  **Given** that I am a `user`
+  **When** I want to filter DIY Projects by categories
+  **Then** I can use the main navigation menu to select a particular filter
 
 ###### Tasks
 
-- [X] Task 1 - Create the Django view and controllers to handle DIY
-  details
-- [X] Task 2 - Create a template for the DIY Project details
-- [X] Task 3 - Add to the details template a presentation header with
-  all the DIY Project details
-- [X] Task 4 - Add to the details template a list of the components
-  related to the DIY Project
-- [X] Task 5 - Add to the details template a list of the instructions
-  related to the DIY Project
+- [X] Task 1 – Modify the main-nav template to displays a list of useful filtering options for one or several categories
+- [X] Task 2 – Modify the products/views.all_products view tu include the selected filter to the database query for the DIY Projects list. 
 
 ###### Story Points: 8
 
-##### [#21](https://github.com/Juanma1313/DYS/issues/21) USER STORY: View Components
+##### [#20](https://github.com/Juanma1313/diyshop/issues/20) USER STORY: Sorting DIY Projects
 
-As **user**, I can **select and view a project component**, so
-that **I can access the details of the component**
-
----
+As **user**, I can **use a predefined sorting option from the main-nav bar**, so that **I can view the list of DIY Projects in a particular order**
 
 ###### Acceptance Criteria
 
 - Acceptance Criteria 1
-
-**Given** that I am a user
-
-**When** in the DIY Project details webpage, and selecting a
-component from the components list
-
-**Then** if the component is also a DIY Project, I get redirected to
-this DIY Project detail website page
-
-###### Tasks
-
-- [X] Task 3 - In the DIY Project details template, add a link to its
-  DIY project detail for all the components related to the DIY Project and
-  are DIY Projects themselves.
-
-###### Story Points: 3
-
-#### [#38](https://github.com/Juanma1313/DYS/issues/38) EPIC: User registration
-
-As a **user**, I can **register myself on the website**, so that
-**hold my information about the website**
-
-##### [#12](https://github.com/Juanma1313/DYS/issues/12) USER STORY: Register an account
-
-As **anonymous user**, I can **register myself**, so that **I
-can select my favourite content**
-
----
-
-###### Acceptance Criteria
-
-- Acceptance Criteria 1
-
-**Given** that I am an `Anonymous` user (non registered)
-
-**When** I am in the sign-in website page
-
-**Then** I can access the sign-up page following the `sign up`
-link
+  **Given** that I am a `user`
+  **When** I want to sort DIY Projects by date
+  **Then** I can use the main navigation menu to select the new arrival to get the DIY Project list ordered from newer to older.
+  **Then** I can use the dropdown sorting menu to select the Date(new to old) or Date (old to new) to get the DIY Project list ordered as selected
 
 - Acceptance Criteria 2
-
-**Given** that I am an `Anonymous` user (non registered)
-
-**When** I am in any website page
-
-**Then** I can access the sign-up page selecting the sin-up option
-in the user menu
+  **Given** that I am a `user`
+  **When** I want to sort DIY Projects by price
+  **Then** I can use the main navigation menu to select the `By Price` option to get the DIY Project list ordered by price from lower to higher.
+  **Then** I can use the dropdown sorting menu to select the Price(low to high) or Price(high to low) to get the DIY Project list ordered as selected
 
 - Acceptance Criteria 3
-
-**Given** that I am a non `Anonymous` user (user already
-registered)
-
-**When** I am in the home page
-
-**Then** the `join us ...` link should not be available
+  **Given** that I am a `user`
+  **When** I want to sort DIY Projects by rating
+  **Then** I can use the main navigation menu to select the `By Rating` option to get the DIY Project list ordered by rating  from higher to lower.
+  **Then** I can use the dropdown sorting menu to select the Rating(low to high) or Rating(high to low) to get the DIY Project list ordered as selected
 
 - Acceptance Criteria 4
+  **Given** that I am a `user`
+  **When** I want to sort DIY Projects by Category
+  **Then** I can use the main navigation menu to select the `By Category` option to get the DIY Project list ordered by category from A to Z.
+  **Then** I can use the dropdown sorting menu to select the Category(A to Z) or Category(Z to A) to get the DIY Project list ordered as selected
 
-**Given** that I am in the sign-up webpage
+- Acceptance Criteria 5
+  **Given** that I am a `user`
+  **When** I want to sort DIY Projects by name
+  **Then** I can use the dropdown sorting menu to select the Name(A to Z) or Name(Z to A) to get the DIY Project list ordered as selected
 
-**When** I have entered a valid e-mail address and a valid password
-
-**Then** The new account is created
-
-###### Tasks
-
-- [X] Task 1 - Adapt Django's allauth accounts application to allow
-  user registration via email.
-- [X] Task 2 - Create the sign-up option menu in the user menu in the
-  base template
-
-###### Story Points: 3
-
-##### [#13](https://github.com/Juanma1313/DYS/issues/13) USER STORY: Validate e-mail
-
-As **user**, I can **validate my own e-mail**, so that **I can
-sign in the website**
-
----
-
-###### Acceptance Criteria
-
-- Acceptance Criteria 1
-
-**Given** that I am a new `Registered` user
-
-**When** I have created an account using the sign-up webpage
-
-**Then** an e-mail validation is sent to the new account e-mail
-address
-
-**Then** we will be redirected to a webpage with instructions on how
-to verify the e-mail Address.
-
-- Acceptance Criteria 2
-
-**Given** that I am a new `Registered` user that has received an
-e-mail verification e-mail
-
-**When** I follow the link contained in the e-mail verification
-e-mail
-
-**Then** I will be directed to the `confirm-Email` webpage
-
-- Acceptance Criteria 3
-
-**Given** that I am a new `Registered` user redirected to the
-`confirm-Email` webpage
-
-**When** I click the confirm button
-
-**Then** the e-mail is confirmed
-
-**Then** I am redirected to the sign-in webpage
 
 ###### Tasks
 
-- [X] Task 1 - Create an e-mail account for Django's automated e-mail
-  (on Gmail, Yahoo, etc)
-- [X] Task 1 - Adapt Django's allauth accounts application to allow
-  e-mail validation.
-
-###### Story Points: 3
-
-##### [#14](https://github.com/Juanma1313/DYS/issues/14) USER STORY: Sign in
-
-As **user**, I can **sign on the website**, so that **I can
-mark my favourite content**
-
----
-
-###### Acceptance Criteria
-
-- Acceptance Criteria 1
-
-**Given** that I am a `Registered` user not logged in
-
-**When** I am in any website page
-
-**Then** I can access the sign-in web page selecting the `sign in`
-option in the user menu
-
-- Acceptance Criteria 2
-
-**Given** that I am a `Registered` user not logged in
-
-**When** I am in the home page
-
-**Then** I can access the sign-in web page following the `join us ...` link
-
-- Acceptance Criteria 3
-
-**Given** that I am in the sign-in webpage
-
-**When** I have entered a valid e-mail address and a valid password
-
-**Then** I become logged in the website
-
-**Then** The user menu button should contain my username
-
-- Acceptance Criteria 4
-
-**Given** that I am a user not logged in
-
-**When** I am in any website page
-
-**Then** The user menu button should contain `Anonymous`
-
-###### Tasks
-
-- [X] Task 1 - Adapt Django's allauth accounts application to allow
-  user sign-in via email.
-- [X] Task 2 - Create the `sign in` option menu in the user menu in
-  the base template
-
-###### Story Points: 3
-
-##### [#15](https://github.com/Juanma1313/DYS/issues/15) USER STORY: Change e-mail
-
-As **user**, I can **change my own e-mail address**, so that
-**I can sign in on the website with new e-mail address**
-
----
-
-###### Acceptance Criteria
-
-- Acceptance Criteria 1
-
-**Given** that I am a `Registered` user
-
-**When** I am in any website page
-
-**Then** I can access the E-mail web page selecting the `E-mail`
-option in the user menu
-
-- Acceptance Criteria 2
-
-**Given** that I am in the e-mail webpage
-
-**When** I fill the email field with a valid e-mail address and use
-the button `Add Email`
-
-**Then** The e-mail address is added to user's list of addresses
-
-- Acceptance Criteria 3
-
-**Given** that I am in the e-mail webpage and I have more than one
-e-mail addresses
-
-**When** I select an e-mail address from the list and use the button
-`Make Primary`
-
-**Then** The selected e-mail address will be the new `Primary`
-that will be used for sign-in
-
-###### Tasks
-
-- [X] Task 1 - Adapt Django's allauth accounts application to allow
-  users to manage their e-mail addresses.
-
-###### Story Points: 1
-
-##### [#16](https://github.com/Juanma1313/DYS/issues/16) USER STORY: Delete own account
-
-As **user**, I can **Delete my own account**, so that **I can
-erase my information from the website**
-
-Note: This user story is not included in the [DIY Site
-Backlog](https://github.com/Juanma1313/dys/milestone/1) iteration.
-
-##### [#17](https://github.com/Juanma1313/DYS/issues/17) USER STORY: Administrate users
-
-As **Administrator**, I can **Create/modify/delete user accounts
-and their privileges**, so that **I can assign who signs in on the
-website and who can create or modify content**
-
----
-
-###### Acceptance Criteria
-
-- Acceptance Criteria 1
-
-**Given** that I am an `Administrator` user
-
-**When** I am in any website page
-
-**Then** I can access the admin web page selecting the `Admin`
-option in the user menu
-
-- Acceptance Criteria 2
-
-**Given** that I am an `Administrator` user
-
-**When** I am in admin website page
-
-**Then** I can add/delete/modify any user
-
-- Acceptance Criteria 2
-
-**Given** that I am an `Administrator` user
-
-**When** I am in admin website page
-
-**Then** I can add/delete/modify any user group
-
-- Acceptance Criteria 2
-
-**Given** that I am an `Administrator` user
-
-**When** I am in admin website page
-
-**Then** I can add/delete/modify any privilege of any user and any
-group
-
-- Acceptance Criteria 3
-
-**Given** that I am an `Administrator` user
-
-**When** I am in admin website page
-
-**Then** I can add/delete/modify any privilege of any user and any
-group
-
-###### Tasks
-
-- [X] Task 1 - Install and setup Django's allauth and its accounts
-  and interfaces, extensions.
-- [X] Task 2 - Create at least one administrator account
-- [X] Task 3 - Customize allauth templates to the website base
-  template
-- [X] Task 4 - Create `Content Creators` user group with necessary
-  privileges for content creators
+- [X] Task 1 – Modify the main-nav template to displays the list of useful ordering options
+- [X] Task 2 – Modify the products template include a dropdown list of the required ordering options
+- [X] Task 3 – Modify the products/views.all_products view tu include the selected ordering to the database query for the DIY Projects list. 
 
 ###### Story Points: 8
 
-##### [#18](https://github.com/Juanma1313/DYS/issues/18) USER STORY: Reset/Change password
+##### [#21](https://github.com/Juanma1313/diyshop/issues/21) USER STORY: Searching DIY Projects with text
 
-As **user**, I can **Reset and change my own password**, so that
-**I can recover my account if I forget my password or enforce security
-to my account**
-
----
+As **user**, I can **search a text in DIY Projects**, so that **I can get a list of the DIY Projects containing the submitted text**
 
 ###### Acceptance Criteria
 
 - Acceptance Criteria 1
-
-**Given** that I am in the sign-in webpage
-
-**When** following the link `Forgot your password?'
-
-**Then** I get redirected to the Password/reset webpage
-
-- Acceptance Criteria 2
-
-**Given** that I am in the Password/reset webpage
-
-**When** I fill my user e-mail address and use the `Reset My Password` button
-
-**Then** a password reset e-mail is sent to the e-mail address
-
-**Then** we will be redirected to a webpage with instructions on how
-to reset the password.
-
-- Acceptance Criteria 3
-
-**Given** that I am a Registered user that has received a password
-reset e-mail
-
-**When** I follow the link contained in the password reset e-mail
-
-**Then** I will be redirected to the change password webpage
-
-- Acceptance Criteria 4
-
-**Given** that I am a Registered user that has been redirected to
-the change password webpage
-
-**When** I fill in a valid password
-
-**Then** The account password will be changed to the new password
-
-**Then** I will be redirected to the change password done webpage
+  **Given** that I am a `user`
+  **When** I want to search DIY Projects for specific text
+  **Then** I can write the text to search and i will get a list of DIY Projects that contain the text in the name or the description
 
 ###### Tasks
 
-- [X] Task 1 - Adapt Django's allauth accounts application to allow
-  user password reset.
+- [X] Task 1 – Add a text search control to the base template
+- [X] Task 2 – Modify the products/views.all_products view tu include the selected text to the database query for the DIY Projects list. 
 
-###### Story Points: 1
+###### Story Points: 8
 
-##### [#22](https://github.com/Juanma1313/DYS/issues/22) USER STORY: Mark a project as favourite
 
-As **a registered user**, I can **mark a project as favourite**,
-so that **I can keep a collection of favourite projects and the
-projects get rated**
 
----
+
+
+#### [#22](https://github.com/Juanma1313/diyshop/issues/22) EPIC: User Shopping Cart
+As a **user**, I can **add DIY Project to my shopping cart**, to **be able to keep track of the added items and costs**.
+
+##### [#23](https://github.com/Juanma1313/diyshop/issues/23) USER STORY: add Projects to the shopping cart
+
+As **User**, I can **add a Non Free DIY Proyect to my cart**, so that **I can keep track of my selections and my costs**
 
 ###### Acceptance Criteria
 
 - Acceptance Criteria 1
-
-**Given** that I am a signed-in user
-
-**When** I am viewing a DIY Project details
-
-**Then** I can click on the favourite icon to toggle the current DIY
-Project as favourite for me.
+  **Given** that I am a `User`
+  **When** I am in a DIY project details page of a non free DIY Project
+  **Then** I can use the `+` or `-` buttons to adjust the number of kits I want to add to my shopping cart (Shopping Bag).
+  **Then** I can use the `Add To Bag` button to add the selected numberof DIY project kits to my shopping cart (Shopping Bag)..
 
 ###### Tasks
 
-- [X] Task 1 - Modify the DIY Project class model to handle DIY
-  likes.
-- [X] Task 2 - Create the Django view and controllers to handle DIY
-  likes
-- [X] Task 3 - Modify DIY Project detail template to handle DIY likes
+- [X] Task 1 – Create the bag application
+- [X] Task 2 – Create the session store mecanism to hold the shopping items added
+- [X] Task 3 – Create the bag/views.add_to_bag view to allow for the shopping items to be added 
+- [X] Task 4 – modify the base template to include the shopping cart icon
+
+###### Story Points: 13
+
+##### [#24](https://github.com/Juanma1313/diyshop/issues/24) USER STORY: view the shopping cart content
+
+As **User**, I can **see all the shopping items I currently have in my shipping cart**, so that **I can keep track of my selections and my costs**
+
+###### Acceptance Criteria
+
+- Acceptance Criteria 1
+  **Given** that I am a `User`
+  **When** I am in any web shop page
+  **Then** I can click the shopping bag icon to bring the shopping bag details page.
+
+###### Tasks
+
+- [X] Task 1 – Create the bag/views.view_bag view to allow for the shopping items in the shopping cart to be displayed
+- [X] Task 2 – Create the bag template to display the items and totals
+
 
 ###### Story Points: 5
+
+##### [#25](https://github.com/Juanma1313/diyshop/issues/25) USER STORY: manage shopping items in the shopping cart
+
+As **User**, I can **increment/decrement number of shopping items I currently have in my shipping cart**, so that **I can adjust my selections and my costs**
+
+###### Acceptance Criteria
+
+- Acceptance Criteria 1
+  **Given** that I am a `User`
+  **When** I am in the shopping bag view detail page
+  **Then** I can use the `+` or `-` buttons for any shopping item to adjust the number of that item I want to keep in my shopping cart.
+  **Then** I can use the `Update` button to update the number of items in the shopping cart.
+  **Then** I can use the `Remove` button to permanently delete that item from the shopping cart.
+
+###### Tasks
+
+- [X] Task 3 – Create the bag/views.adjust_bag view to allow for the shopping cart content be modified 
+- [X] Task 1 – modify the bag template to include counter, update and remove options per each item in the shopping cart
+
+###### Story Points: 8
+
+
+[EPIC: User product checkout]()
+
+[EPIC: Messages and notifications]()
+
+[EPIC: Social Media and marketing]()
+
+[EPIC: Production deployment]()
+
 
 #### Web Site Sketches
 
@@ -2516,7 +1965,7 @@ first clonning the repository could be a better choice.
 Creating a clone enables you to make a copy of the repository allowing
 you to run the application in your local development environment:
 
-1. Navigate to [This repository](https://github.com/Juanma1313/dys)
+1. Navigate to [This repository](https://github.com/Juanma1313/diyshop)
 2. click on the arrow on the green ‘code’ button at the top of the list
    of files
 3. select the ‘HTTP’ option to clone using the web URL and copy the URL

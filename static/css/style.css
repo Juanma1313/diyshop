@@ -419,7 +419,7 @@ a.category-badge > span.badge:hover {
         z-index: 1030;
     }
     .header-container {
-        padding-top: 100px;
+        padding-top: 120px;
     }    
     .carousel-inner .carousel-item-end.active,
     .carousel-inner .carousel-item-next {
