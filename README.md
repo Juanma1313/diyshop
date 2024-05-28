@@ -1,38 +1,28 @@
-# ![DIY Site logo](static/diy-logo.png) **DIY Site**
-
----
+# ![DIY Site logo](static/diy-logo.png) **DIY Shop**
 
 # Introduction
 
-The DIY site is intended to be a repository of small-scale construction
-projects, designed so that anyone can carry them out by following the
+The DIY site, as a first stage,  was intended to be a repository of small-scale construction projects, designed so that anyone can carry them out by following the
 instructions posted on the repository in a genuine Do-It-Yourself style.
 
-In the first phase of implementation, people of any age and skill level
-can explore the projects named "Things" that are publicly presented in
-this repository and use the project instructions to replicate them. The
-contents of the projects (things) are entered into the repository by the
-creators who require private access with certain privileges, assigned by
-an administrator, in order to access the repository management system.
+The DIY Shop, as the second stage, implementes a fully functional E-Commerce solution that allows users tu upload/download/manage their own content, allowing the owner to sell the parts and materials that users may need to acomplice the published DIY Projects.
 
 Public access to this website can be made completely anonymous, allowing
 the users to browse the entire published repository, and encouraging
 them to register on a permanent basis, which will also allow users to
 mark which projects are their favourites.
 
-In this second fase, we expand the initial implementation to include
-E-Commerce functionality, including features like user profiles, shopping
-kart, online payment, e-mail confirmation, allow users to add content
-trough website pages, sofisticated message notification for the user,
-product search capabilities, product navigation using categories, links to
-Facebookbusines page and newsleter subscription.
+In the first stage of implementation, people of any age and skill level
+could explore the projects named "Things" that are publicly presented in
+this repository, and use the DIY project published instructions to replicate them. The contents of the projects (things) were uploaded into the repository by the
+creator users whom require private access with certain privileges, assigned by
+an administrator, in order to access the repository management system.
 
-From a technical standpoint, this site is implemented in Python,
-JavaScript, HTML and CSS languages, on the Django framework and using
-MVC design. It includes user authentication, email validation and full
-CRUD functionality to manage the content of the repository.
+In this second fase, we expand the initial implementation to include E-Commerce functionality, including features like user profiles, shopping kart, online payment, e-mail confirmation, allow users to add content trough website pages, sofisticated message notification for the user, product search capabilities, product navigation using categories, links to Facebookbusines page and newsleter subscription.
 
-Access the website  [DIY Site](https://diyshop-e5a99a0c89cb.herokuapp.com/) Deployed on Heroku service
+From a technical standpoint, this site is implemented in Python, JavaScript, HTML and CSS languages, on the Django framework and using MVC design. It includes user authentication, email validation and full CRUD functionality to manage the content of the repository.
+
+Access the website  [DIY Shop](https://diyshop-e5a99a0c89cb.herokuapp.com/) Deployed on Heroku service
 
 # Table of Contents
 
@@ -116,37 +106,37 @@ There are four types of users segregated by their role and purpose.
 The following are the customer requirements that are part of the user
 stories list for the initial delivery iteration backlog.
 
-|      |       |                                               |           |         |         |       |
-| ---- | ----- | --------------------------------------------- | --------- | ------- | ------- | ----- |
-| Epic | Story | Requirements for users                        | Anonymous | Regular | Creator | Admin |
-| 38   | 12    | Register an account using e-mail and password | x         |         |         |       |
-| 38   | 13    | Validate own e-mail                           |           | x       | x       | x     |
-| 38   | 14    | Login in main page with e-mail and password   | x         | x       | x       | x     |
-| 38   | 15    | Change e-mail                                 |           | x       | x       | x     |
-| 38   | 16    | Delete own e-mail account                     |           |         | x       | x     |
-| 37   | 17    | Register own account using user and password  |           |         |         | x     |
-| 37   | 17    | Login in admin page with user and password    |           |         | x       | x     |
-| 37   | 17    | Change own user data (name, lastname)         |           |         | x       | x     |
-| 38   | 18    | Change own password                           |           | x       | x       | x     |
-| 37   | 17    | Delete own user-account                       |           |         |         | x     |
-| 38   | 35    | Sign out/log out                              |           | x       | x       | x     |
-| 37   | 17    | Administrate users and password               |           |         |         | x     |
-| 41   | 19    | view list of published DIY projects           | x         | x       | x       | x     |
-| 41   | 20    | View details of a published DIY project       | x         | x       | x       | x     |
-| 41   | 21    | View published components of a DIY project    | x         | x       | x       | x     |
-| 41   | 20    | View instructions of a DIY project            | x         | x       | x       | x     |
-| 38   | 22    | Mark a DIY project as own favourite           |           | x       | x       | x     |
-| 39   | 23/24 | Create a DIY project and its details          |           |         | x       | x     |
-| 39   | 26    | Create components (DIY subprojects)           |           |         | x       | x     |
-| 39   | 25    | Create instructions                           |           |         | x       | x     |
-| 39   | 27    | Modify a DIY project and its details          |           |         | x       | x     |
-| 39   | 28    | Modify a component and its details            |           |         | x       | x     |
-| 39   | 29    | Modify the instructions of a DIY project      |           |         | x       | x     |
-| 39   | 30    | Delete a DIY project and its details          |           |         | x       | x     |
-| 39   | 31    | Delete a component                            |           |         | x       | x     |
-| 39   | 32    | Delete instructions                           |           |         | x       | x     |
-| 39   | 33    | Change state published/Draft a DIY project    |           |         | x       | x     |
-| 39   | 34    | Change state published/Draft a component      |           |         | x       | x     |
+|                                                 |       |                                               |           |         |         |       |
+| ----------------------------------------------- | ----- | --------------------------------------------- | --------- | ------- | ------- | ----- |
+| Epic                                            | Story | Requirements for users                        | Anonymous | Regular | Creator | Admin |
+| [#38](https://github.com/Juanma1313/DYS/issues/38) | 12    | Register an account using e-mail and password | x         |         |         |       |
+| [#38](https://github.com/Juanma1313/DYS/issues/38) | 13    | Validate own e-mail                           |           | x       | x       | x     |
+| [#38](https://github.com/Juanma1313/DYS/issues/38) | 14    | Login in main page with e-mail and password   | x         | x       | x       | x     |
+| [#38](https://github.com/Juanma1313/DYS/issues/38) | 15    | Change e-mail                                 |           | x       | x       | x     |
+| [#38](https://github.com/Juanma1313/DYS/issues/38) | 16    | Delete own e-mail account                     |           |         | x       | x     |
+| [#37](https://github.com/Juanma1313/DYS/issues/37) | 17    | Register own account using user and password  |           |         |         | x     |
+| [#37](https://github.com/Juanma1313/DYS/issues/37) | 17    | Login in admin page with user and password    |           |         | x       | x     |
+| [#37](https://github.com/Juanma1313/DYS/issues/37) | 17    | Change own user data (name, lastname)         |           |         | x       | x     |
+| [#38](https://github.com/Juanma1313/DYS/issues/38) | 18    | Change own password                           |           | x       | x       | x     |
+| [#37](https://github.com/Juanma1313/DYS/issues/37) | 17    | Delete own user-account                       |           |         |         | x     |
+| [#38](https://github.com/Juanma1313/DYS/issues/38) | 35    | Sign out/log out                              |           | x       | x       | x     |
+| [#37](https://github.com/Juanma1313/DYS/issues/37) | 17    | Administrate users and password               |           |         |         | x     |
+| [#41](https://github.com/Juanma1313/DYS/issues/41) | 19    | view list of published DIY projects           | x         | x       | x       | x     |
+| [#41](https://github.com/Juanma1313/DYS/issues/41) | 20    | View details of a published DIY project       | x         | x       | x       | x     |
+| [#41](https://github.com/Juanma1313/DYS/issues/41) | 21    | View published components of a DIY project    | x         | x       | x       | x     |
+| [#41](https://github.com/Juanma1313/DYS/issues/41) | 20    | View instructions of a DIY project            | x         | x       | x       | x     |
+| [#38](https://github.com/Juanma1313/DYS/issues/38) | 22    | Mark a DIY project as own favourite           |           | x       | x       | x     |
+| [#39](https://github.com/Juanma1313/DYS/issues/39) | 23/24 | Create a DIY project and its details          |           |         | x       | x     |
+| [#39](https://github.com/Juanma1313/DYS/issues/39) | 26    | Create components (DIY subprojects)           |           |         | x       | x     |
+| [#39](https://github.com/Juanma1313/DYS/issues/39) | 25    | Create instructions                           |           |         | x       | x     |
+| [#39](https://github.com/Juanma1313/DYS/issues/39) | 27    | Modify a DIY project and its details          |           |         | x       | x     |
+| [#39](https://github.com/Juanma1313/DYS/issues/39) | 28    | Modify a component and its details            |           |         | x       | x     |
+| [#39](https://github.com/Juanma1313/DYS/issues/39) | 29    | Modify the instructions of a DIY project      |           |         | x       | x     |
+| [#39](https://github.com/Juanma1313/DYS/issues/39) | 30    | Delete a DIY project and its details          |           |         | x       | x     |
+| [#39](https://github.com/Juanma1313/DYS/issues/39) | 31    | Delete a component                            |           |         | x       | x     |
+| [#39](https://github.com/Juanma1313/DYS/issues/39) | 32    | Delete instructions                           |           |         | x       | x     |
+| [#39](https://github.com/Juanma1313/DYS/issues/39) | 33    | Change state published/Draft a DIY project    |           |         | x       | x     |
+| [#39](https://github.com/Juanma1313/DYS/issues/39) | 34    | Change state published/Draft a component      |           |         | x       | x     |
 
 #### Other requirements
 
@@ -167,9 +157,7 @@ GitHub
 
 The project should be develop under Agile methodology.
 
-
 ### Customer requirements for users for second sprint
-
 
 ### Development plan
 
