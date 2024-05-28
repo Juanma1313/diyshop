@@ -173,7 +173,7 @@ The project should be develop under Agile methodology.
 
 [Development plan for first stage (DIY Site)](https://github.com/Juanma1313/diyshop#development-plan)
 
-Following the same guidelines applied in the first stage, the development must be managed under the agile methodology.
+Following the same guidelines applied to the first stage, the development must be managed under the agile methodology.
 ***Epics***, and their corresponding ***user stories*** must be defined and, when needed, meet a consensus between the developers and the project owner through agreed acceptance criteria. Also, from a more technical point of view, development tasks and their corresponding ***story points*** are defined in order to better evaluate the development effort.
 The following information lists all these issues. Please follow the links to access the full information stored on github.
 
@@ -206,14 +206,19 @@ As **Administrator**, I can **Create/modify/delete user accounts and their privi
 ###### Acceptance Criteria
 
 - Acceptance Criteria 1
+
   **Given** that I am an `Administrator` user
   **When** I am in any website page
   **Then** I can access the admin web page selecting the `Admin` option in the user menu
+
 - Acceptance Criteria 2
+
   **Given** that I am an `Administrator` user
   **When** I am in admin website page
   **Then** I can add/delete/modify any user
+
 - Acceptance Criteria 3
+
   **Given** that I am an `Administrator` user
   **When** I am in admin website page
   **Then** I can add/delete/modify any privilege of any user and any group
@@ -238,14 +243,19 @@ As **registered user**, I can **Create a DIY project**, so that **I can publish 
 ###### Acceptance Criteria
 
 - Acceptance Criteria 1
+
   **Given** that I am a `Registered User`
   **When** I am in any website page
   **Then** I can access the `Add Project` option in the user menu
+
 - Acceptance Criteria 2
+
   **Given** that I am a `Registered User`
   **When** I click on the `Add Project`option in the user menu
   **Then** I can create a new DIY Project
+
 - Acceptance Criteria 3
+
   **Given** that I am a `Registered User`
   **When** I have created a new DIY Project
   **Then** The Created date, Modified_Date and Parent fields are
@@ -266,14 +276,19 @@ As **Registered User**, I can **create the DIY project details**, so that **proj
 ###### Acceptance Criteria
 
 - Acceptance Criteria 1
+
   **Given** that I am a `Registered User`
   **When** I have created a new DIY Project (`Thing`)
   **Then** I can assign a Title, Status, and Featured Image
+
 - Acceptance Criteria 2
+
   **Given** that I am a `Registered User`
   **When** I have created a new DIY Project (`Thing`)
   **Then** I can edit a WSWG document to the description
+
 - Acceptance Criteria 3
+
   **Given** that I am a `Registered User`
   **When** I have created a new DIY Project (`Thing`)
   **Then** I need to use a Save button to permanently store the changes in the database
@@ -293,14 +308,19 @@ As **Registered User**, I can **create project instructions for my DIY Projects*
 ###### Acceptance Criteria
 
 - Acceptance Criteria 1
+
   **Given** that I am a `Registered User`
   **When** I am in any website page
   **Then** I can access the `Add Instructions` option in the user menu
+
 - Acceptance Criteria 2
+
   **Given** that I am a `Registered User`
   **When** I click on the `Add Instructions` option in the user menu
   **Then** I can create a new `Instructions` element
+
 - Acceptance Criteria 3
+
   **Given** that I am a `Registered User`
   **When** I have created a new `Instructions` element
   **Then** I must assign the `Instructions` element to one of my existing DIY Projects
@@ -321,6 +341,7 @@ As **Registered User**, I can **create components for my DIY Projects**, so that
 ###### Acceptance Criteria
 
 - Acceptance Criteria 1
+
   **Given** that I am a `Registered User`
   **When** I have created a DIY Project (`Thing`)
   **Then** I can assign it to any of my existing DIY Project
@@ -338,14 +359,19 @@ As **Registered User**, I can **modify the DIY project details**, so that **the 
 ###### Acceptance Criteria
 
 - Acceptance Criteria 1
+
   **Given** that I am a `Registered User`
   **When** I am viewing my  DIY Project (Thing)
   **Then** I can use a button to bring a  page to modify my DIY Project
+
 - Acceptance Criteria 2
+
   **Given** that I am a `Registered User`
   **When** I am modifying my DIY Project (Thing)
   **Then** I can change the Title, Author, Status, and Featured Image
+
 - Acceptance Criteria 3
+
   **Given** that I am a `Registered User`
   **When** I am modifying my DIY Project (Thing)
   **Then** I can edit a WSWG document to the description
@@ -364,14 +390,19 @@ As **Registered User**, I can **modify my component's details**, so that **my co
 ###### Acceptance Criteria
 
 - Acceptance Criteria 1
+
   **Given** that I am a `Registered User`
   **When** I am viewing one of my Components (`Thing`)
   **Then** I can select a `edit` button to change the details
+
 - Acceptance Criteria 2
+
   **Given** that I am a `Registered User`
   **When** I am modifying my Component (`Thing`)
   **Then** I can edit the description with a WSWG built-in editor
-- Acceptance Criteria
+
+- Acceptance Criteria 3
+
   **Given** that I am a `Registered User`
   **When** I am modifying my DIY Project (`Thing`)
   **Then** I must use a `Save` button to permanently store the changes in the database
@@ -389,14 +420,19 @@ As **Registered User**, I can **modify my Instructions elements**, so that **the
 ###### Acceptance Criteria
 
 - Acceptance Criteria 1
+
   **Given** that I am a `Registered User`
   **When** I am viewing a DIY Project (`Thing`)
   **Then** I can select the `edit`button of the Instructions element to change the Instructions
+
 - Acceptance Criteria 2
+
   **Given** that I am a `Registered User`
   **When** I am modifying an Instructions element
   **Then** I can change the content of Instructions with a WSWG built-in editor
+
 - Acceptance Criteria 3
+
   **Given** that I am a `Registered User`
   **When** I am modifying an Instructions element
   **Then** I must use a `Save` button to permanently store the changes in the database
@@ -410,27 +446,31 @@ As **Registered User**, I can **modify my Instructions elements**, so that **the
 
 ##### [#12](https://github.com/Juanma1313/diyshop/issues/12) USER STORY: Delete a project
 
-As **Register User**, I can **delete my DIY project**, so that
-**the project does no longer exist on the website**
+As **Registered User**, I can **delete my DIY project**, so that **the project does no longer exist on the website**
 
 ###### Acceptance Criteria
 
 - Acceptance Criteria 1
+
   **Given** that I am a `Register User`
-  **When** I select a DIY projectof my own from the DIY Projects list
+  **When** I select a DIY project of my own from the DIY Projects list
   **Then** I can delete the selected DIY Project
+
 - Acceptance Criteria 2
+
   **Given** that I am a `Register User`
-  **When** I am modifying my DIY Project in the website
+  **When** I am modifying my DIY Project on the website
   **Then** I can delete the current DIY Project
+
 - Acceptance Criteria 3
+
   **Given** that I am a `Register User`
   **When** I have requested to delete one or more DIY projects of my own
   **Then** I will have to explicitly confirm the deletion
 
 ###### Tasks
 
-- [X] Task 1 - create a products/views.delete_product allow to query the deletion of the selected DIY Project from the database.
+- [X] Task 1 - create a products/views.delete_product to allow querying the deletion of the selected DIY Project from the database.
 - [X] Task 2 - Modify the products and product_detail templates to provide 'delete'  button to the user's own DIY projects.
 
 ###### Story Points: 3
@@ -442,10 +482,13 @@ As **Registered User**, I can **delete a component**, so that **the component do
 ###### Acceptance Criteria
 
 - Acceptance Criteria 1
+
   **Given** that I am a `Registered User`
   **When** I am viewing my DIY Components `Things`
   **Then** I can delete an existing DIY Component
+
 - Acceptance Criteria 2
+
   **Given** that I am a `Registered User`
   **When** I have requested to delete one or more DIY Components
   **Then** I will have to explicitly confirm the deletion
@@ -464,11 +507,14 @@ so that **those Instructions elements do no longer exist on the website**
 ###### Acceptance Criteria
 
 - Acceptance Criteria 1
+
   **Given** that I am a `Registered User`
   **When** I am viewing my DIY Project (`Thing`)
   **Then** I can delete an existing Instructions element from the
   current DIY Project
+
 - Acceptance Criteria 2
+
   **Given** that I am a `Registered User`
   **When** I have requested to delete one or more Instructions
   elements
@@ -490,6 +536,7 @@ As **Registered User**, I can **change my DIY Project published status
 ###### Acceptance Criteria
 
 - Acceptance Criteria 1
+
   **Given** That I am a `Registered User`
   **When** I am creating or modifying a DIY Project
   **Then** I can toggle the published flag `Status` so that the DIY Project can be shown or hidden from viewing users.
@@ -509,6 +556,7 @@ when marked as `Published` or hidden when it is marked as `Draft`**
 ###### Acceptance Criteria
 
 - Acceptance Criteria 1
+
   **Given** that I am a `Registered User`
   **When** I am creating or modifying a DIY Component
   **Then** I can toggle the published flag `Status` so that this
@@ -533,26 +581,31 @@ As **Administrator**, I can **create/modify/delete categories to classify the DI
 ###### Acceptance Criteria
 
 - Acceptance Criteria 1
+
   **Given** that I am a `Administrator`
   **When** I want a new Category to classify DIY Projects
   **Then** I can use the admin interface to add it to the list of Categories.
 
 - Acceptance Criteria 2
+
   **Given** that I am a `Administrator`
   **When** I create  a new Category
   **Then** I assign an internal lowercase name to be used by the application, and a friendly name that will be shown in the webpage.
 
 - Acceptance Criteria 3
+
   **Given** that I am a `Administrator`
   **When** I need to modify a Category
   **Then** I can use the admin interface to edit the internal and the friendly name.
 
 - Acceptance Criteria 4
+
   **Given** that I am a `Administrator`
   **When** I need to delete a Category
   **Then** I can use the admin interface to delete the selected Category
 
 - Acceptance Criteria 5
+
   **Given** that I am a `Administrator`
   **When** I have deleted a Category
   **Then** The DIY Projects that had that Category, stays without Category.
@@ -572,6 +625,7 @@ As **user**, I can **filter DIY Projects by Categories**, so that **I can narrow
 ###### Acceptance Criteria
 
 - Acceptance Criteria 1
+
   **Given** that I am a `user`
   **When** I want to filter DIY Projects by categories
   **Then** I can use the main navigation menu to select a particular filter
@@ -590,30 +644,35 @@ As **user**, I can **use a predefined sorting option from the main-nav bar**, so
 ###### Acceptance Criteria
 
 - Acceptance Criteria 1
+
   **Given** that I am a `user`
   **When** I want to sort DIY Projects by date
   **Then** I can use the main navigation menu to select the new arrival to get the DIY Project list ordered from newer to older.
   **Then** I can use the dropdown sorting menu to select the Date(new to old) or Date (old to new) to get the DIY Project list ordered as selected
 
 - Acceptance Criteria 2
+
   **Given** that I am a `user`
   **When** I want to sort DIY Projects by price
   **Then** I can use the main navigation menu to select the `By Price` option to get the DIY Project list ordered by price from lower to higher.
   **Then** I can use the dropdown sorting menu to select the Price(low to high) or Price(high to low) to get the DIY Project list ordered as selected
 
 - Acceptance Criteria 3
+
   **Given** that I am a `user`
   **When** I want to sort DIY Projects by rating
   **Then** I can use the main navigation menu to select the `By Rating` option to get the DIY Project list ordered by rating  from higher to lower.
   **Then** I can use the dropdown sorting menu to select the Rating(low to high) or Rating(high to low) to get the DIY Project list ordered as selected
 
 - Acceptance Criteria 4
+
   **Given** that I am a `user`
   **When** I want to sort DIY Projects by Category
   **Then** I can use the main navigation menu to select the `By Category` option to get the DIY Project list ordered by category from A to Z.
   **Then** I can use the dropdown sorting menu to select the Category(A to Z) or Category(Z to A) to get the DIY Project list ordered as selected
 
 - Acceptance Criteria 5
+
   **Given** that I am a `user`
   **When** I want to sort DIY Projects by name
   **Then** I can use the dropdown sorting menu to select the Name(A to Z) or Name(Z to A) to get the DIY Project list ordered as selected
@@ -634,6 +693,7 @@ As **user**, I can **search a text in DIY Projects**, so that **I can get a list
 ###### Acceptance Criteria
 
 - Acceptance Criteria 1
+
   **Given** that I am a `user`
   **When** I want to search DIY Projects for specific text
   **Then** I can write the text to search and i will get a list of DIY Projects that contain the text in the name or the description
@@ -645,10 +705,6 @@ As **user**, I can **search a text in DIY Projects**, so that **I can get a list
 
 ###### Story Points: 8
 
-
-
-
-
 #### [#22](https://github.com/Juanma1313/diyshop/issues/22) EPIC: User Shopping Cart
 As a **user**, I can **add DIY Project to my shopping cart**, to **be able to keep track of the added items and costs**.
 
@@ -659,6 +715,7 @@ As **User**, I can **add a Non Free DIY Proyect to my cart**, so that **I can ke
 ###### Acceptance Criteria
 
 - Acceptance Criteria 1
+
   **Given** that I am a `User`
   **When** I am in a DIY project details page of a non free DIY Project
   **Then** I can use the `+` or `-` buttons to adjust the number of kits I want to add to my shopping cart (Shopping Bag).
@@ -680,6 +737,7 @@ As **User**, I can **see all the shopping items I currently have in my shipping 
 ###### Acceptance Criteria
 
 - Acceptance Criteria 1
+
   **Given** that I am a `User`
   **When** I am in any web shop page
   **Then** I can click the shopping bag icon to bring the shopping bag details page.
@@ -699,6 +757,7 @@ As **User**, I can **increment/decrement number of shopping items I currently ha
 ###### Acceptance Criteria
 
 - Acceptance Criteria 1
+
   **Given** that I am a `User`
   **When** I am in the shopping bag view detail page
   **Then** I can use the `+` or `-` buttons for any shopping item to adjust the number of that item I want to keep in my shopping cart.
@@ -711,6 +770,8 @@ As **User**, I can **increment/decrement number of shopping items I currently ha
 - [X] Task 1 – modify the bag template to include counter, update and remove options per each item in the shopping cart
 
 ###### Story Points: 8
+
+
 
 
 [EPIC: User product checkout]()
