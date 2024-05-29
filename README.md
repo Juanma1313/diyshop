@@ -752,7 +752,7 @@ As **User**, I can **see all the shopping items I currently have in my shipping 
 
 ##### [#25](https://github.com/Juanma1313/diyshop/issues/25) USER STORY: manage shopping items in the shopping cart
 
-As **User**, I can **increment/decrement number of shopping items I currently have in my shipping cart**, so that **I can adjust my selections and my costs**
+As **User**, I can **increment/decrement the number of shopping items I currently have in my shopping cart**, so that **I can adjust my selections and my costs**
 
 ###### Acceptance Criteria
 
@@ -766,10 +766,10 @@ As **User**, I can **increment/decrement number of shopping items I currently ha
 
 ###### Tasks
 
-- [X] Task 3 – Create the bag/views.adjust_bag view to allow for the shopping cart content be modified 
-- [X] Task 1 – modify the bag template to include counter, update and remove options per each item in the shopping cart
+- [X] Task 1 – Create the bag/views.adjust_bag view to allow for the shopping cart content to be modified 
+- [X] Task 2 – modify the bag template to include counter, update and remove options per each item in the shopping cart
 
-###### Story Points: 8
+###### Story Points: 5
 
 #### [#26](https://github.com/Juanma1313/diyshop/issues/26) EPIC: User Shopping Cart Checkout
 As user, I can checkout the content of my shopping cart, so that I am able to formalize the purchase and delivery of the content of the shopping cart.
@@ -791,8 +791,8 @@ As **User**, I can **start the checkout process for the content of my sopping ca
 - [X] Task 1 – Create the checkout application
 - [X] Task 2 – Create the checkout/models.Order class to instantiate order object
 - [X] Task 3 – Create the checkout/forms.OrderForm form to handle all the required order fields
-- [X] Task 3 – Create the checkout/views.checkout view to populate the order object from the shopping cart and start the payment transaction.
-- [X] Task 4 – Create the checkout template to display the order form to the user
+- [X] Task 4 – Create the checkout/views.checkout view to populate the order object from the shopping cart and start the payment transaction.
+- [X] Task 5 – Create the checkout template to display the order form to the user
 
 ###### Story Points: 13
 
@@ -810,17 +810,25 @@ As **User**, I can **fill in the checkout form**, so that **I provide full name,
   **Then** I can see the delivery cost
   **Then** I can see the Grand total cost
 
+- Acceptance Criteria 2
+
   **Given** that I am a `User`
   **When** in the checkout page, I press the `Adjust Bag` button 
   **Then** I am redirected to the shopping cart detail page (Shopping Bag)
+
+- Acceptance Criteria 3
 
   **Given** that I am a `Anonymous User`
   **When** in the checkout page, I press the `Sign Up` link 
   **Then** I am redirected to the sign-up page
 
+- Acceptance Criteria 4
+
   **Given** that I am a `Anonymous User`
   **When** in the checkout page, I press the `Sign In` link 
   **Then** I am redirected to the sign-in page
+
+- Acceptance Criteria 5
 
   **Given** that I am a `User` in the checkout page and I press the `Complete Order` button
   **When** the form data is not valid, 
@@ -847,6 +855,8 @@ As  **User**, I can **send the completed purchase form**, so that **the payment 
   **Given** that I am a `User`
   **When** in the checkout page with a valid checkout form, I press the `Complete Order` button 
   **Then** the order is submited for payment to the external payment gateway.
+
+- Acceptance Criteria 2
 
   **Given** that, an order has been submitted for payment to the external payment gateway.
   **When** the transaction is accepted
@@ -883,10 +893,6 @@ As **User**, I can **start the checkout process for the content of my sopping ca
 ###### Tasks
 
 - [X] Task 1 – Create the checkout application
-- [X] Task 2 – Create the checkout/models.Order class to instanciate order object
-- [X] Task 3 – Create the checkout/forms.OrderForm form to handle all the required order fields
-- [X] Task 3 – Create the checkout/views.checkout view to populate the order object from the shopping cart and start the payment transaction.
-- [X] Task 4 – Create the checkout template to display the order form to the user
 
 ###### Story Points: 13
 
