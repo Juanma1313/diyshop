@@ -16,7 +16,6 @@ from bag.contexts import bag_contents
 
 import stripe
 import json
-from django.core.mail import send_mail
 
 
 @require_POST

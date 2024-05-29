@@ -1,11 +1,13 @@
-<a href="{% url 'products' %}" class="btn btn-outline-black rounded-start-5 btn-lg">
+<!--keep shopping button-->
+<a href="{% url 'products' %}" class="btn btn-white btn-outline-black rounded-start-5 btn-sm">
     <span class="icon">
         <i class="fas fa-chevron-left"></i>
     </span>
-    <span class="text-uppercase">Keep Shopping</span>
+    <span class="text-uppercase fw-bold">Keep Shopping</span>
 </a>
-<a href="{% url 'checkout' %}" class="btn btn-black rounded-end-5 btn-lg">
-    <span class="text-uppercase">Secure Checkout</span>
+<!--checkout button-->
+<a href="{% url 'checkout' %}" class="btn btn-black rounded-end-5 btn-sm">
+    <span class="text-uppercase fw-bold">Secure Checkout</span>
     <span class="icon">
         <i class="fas fa-lock"></i>
     </span>

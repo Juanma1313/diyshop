@@ -25,31 +25,34 @@
 
             <!-- Keep Shopping button-->
             <div class="col-4 px-1 ">
-                <a href="{{request.META.HTTP_REFERER|escape}}" class="btn btn-outline-black rounded-start-5 w-100 btn-sm">
+                <a href="{{request.META.HTTP_REFERER|escape}}" class="btn btn-white btn-outline-black rounded-start-5 w-100 btn-sm">
                     <span class="icon">
                         <i class="fas fa-chevron-left"></i>
                     </span>
-                    <span class="text-uppercase">Back</span>
+                    <span class="text-uppercase fw-bold">Back</span>
                 </a>
             </div>
-            <!-- Quantity selection buttons-->
+            <!-- Quantity selection control-->
             <div class="col-4 ">
-                <div class="form-group w-10 h-100">
-                    <div class="input-group h-100">
-                        <div class="input-group-prepend h-100">
-                            <button class="decrement-qty btn btn-black rounded-start-1 rounded-end-0 h-100 btn-sm" 
+                <div class="form-group w-10">
+                    <div class="input-group">
+                        <!-- Minus button-->
+                        <div class="input-group-prepend">
+                            <button class="decrement-qty btn btn-black rounded-start-1 rounded-end-0 btn-sm" 
                                 data-item_id="{{ product.id }}" id="decrement-qty_{{ product.id }}">
                                 <span class="icon">
                                     <i class="fas fa-minus"></i>
                                 </span>
                             </button>
                         </div>
-                        <input class="form-control qty_input text-end h-100" type="number"
+                        <!-- Quantity field-->
+                        <input class="form-control qty_input text-end px-1 py-0" type="number"
                             name="quantity" value="1" min="1" max="99"
                             data-item_id="{{ product.id }}"
                             id="id_qty_{{ product.id }}">
-                        <div class="input-group-append h-100">
-                            <button class="increment-qty btn btn-black rounded-start-0 rounded-end-1 h-100 btn-sm"
+                        <!-- Plus button-->
+                        <div class="input-group-append">
+                            <button class="increment-qty btn btn-black rounded-start-0 rounded-end-1 btn-sm"
                                 data-item_id="{{ product.id }}" id="increment-qty_{{ product.id }}">
                                 <span class="icon">
                                     <i class="fas fa-plus"></i>
@@ -61,7 +64,7 @@
             </div>
             <!-- Add to bag button-->
             <div class="col-4 px-1">
-                <input type="submit" class="w-100 h-100 btn btn-black rounded-end-5 text-uppercase btn-sm" value="Add to Bag">
+                <input type="submit" class="w-100 btn btn-black rounded-end-5 text-uppercase btn-sm fw-bold" value="Add to Bag">
             </div>
             <input type="hidden" name="redirect_url" value="{{ request.path }}">
             {% endwith %}
@@ -72,7 +75,6 @@
     <div class="col-12 p-2">
         <strong class="thing-subtitle text-black">Free Access</strong>
     </div>
-    <!-- Shopping bag controls-->
     <div class="row g-0">
         <!-- Keep Shopping button-->
         <div class="col-4 px-1 ">
@@ -80,7 +82,7 @@
                 <span class="icon">
                     <i class="fas fa-chevron-left"></i>
                 </span>
-                <span class="text-uppercase">Back</span>
+                <span class="text-uppercase fw-bold">Back</span>
             </a>
         </div>
     </div>

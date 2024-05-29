@@ -125,13 +125,11 @@
                                             <strong class="text-muted">Free</strong>
                                         {% endif %}
                                     </div>
-                                    <!-- edit/delete buttons -->
+                                    <!-- edit/delete links -->
                                     {% if request.user.is_superuser or request.user.is_staff or request.user == product.author %}
                                     <div class="col text-end">
-                                        <small >
-                                            <a href="{% url 'edit_product' product.id %}">Edit</a> | 
-                                            <a class="text-danger" href="{% url 'delete_product' product.id %}">Delete</a>
-                                        </small>
+                                            <a class="link-primary fw-bold" href="{% url 'edit_product' product.id %} ">Edit</a>
+                                            <a class="link-danger fw-bold" href="{% url 'delete_product' product.id %}">Delete</a>
                                     </div>
                                     {% endif %}
                                 </div>
