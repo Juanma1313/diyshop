@@ -1,24 +1,36 @@
 .StripeElement,
 .stripe-style-input {
-  box-sizing: border-box;
-  height: 40px;
-  padding: 10px 12px;
-  border: 1px solid transparent;
-  border-radius: 0px;
-  background-color: white;
-  box-shadow: 0 1px 3px 0 #e6ebf1;
-  -webkit-transition: box-shadow 150ms ease;
-  transition: box-shadow 150ms ease;
+    box-sizing: border-box;
+    height: 40px;
+    padding: 8px 10px;
+    border: 1px solid black;
+    background-color: white;
+    box-shadow: 0 1px 3px 0 #3d3f41;
+    -webkit-transition: box-shadow 150ms ease;
+    transition: box-shadow 150ms ease;
+    border-radius: var(--bs-border-radius)!important;
 }
 
 .StripeElement--focus,
 .stripe-style-input:focus,
 .stripe-style-input:active {
-  box-shadow: 0 1px 3px 0 #cfd7df;
+    box-shadow: 0 1px 3px 0 #cfd7df;
+}
+
+.form-select:focus {
+    border-color: black!important;
+    background-color:black!important;
+    color: whitesmoke!important;
+    box-shadow: 0 0 0 0.25rem #3d3f41!important;
+}
+
+.form-select option {
+    background-color: whitesmoke!important;
+    color: black!important;
 }
 
 .StripeElement--webkit-autofill {
-  background-color: #fefde5 !important;
+    background-color: #fefde5 !important;
 }
 
 .stripe-style-input::placeholder {
@@ -64,3 +76,4 @@ select option[value=""] {
     margin: 0;
     height: 100%;
 }
+

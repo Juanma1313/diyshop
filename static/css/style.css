@@ -9,6 +9,12 @@ body {
     color: #000;
     font-family: 'Lato';
 }
+
+/* '.form-*' classes are deprecated in bootstrap 5 */
+.form-group {
+    margin-bottom: 0.5rem;
+}
+
 .logo-font {
     text-transform: uppercase;
 }

@@ -162,7 +162,11 @@
 
         {% block content %}
         {% endblock %}
-
+        <div class="btt-button shadow-sm rounded-5 border border-black">
+            <a class="btt-link d-flex h-100">
+                <i class="fas fa-arrow-up text-black mx-auto my-auto"></i>
+            </a>	
+        </div>    
         <!-- Footer -->
         <footer class="container-fluid fixed-bottom footer mt-auto py-3 dark-bg d-none d-lg-block">
             <p class="m-0 text-center text-white">Developed for the Code Institute's Assessment</p>
@@ -187,6 +191,11 @@
         </footer>
 
         {% block postloadjs %}
+        <script type="text/javascript">
+            $('.btt-link').click(function(e) {
+                window.scrollTo(0,0)
+            })
+        </script>
         {% if messages %}
             <script type="text/javascript">
                 const toastElList = document.querySelectorAll('.toast');

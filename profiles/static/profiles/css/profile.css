@@ -8,7 +8,7 @@
 }
 
 #profile-update-form input::placeholder {
-    color: #aab7c4;
+    color: #3f4449;
 }
 
 #id_default_country,
@@ -17,10 +17,35 @@
 }
 
 #id_default_country option:first-child {
-    color: #aab7c4;
+    color: #25282b;
 }
 
-/* '.form-*' classes are deprecated in bootstrap 5 */
-.form-group {
-    margin-bottom: 1rem;
+
+.profile-style-input {
+    box-sizing: border-box;
+    height: 40px;
+    padding: 8px 10px;
+    border: 1px solid black;
+    background-color: white;
+    box-shadow: 0 1px 3px 0 #3d3f41;
+    -webkit-transition: box-shadow 150ms ease;
+    transition: box-shadow 150ms ease;
+    border-radius: var(--bs-border-radius)!important;
 }
+
+.profile-style-input:focus {
+    border-color: black!important;
+    box-shadow: 0 0 0 0.25rem #3d3f41;
+}
+
+.form-select:focus {
+    border-color: black!important;
+    background-color:black!important;
+    color: whitesmoke!important;
+    box-shadow: 0 0 0 0.25rem #3d3f41!important;
+}
+
+.form-select option {
+    background-color: whitesmoke!important;
+    color: black!important;
+  }
