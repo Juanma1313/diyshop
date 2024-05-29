@@ -771,10 +771,125 @@ As **User**, I can **increment/decrement number of shopping items I currently ha
 
 ###### Story Points: 8
 
+#### [#26](https://github.com/Juanma1313/diyshop/issues/26) EPIC: User Shopping Cart Checkout
+As user, I can checkout the content of my shopping cart, so that I am able to formalize the purchase and delivery of the content of the shopping cart.
+
+##### [#27](https://github.com/Juanma1313/diyshop/issues/27) USER STORY: initiate checkout of the shopping cart
+
+As **User**, I can **start the checkout process for the content of my sopping cart**, so that **I can show the order summary and the payment methods**
+
+###### Acceptance Criteria
+
+- Acceptance Criteria 1
+
+  **Given** that I am a `User`
+  **When** in the shopping cart detail page (Shopping Bag), I press the `Secure Checkout` button
+  **Then** I am redirected to the checkout page, where the order form and order summary are presented.
+
+###### Tasks
+
+- [X] Task 1 – Create the checkout application
+- [X] Task 2 – Create the checkout/models.Order class to instantiate order object
+- [X] Task 3 – Create the checkout/forms.OrderForm form to handle all the required order fields
+- [X] Task 3 – Create the checkout/views.checkout view to populate the order object from the shopping cart and start the payment transaction.
+- [X] Task 4 – Create the checkout template to display the order form to the user
+
+###### Story Points: 13
+
+##### [#28](https://github.com/Juanma1313/diyshop/issues/28) USER STORY: Fill in the checkout form
+
+As **User**, I can **fill in the checkout form**, so that **I provide full name, delivery and payment information**
+
+###### Acceptance Criteria
+
+- Acceptance Criteria 1
+
+  **Given** that I am a `User`
+  **When** in the checkout page
+  **Then** I can see all the elements from the shopping bag with their cost 
+  **Then** I can see the delivery cost
+  **Then** I can see the Grand total cost
+
+  **Given** that I am a `User`
+  **When** in the checkout page, I press the `Adjust Bag` button 
+  **Then** I am redirected to the shopping cart detail page (Shopping Bag)
+
+  **Given** that I am a `Anonymous User`
+  **When** in the checkout page, I press the `Sign Up` link 
+  **Then** I am redirected to the sign-up page
+
+  **Given** that I am a `Anonymous User`
+  **When** in the checkout page, I press the `Sign In` link 
+  **Then** I am redirected to the sign-in page
+
+  **Given** that I am a `User` in the checkout page and I press the `Complete Order` button
+  **When** the form data is not valid, 
+  **when** the database transaction has failed 
+  **when** the payment gateway transaction has failed
+  **Then** cancel the order transactions on the database and payment gateway
+  **Then** notify me of the problem
+
+###### Tasks
+
+- [X] Task 1 – Register with an online payment gateway service provider (Stripe)
+- [X] Task 2 – Install and integrate the payment gateway service provider API
+
+###### Story Points: 8
+
+##### [#29](https://github.com/Juanma1313/diyshop/issues/29) USER STORY: submit the checkout order to the online payment service
+
+As  **User**, I can **send the completed purchase form**, so that **the payment of the purchase order can be fulfilled**
+
+###### Acceptance Criteria
+
+- Acceptance Criteria 1
+
+  **Given** that I am a `User`
+  **When** in the checkout page with a valid checkout form, I press the `Complete Order` button 
+  **Then** the order is submited for payment to the external payment gateway.
+
+  **Given** that, an order has been submitted for payment to the external payment gateway.
+  **When** the transaction is accepted
+  **Then** The new purchase order is finally committed to the database
+  **Then** An e-mail with the confirmation of the purchase is sent to the address that the user filled in the purchase form.  
+  **Then** The shopping cart is cleaned of all shopping items
+  **Then** the user is redirected to the checkout_success page where all the details of the purchase order is displayed
 
 
+###### Tasks
 
-[EPIC: User product checkout]()
+- [X] Task 1 – Create the checkout/views.checkout_success view to delete the shopping cart from the user session and render the chekout_success page.
+- [X] Task 2 – Create the checkout_success template to display the relevant Order infomation.
+- [X] Task 3 – Create the confirmation_emails templates for the e-mail subject and the e-mail body.
+- [X] Task 4 – Create the checkout/emails.send_confirmation_email function to create the e-mail and send it to the address in the order.
+
+###### Story Points: 8
+
+#### [#30](https://github.com/Juanma1313/diyshop/issues/30) EPIC: User Profiles
+As a **Registered user**, I can **set my billing information into a profile**, to **be able to use that profile for future checkouts**.
+
+##### [#27](https://github.com/Juanma1313/diyshop/issues/27) USER STORY: Create a profile
+
+As **User**, I can **start the checkout process for the content of my sopping cart**, so that **I can show the order sumary and the payment methods**
+
+###### Acceptance Criteria
+
+- Acceptance Criteria 1
+
+  **Given** that I am a `User`
+  **When** in the shoping cart detail page (Shopping Bag), I press the `Secure Checkout` button
+  **Then** I am redirected to the checkout page were the order form and order summary are presented.
+
+###### Tasks
+
+- [X] Task 1 – Create the checkout application
+- [X] Task 2 – Create the checkout/models.Order class to instanciate order object
+- [X] Task 3 – Create the checkout/forms.OrderForm form to handle all the required order fields
+- [X] Task 3 – Create the checkout/views.checkout view to populate the order object from the shopping cart and start the payment transaction.
+- [X] Task 4 – Create the checkout template to display the order form to the user
+
+###### Story Points: 13
+
 
 [EPIC: Messages and notifications]()
 
