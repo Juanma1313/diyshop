@@ -7,6 +7,7 @@ from django.conf import settings
 
 from .forms import OrderForm
 from .models import Order, OrderLineItem
+from .emails import send_confirmation_email
 
 from products.models import Thing
 from profiles.models import UserProfile
@@ -15,6 +16,7 @@ from bag.contexts import bag_contents
 
 import stripe
 import json
+from django.core.mail import send_mail
 
 
 @require_POST
@@ -138,9 +140,9 @@ def checkout(request):
             order_form = OrderForm()
 
     if not stripe_public_key:
-        messages.warning(request, ('Stripe public key is missing. '
-                                   'possibly not defined in the '
-                                   'environment?'))
+        messages.warning(request, ('Online payment service is not available. '
+                                   'Please, contact with us.'
+                                   ' Exception code ["NOPUBKEY01]'))
 
     template = 'checkout/checkout.html'
     context = {
@@ -179,6 +181,7 @@ def checkout_success(request, order_number):
             if user_profile_form.is_valid():
                 user_profile_form.save()
 
+    send_confirmation_email(order)
     messages.success(request,
                      f'Order successfully processed! '
                      f'Your order number is {order_number}. A confirmation '
