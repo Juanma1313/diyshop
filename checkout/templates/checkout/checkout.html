@@ -86,16 +86,16 @@
             </div>
             <!-- ORDER FORM -->
             <div class="col-12 col-lg-6">
-                <p class="text-muted">Please fill out the form below to complete your order</p>
+                <p class="text-muted text-center">Please fill out the form below to complete your order</p>
                 <form action="{% url 'checkout' %}" method="POST" id="payment-form">
                     {% csrf_token %}
-                    <fieldset class="rounded px-3 mb-5">
-                        <legend class="fieldset-label small text-black px-2 w-auto">Details</legend>
+                    <fieldset class="rounded px-2 mb-3">
+                        <legend class="fieldset-label small text-black px-1 w-auto">Details</legend>
                         {{ order_form.full_name | as_crispy_field }}
                         {{ order_form.email | as_crispy_field }}
                     </fieldset>
-                    <fieldset class="rounded px-3 mb-5">
-                        <legend class="fieldset-label small text-black px-2 w-auto">Delivery</legend>
+                    <fieldset class="rounded px-2 mb-3">
+                        <legend class="fieldset-label small text-black px-1 w-auto">Delivery</legend>
                         {{ order_form.phone_number | as_crispy_field }}
                         {{ order_form.street_address1 | as_crispy_field }}
                         {{ order_form.street_address2 | as_crispy_field }}
@@ -115,31 +115,33 @@
 							{% endif %}
 						</div>
                     </fieldset>
-                    <fieldset class="px-3">
+                    <fieldset class="px-2">
                         <legend class="fieldset-label small text-black px-2 w-auto">Payment</legend>
-                        <!-- A Stripe card element will go here -->
+                        <!-- Stripe card element -->
                         <div class="mb-3" id="card-element"></div>
 
-                        <!-- Used to display form errors -->
+                        <!-- display form errors -->
                         <div class="mb-3 text-danger" id="card-errors" role="alert"></div>
                         <!-- Pass the client secret to the view so we can get the payment intent id -->
-                        <input type="hidden" value="{{ client_secret }}" name="client_secret">                        
+                        <input type="hidden" value="{{ client_secret }}" name="client_secret">
                     </fieldset>
 
-                    <div class="submit-button text-end mt-5 mb-2">                    
+                    <div class="submit-button text-center mt-3 mb-2">
+                        <!-- Adjust Bag Button-->
 						<a href="{% url 'view_bag' %}" class="btn btn-outline-black rounded-start-5">
 							<span class="icon">
 								<i class="fas fa-chevron-left"></i>
 							</span>
 							<span class="fw-bold">Adjust Bag</span>
 						</a>
+                        <!-- Buy Now-->
 						<button id="submit-button" class="btn btn-black rounded-end-5">
-							<span class="fw-bold">Complete Order</span>
+							<span class="fw-bold">Buy Now</span>
 							<span class="icon">
 								<i class="fas fa-lock"></i>
 							</span>
 						</button>
-						<p class="small text-danger my-0">
+						<p class="small text-danger text-center my-1">
 							<span class="icon">
 								<i class="fas fa-exclamation-circle"></i>
 							</span>
@@ -149,6 +151,10 @@
                 </form>
             </div>
         </div>
+        <!--room for scrolling -->
+        <hr class="row py-5">
+        <div class="row py-5"></div>
+        
     </div>
     <div id="loading-overlay">
         <h1 class="text-light logo-font loading-spinner">
