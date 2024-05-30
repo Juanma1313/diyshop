@@ -187,20 +187,48 @@ The project should be develop under Agile methodology.
 ### Customer requirements for users for second stage
 The following are the customer requirements that are part of the user stories list for the second delivery iteration backlog.
 
-| Epic                                                | Story | Requirements for users                     | Anonymous | Regular | Creator | Admin |
-| --------------------------------------------------- | ----- | ------------------------------------------ | --------- | ------- | ------- | ----- |
-| [#39](https://github.com/Juanma1313/diyshop/issues/39) | 23    | Create a DIY project                       |           |         | x       | x     |
-| [#39](https://github.com/Juanma1313/diyshop/issues/39) | 24    | Create a DIY project  details             |           |         | x       | x     |
-| [#39](https://github.com/Juanma1313/diyshop/issues/39) | 26    | Create components (DIY subprojects)        |           |         | x       | x     |
-| [#39](https://github.com/Juanma1313/diyshop/issues/39) | 25    | Create instructions                        |           |         | x       | x     |
-| [#39](https://github.com/Juanma1313/diyshop/issues/39) | 27    | Modify a DIY project and its details       |           |         | x       | x     |
-| [#39](https://github.com/Juanma1313/diyshop/issues/39) | 28    | Modify a component and its details         |           |         | x       | x     |
-| [#39](https://github.com/Juanma1313/diyshop/issues/39) | 29    | Modify the instructions of a DIY project   |           |         | x       | x     |
-| [#39](https://github.com/Juanma1313/diyshop/issues/39) | 30    | Delete a DIY project and its details       |           |         | x       | x     |
-| [#39](https://github.com/Juanma1313/diyshop/issues/39) | 31    | Delete a component                         |           |         | x       | x     |
-| [#39](https://github.com/Juanma1313/diyshop/issues/39) | 32    | Delete instructions                        |           |         | x       | x     |
-| [#39](https://github.com/Juanma1313/diyshop/issues/39) | 33    | Change state published/Draft a DIY project |           |         | x       | x     |
-| [#39](https://github.com/Juanma1313/diyshop/issues/39) | 34    | Change state published/Draft a component   |           |         | x       | x     |
+| Epic                                                   | Description                                 |
+| ------------------------------------------------------ | ------------------------------------------- |
+| [#1](https://github.com/Juanma1313/diyshop/issues/1)   | EPIC: Setup initial development environment |                      
+| [#4](https://github.com/Juanma1313/diyshop/issues/4)   | EPIC: DIY Project creation and management   |                      
+| [#17](https://github.com/Juanma1313/diyshop/issues/17) | EPIC: Searching DIY Projects                |                      
+| [#22](https://github.com/Juanma1313/diyshop/issues/22) | EPIC: User Shopping Cart                    |                      
+| [#26](https://github.com/Juanma1313/diyshop/issues/26) | EPIC: User Shopping Cart Checkout           |                      
+| [#30](https://github.com/Juanma1313/diyshop/issues/30) | EPIC: User Profiles                         |                      
+| [#33](https://github.com/Juanma1313/diyshop/issues/33) | EPIC: User Messages and Notifications       |                      
+
+
+| Epic                                                   | Story                                                  | Requirements for users                                              | Anonymous | Regular | Creator | Admin |
+| ------------------------------------------------------ | ------------------------------------------------------ | ------------------------------------------------------------------- | --------- | ------- | ------- | ----- |
+| [#1](https://github.com/Juanma1313/diyshop/issues/1)   | [#2](https://github.com/Juanma1313/diyshop/issues/2)   | USER STORY: Create Development Environment                          | |  |  |  | 
+| [#1](https://github.com/Juanma1313/diyshop/issues/1)   | [#3](https://github.com/Juanma1313/diyshop/issues/3)   | USER STORY: Administrate users                                      | |  |  |  | 
+| [#4](https://github.com/Juanma1313/diyshop/issues/4)   | [#5](https://github.com/Juanma1313/diyshop/issues/5)   | USER STORY: Create a DIY project                                    | |  |  |  | 
+| [#4](https://github.com/Juanma1313/diyshop/issues/4)   | [#6](https://github.com/Juanma1313/diyshop/issues/6)   | USER STORY: Create DIY project details                              | |  |  |  | 
+| [#4](https://github.com/Juanma1313/diyshop/issues/4)   | [#7](https://github.com/Juanma1313/diyshop/issues/7)   | USER STORY: Create Instructions                                     | |  |  |  | 
+| [#4](https://github.com/Juanma1313/diyshop/issues/4)   | [#8](https://github.com/Juanma1313/diyshop/issues/8)   | USER STORY: Create component                                        | |  |  |  | 
+| [#4](https://github.com/Juanma1313/diyshop/issues/4)   | [#9](https://github.com/Juanma1313/diyshop/issues/9)   | USER STORY: Modify a DIY project details                            | |  |  |  | 
+| [#4](https://github.com/Juanma1313/diyshop/issues/4)   | [#10](https://github.com/Juanma1313/diyshop/issues/10) | USER STORY: Modify component                                        | |  |  |  | 
+| [#4](https://github.com/Juanma1313/diyshop/issues/4)   | [#11](https://github.com/Juanma1313/diyshop/issues11/) | USER STORY: Modify instructions                                     | |  |  |  | 
+| [#4](https://github.com/Juanma1313/diyshop/issues/4)   | [#12](https://github.com/Juanma1313/diyshop/issues/12) | USER STORY: Delete a project                                        | |  |  |  | 
+| [#4](https://github.com/Juanma1313/diyshop/issues/4)   | [#13](https://github.com/Juanma1313/diyshop/issues/13) | USER STORY: Delete a owned Components                               | |  |  |  | 
+| [#4](https://github.com/Juanma1313/diyshop/issues/4)   | [#14](https://github.com/Juanma1313/diyshop/issues/14) | USER STORY: Delete owned Instructions elements                      | |  |  |  | 
+| [#4](https://github.com/Juanma1313/diyshop/issues/4)   | [#15](https://github.com/Juanma1313/diyshop/issues/15) | USER STORY: Change own DIY Project Published status                 | |  |  |  | 
+| [#4](https://github.com/Juanma1313/diyshop/issues/4)   | [#16](https://github.com/Juanma1313/diyshop/issues/16) | USER STORY: Change own DIY Component published status               | |  |  |  | 
+| [#17](https://github.com/Juanma1313/diyshop/issues/17) | [#18](https://github.com/Juanma1313/diyshop/issues/18) | USER STORY: Manage DIY Projects Categories                          | |  |  |  | 
+| [#17](https://github.com/Juanma1313/diyshop/issues/17) | [#19](https://github.com/Juanma1313/diyshop/issues/19) | USER STORY: Filter DIY Projects by Categories                       | |  |  |  | 
+| [#17](https://github.com/Juanma1313/diyshop/issues/17) | [#20](https://github.com/Juanma1313/diyshop/issues/20) | USER STORY: Sorting DIY Projects                                    | |  |  |  | 
+| [#17](https://github.com/Juanma1313/diyshop/issues/17) | [#21](https://github.com/Juanma1313/diyshop/issues/21) | USER STORY: Searching DIY Projects with text                        | |  |  |  | 
+| [#22](https://github.com/Juanma1313/diyshop/issues/22) | [#23](https://github.com/Juanma1313/diyshop/issues/23) | USER STORY: add Projects to the shopping cart                       | |  |  |  | 
+| [#22](https://github.com/Juanma1313/diyshop/issues/22) | [#24](https://github.com/Juanma1313/diyshop/issues/24) | USER STORY: view the shopping cart content                          | |  |  |  | 
+| [#22](https://github.com/Juanma1313/diyshop/issues/22) | [#25](https://github.com/Juanma1313/diyshop/issues/25) | USER STORY: manage shopping items in the shopping cart              | |  |  |  | 
+| [#26](https://github.com/Juanma1313/diyshop/issues/26) | [#27](https://github.com/Juanma1313/diyshop/issues/27) | USER STORY: initiate checkout of the shopping cart                  | |  |  |  | 
+| [#26](https://github.com/Juanma1313/diyshop/issues/26) | [#28](https://github.com/Juanma1313/diyshop/issues/28) | USER STORY: Fill in the checkout form                               | |  |  |  | 
+| [#26](https://github.com/Juanma1313/diyshop/issues/26) | [#29](https://github.com/Juanma1313/diyshop/issues/29) | USER STORY: submit the checkout order to the online payment service | |  |  |  | 
+| [#30](https://github.com/Juanma1313/diyshop/issues/30) | [#31](https://github.com/Juanma1313/diyshop/issues/31) | USER STORY: Create a user profile                                   | |  |  |  | 
+| [#30](https://github.com/Juanma1313/diyshop/issues/30) | [#32](https://github.com/Juanma1313/diyshop/issues/32) | USER STORY: View and Manage my Profile                              | |  |  |  | 
+| [#33](https://github.com/Juanma1313/diyshop/issues/33) | [#34](https://github.com/Juanma1313/diyshop/issues/34) | USER STORY: User Messages and Notifications                         | |  |  |  | 
+
+ 
 
 ### Development plan
 
