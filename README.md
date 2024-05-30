@@ -19,6 +19,7 @@ Access the website  [DIY Shop](https://diyshop-e5a99a0c89cb.herokuapp.com/) Depl
 # Table of Contents
 
 - [Introduction](#introduction)
+- [Busines Model](#busines-model)
 - [User experience (UX)](#user-experience-ux)
 
   - [Functional specifications](#functional-specifications)
@@ -60,17 +61,56 @@ Access the website  [DIY Shop](https://diyshop-e5a99a0c89cb.herokuapp.com/) Depl
   - [Create a clone of this repository](#create-a-clone-of-this-repository)
 - [Acknowledgements](#acknowledgements)
 
+# Busines Model
+
+Since this initiative is oriented towards the sale of its products in a non-face-to-face manner and through online transactions, it clearly falls within the scope of an E-Commerce business model.
+The target customer of this business is a retail customer, which is why a business-to-customer or what is cooquially called B2C strategy is imposed.
+
+## Marketing Strategy
+
+In our case, the product being sold is not really the product being offered, since what is offered on this website is information on how to carry out small do-it-yourself (DIY) projects, but what is really being sold are the parts and kits to carry out these projects.
+So the main strategy is to make DIY projects attractive so that customers are compelled to buy the necessary parts and pieces, which in normal conditions, to find them individually in the conventional market, is a major inconvenience for the customer.
+
+### Market Target
+
+The target customer profile of the products sold in this business are those individuals or groups who have time for leisure, are handyman, are curious about technology, or simply have fun making things themselves. I believe that this customer profile would include Bricolage enthusiasts, tinkerers, makers, craft artists, decorators, dyers, Hobbies enthusiasts, Gadget snobs,  electronics fans, robotics aficionados, etc.
+
+### Marketing techniques
+
+We can use various sales techniques to maximize the audience and consequently increase visits and, desirably, also product sales.
+
+### The ‘Share your DIY project’ technique
+
+By allowing users to upload their own projects for sharing, it increases the amount and diversity of content available. And while these shared projects cannot be directly monetized, on the other hand they increase the attractiveness of the website and, consequently, promote a greater presence of the platform on the internet.
+
+It must also be taken into account that this type of technology is associated with infrastructure costs that have to be cost-effective. The storage capacity and connection times used in these shared projects have to be compensated with the sales of parts and kits. One way of offsetting these costs is to reach agreements with content creators to also offer parts and construction kits from their own projects.
+
+### SEO
+
+In order for search engines such as Google to find this platform and offer it among the best proposals, we have made a list of the words and phrases that could best suit the internet searches of potential customers.
+
+In choosing the words and phrases, we have taken into account the clients, the purpose of the website and the DIY projects that belong to the business, but we cannot take into consideration the products that are sold, as they are not part of our marketing strategy, nor can we consider the DIY projects shared by users, as we don't know which, when or if they will be uploaded.
+
+This busines would be operating in Spain, so a set of this words in spanish shoul be also included, but since the website default lenguage is English, and currently does not support multilanguage. We will avoid this part for now.
+
+
+| Clients | busines | miscelaneous | sentences |
+| ---- | ---- | ---- | ---- |
+|tinkerer   |DIY Project    | open hardware |      |
+|electronic |Shared projects| open software |      |
+|robotic    |fun and usefull| DIY Tools     |      |
+|maker      |DIY upload     | circuits      |      |
+|Hobby      |DIY download   | actuators     |      |
+|animatronic|DIY Shop       | woodwork      |      |
+|           |DIY Shop       | woodwork      |      |
+
+
+
 # User experience (UX)
 
-DIY Site aims to be a friendly public site for users to access DIY style
-projects that they can replicate. The presentation of the content is
-dynamic and attractive, and the information about the projects is clear
-and easy to read.
+DIY Site aims to be a friendly public site for users to access DIY style projects that they can replicate. The presentation of the content is dynamic and attractive, and the information about the projects is clear and easy to read.
 
-Registered project creators will also be able to add and edit their own
-creations. This administrative interface is geared towards a more
-functional purpose, so that project content can be easily edited and
-expanded.
+Registered project creators will also be able to add and edit their own creations. This administrative interface is geared towards a more functional purpose, so that project content can be easily edited and expanded.
 
 ## Functional specifications
 
@@ -86,17 +126,13 @@ There are four types of users segregated by their role and purpose.
 
 ### Goals
 
-- For all users, the user interface should be minimalistic and
-  intuitive
-- For anonymous and regular users the user interface should be
-  friendly, dynamic, clear and fun.
-- For Creators and administrators, The user interface should be clear,
-  flexible and functional.
+- For all users, the user interface should be minimalistic and intuitive
+- For anonymous and regular users the user interface should be friendly, dynamic, clear and fun.
+- For Creators and administrators, The user interface should be clear, flexible and functional.
 
 ### Initial Customer requirements for users
 
-The following are the customer requirements that are part of the user
-stories list for the initial delivery iteration backlog.
+The following are the customer requirements that are part of the user stories list for the initial delivery iteration backlog.
 
 | Epic                                                | Story | Requirements for users                        | Anonymous | Regular | Creator | Admin |
 | --------------------------------------------------- | ----- | --------------------------------------------- | --------- | ------- | ------- | ----- |
@@ -149,6 +185,7 @@ GitHub
 The project should be develop under Agile methodology.
 
 ### Customer requirements for users for second stage
+The following are the customer requirements that are part of the user stories list for the second delivery iteration backlog.
 
 | Epic                                                | Story | Requirements for users                     | Anonymous | Regular | Creator | Admin |
 | --------------------------------------------------- | ----- | ------------------------------------------ | --------- | ------- | ------- | ----- |
@@ -164,10 +201,6 @@ The project should be develop under Agile methodology.
 | [#39](https://github.com/Juanma1313/diyshop/issues/39) | 32    | Delete instructions                        |           |         | x       | x     |
 | [#39](https://github.com/Juanma1313/diyshop/issues/39) | 33    | Change state published/Draft a DIY project |           |         | x       | x     |
 | [#39](https://github.com/Juanma1313/diyshop/issues/39) | 34    | Change state published/Draft a component   |           |         | x       | x     |
-
-
-
-
 
 ### Development plan
 
@@ -210,13 +243,11 @@ As **Administrator**, I can **Create/modify/delete user accounts and their privi
   **Given** that I am an `Administrator` user
   **When** I am in any website page
   **Then** I can access the admin web page selecting the `Admin` option in the user menu
-
 - Acceptance Criteria 2
 
   **Given** that I am an `Administrator` user
   **When** I am in admin website page
   **Then** I can add/delete/modify any user
-
 - Acceptance Criteria 3
 
   **Given** that I am an `Administrator` user
@@ -247,13 +278,11 @@ As **registered user**, I can **Create a DIY project**, so that **I can publish 
   **Given** that I am a `Registered User`
   **When** I am in any website page
   **Then** I can access the `Add Project` option in the user menu
-
 - Acceptance Criteria 2
 
   **Given** that I am a `Registered User`
   **When** I click on the `Add Project`option in the user menu
   **Then** I can create a new DIY Project
-
 - Acceptance Criteria 3
 
   **Given** that I am a `Registered User`
@@ -280,13 +309,11 @@ As **Registered User**, I can **create the DIY project details**, so that **proj
   **Given** that I am a `Registered User`
   **When** I have created a new DIY Project (`Thing`)
   **Then** I can assign a Title, Status, and Featured Image
-
 - Acceptance Criteria 2
 
   **Given** that I am a `Registered User`
   **When** I have created a new DIY Project (`Thing`)
   **Then** I can edit a WSWG document to the description
-
 - Acceptance Criteria 3
 
   **Given** that I am a `Registered User`
@@ -312,13 +339,11 @@ As **Registered User**, I can **create project instructions for my DIY Projects*
   **Given** that I am a `Registered User`
   **When** I am in any website page
   **Then** I can access the `Add Instructions` option in the user menu
-
 - Acceptance Criteria 2
 
   **Given** that I am a `Registered User`
   **When** I click on the `Add Instructions` option in the user menu
   **Then** I can create a new `Instructions` element
-
 - Acceptance Criteria 3
 
   **Given** that I am a `Registered User`
@@ -363,13 +388,11 @@ As **Registered User**, I can **modify the DIY project details**, so that **the 
   **Given** that I am a `Registered User`
   **When** I am viewing my  DIY Project (Thing)
   **Then** I can use a button to bring a  page to modify my DIY Project
-
 - Acceptance Criteria 2
 
   **Given** that I am a `Registered User`
   **When** I am modifying my DIY Project (Thing)
   **Then** I can change the Title, Author, Status, and Featured Image
-
 - Acceptance Criteria 3
 
   **Given** that I am a `Registered User`
@@ -394,13 +417,11 @@ As **Registered User**, I can **modify my component's details**, so that **my co
   **Given** that I am a `Registered User`
   **When** I am viewing one of my Components (`Thing`)
   **Then** I can select a `edit` button to change the details
-
 - Acceptance Criteria 2
 
   **Given** that I am a `Registered User`
   **When** I am modifying my Component (`Thing`)
   **Then** I can edit the description with a WSWG built-in editor
-
 - Acceptance Criteria 3
 
   **Given** that I am a `Registered User`
@@ -424,13 +445,11 @@ As **Registered User**, I can **modify my Instructions elements**, so that **the
   **Given** that I am a `Registered User`
   **When** I am viewing a DIY Project (`Thing`)
   **Then** I can select the `edit`button of the Instructions element to change the Instructions
-
 - Acceptance Criteria 2
 
   **Given** that I am a `Registered User`
   **When** I am modifying an Instructions element
   **Then** I can change the content of Instructions with a WSWG built-in editor
-
 - Acceptance Criteria 3
 
   **Given** that I am a `Registered User`
@@ -455,13 +474,11 @@ As **Registered User**, I can **delete my DIY project**, so that **the project d
   **Given** that I am a `Register User`
   **When** I select a DIY project of my own from the DIY Projects list
   **Then** I can delete the selected DIY Project
-
 - Acceptance Criteria 2
 
   **Given** that I am a `Register User`
   **When** I am modifying my DIY Project on the website
   **Then** I can delete the current DIY Project
-
 - Acceptance Criteria 3
 
   **Given** that I am a `Register User`
@@ -486,7 +503,6 @@ As **Registered User**, I can **delete a component**, so that **the component do
   **Given** that I am a `Registered User`
   **When** I am viewing my DIY Components `Things`
   **Then** I can delete an existing DIY Component
-
 - Acceptance Criteria 2
 
   **Given** that I am a `Registered User`
@@ -512,7 +528,6 @@ so that **those Instructions elements do no longer exist on the website**
   **When** I am viewing my DIY Project (`Thing`)
   **Then** I can delete an existing Instructions element from the
   current DIY Project
-
 - Acceptance Criteria 2
 
   **Given** that I am a `Registered User`
@@ -569,9 +584,8 @@ Built in [#15](https://github.com/Juanma1313/diyshop/issues/15)
 
 ###### Story Points: 0
 
-
-
 #### [#17](https://github.com/Juanma1313/diyshop/issues/17) EPIC: Searching DIY Projects
+
 As a **user**, I can **sort, filter and search for DIY projects**, to **better find the ones that suit me best**.
 
 ##### [#18](https://github.com/Juanma1313/diyshop/issues/18) USER STORY: Manage DIY Projects Categories
@@ -585,25 +599,21 @@ As **Administrator**, I can **create/modify/delete categories to classify the DI
   **Given** that I am a `Administrator`
   **When** I want a new Category to classify DIY Projects
   **Then** I can use the admin interface to add it to the list of Categories.
-
 - Acceptance Criteria 2
 
   **Given** that I am a `Administrator`
   **When** I create  a new Category
   **Then** I assign an internal lowercase name to be used by the application, and a friendly name that will be shown in the webpage.
-
 - Acceptance Criteria 3
 
   **Given** that I am a `Administrator`
   **When** I need to modify a Category
   **Then** I can use the admin interface to edit the internal and the friendly name.
-
 - Acceptance Criteria 4
 
   **Given** that I am a `Administrator`
   **When** I need to delete a Category
   **Then** I can use the admin interface to delete the selected Category
-
 - Acceptance Criteria 5
 
   **Given** that I am a `Administrator`
@@ -613,7 +623,7 @@ As **Administrator**, I can **create/modify/delete categories to classify the DI
 ###### Tasks
 
 - [X] Task 1 – Create product.Category class model that will be used to instantiate each Category object
-- [X] Task 2 – Modify the DIY Project object model 'Thing' to include the Category model 
+- [X] Task 2 – Modify the DIY Project object model 'Thing' to include the Category model
 - [X] Task 3 – Create the admin.CategoryAdmin view to handle Category elements in the Admin user interface.
 
 ###### Story Points: 5
@@ -633,7 +643,7 @@ As **user**, I can **filter DIY Projects by Categories**, so that **I can narrow
 ###### Tasks
 
 - [X] Task 1 – Modify the main-nav template to displays a list of useful filtering options for one or several categories
-- [X] Task 2 – Modify the products/views.all_products view tu include the selected filter to the database query for the DIY Projects list. 
+- [X] Task 2 – Modify the products/views.all_products view tu include the selected filter to the database query for the DIY Projects list.
 
 ###### Story Points: 8
 
@@ -649,40 +659,35 @@ As **user**, I can **use a predefined sorting option from the main-nav bar**, so
   **When** I want to sort DIY Projects by date
   **Then** I can use the main navigation menu to select the new arrival to get the DIY Project list ordered from newer to older.
   **Then** I can use the dropdown sorting menu to select the Date(new to old) or Date (old to new) to get the DIY Project list ordered as selected
-
 - Acceptance Criteria 2
 
   **Given** that I am a `user`
   **When** I want to sort DIY Projects by price
   **Then** I can use the main navigation menu to select the `By Price` option to get the DIY Project list ordered by price from lower to higher.
   **Then** I can use the dropdown sorting menu to select the Price(low to high) or Price(high to low) to get the DIY Project list ordered as selected
-
 - Acceptance Criteria 3
 
   **Given** that I am a `user`
   **When** I want to sort DIY Projects by rating
   **Then** I can use the main navigation menu to select the `By Rating` option to get the DIY Project list ordered by rating  from higher to lower.
   **Then** I can use the dropdown sorting menu to select the Rating(low to high) or Rating(high to low) to get the DIY Project list ordered as selected
-
 - Acceptance Criteria 4
 
   **Given** that I am a `user`
   **When** I want to sort DIY Projects by Category
   **Then** I can use the main navigation menu to select the `By Category` option to get the DIY Project list ordered by category from A to Z.
   **Then** I can use the dropdown sorting menu to select the Category(A to Z) or Category(Z to A) to get the DIY Project list ordered as selected
-
 - Acceptance Criteria 5
 
   **Given** that I am a `user`
   **When** I want to sort DIY Projects by name
   **Then** I can use the dropdown sorting menu to select the Name(A to Z) or Name(Z to A) to get the DIY Project list ordered as selected
 
-
 ###### Tasks
 
 - [X] Task 1 – Modify the main-nav template to displays the list of useful ordering options
 - [X] Task 2 – Modify the products template include a dropdown list of the required ordering options
-- [X] Task 3 – Modify the products/views.all_products view tu include the selected ordering to the database query for the DIY Projects list. 
+- [X] Task 3 – Modify the products/views.all_products view tu include the selected ordering to the database query for the DIY Projects list.
 
 ###### Story Points: 8
 
@@ -701,11 +706,12 @@ As **user**, I can **search a text in DIY Projects**, so that **I can get a list
 ###### Tasks
 
 - [X] Task 1 – Add a text search control to the base template
-- [X] Task 2 – Modify the products/views.all_products view tu include the selected text to the database query for the DIY Projects list. 
+- [X] Task 2 – Modify the products/views.all_products view tu include the selected text to the database query for the DIY Projects list.
 
 ###### Story Points: 8
 
 #### [#22](https://github.com/Juanma1313/diyshop/issues/22) EPIC: User Shopping Cart
+
 As a **user**, I can **add DIY Project to my shopping cart**, to **be able to keep track of the added items and costs**.
 
 ##### [#23](https://github.com/Juanma1313/diyshop/issues/23) USER STORY: add Projects to the shopping cart
@@ -725,7 +731,7 @@ As **User**, I can **add a Non Free DIY Proyect to my cart**, so that **I can ke
 
 - [X] Task 1 – Create the bag application
 - [X] Task 2 – Create the session store mecanism to hold the shopping items added
-- [X] Task 3 – Create the bag/views.add_to_bag view to allow for the shopping items to be added 
+- [X] Task 3 – Create the bag/views.add_to_bag view to allow for the shopping items to be added
 - [X] Task 4 – modify the base template to include the shopping cart icon
 
 ###### Story Points: 13
@@ -747,7 +753,6 @@ As **User**, I can **see all the shopping items I currently have in my shipping 
 - [X] Task 1 – Create the bag/views.view_bag view to allow for the shopping items in the shopping cart to be displayed
 - [X] Task 2 – Create the bag template to display the items and totals
 
-
 ###### Story Points: 5
 
 ##### [#25](https://github.com/Juanma1313/diyshop/issues/25) USER STORY: manage shopping items in the shopping cart
@@ -766,12 +771,13 @@ As **User**, I can **increment/decrement the number of shopping items I currentl
 
 ###### Tasks
 
-- [X] Task 1 – Create the bag/views.adjust_bag view to allow for the shopping cart content to be modified 
+- [X] Task 1 – Create the bag/views.adjust_bag view to allow for the shopping cart content to be modified
 - [X] Task 2 – modify the bag template to include counter, update and remove options per each item in the shopping cart
 
 ###### Story Points: 5
 
 #### [#26](https://github.com/Juanma1313/diyshop/issues/26) EPIC: User Shopping Cart Checkout
+
 As user, I can checkout the content of my shopping cart, so that I am able to formalize the purchase and delivery of the content of the shopping cart.
 
 ##### [#27](https://github.com/Juanma1313/diyshop/issues/27) USER STORY: initiate checkout of the shopping cart
@@ -806,33 +812,29 @@ As **User**, I can **fill in the checkout form**, so that **I provide full name,
 
   **Given** that I am a `User`
   **When** in the checkout page
-  **Then** I can see all the elements from the shopping bag with their cost 
+  **Then** I can see all the elements from the shopping bag with their cost
   **Then** I can see the delivery cost
   **Then** I can see the Grand total cost
-
 - Acceptance Criteria 2
 
   **Given** that I am a `User`
-  **When** in the checkout page, I press the `Adjust Bag` button 
+  **When** in the checkout page, I press the `Adjust Bag` button
   **Then** I am redirected to the shopping cart detail page (Shopping Bag)
-
 - Acceptance Criteria 3
 
   **Given** that I am a `Anonymous User`
-  **When** in the checkout page, I press the `Sign Up` link 
+  **When** in the checkout page, I press the `Sign Up` link
   **Then** I am redirected to the sign-up page
-
 - Acceptance Criteria 4
 
   **Given** that I am a `Anonymous User`
-  **When** in the checkout page, I press the `Sign In` link 
+  **When** in the checkout page, I press the `Sign In` link
   **Then** I am redirected to the sign-in page
-
 - Acceptance Criteria 5
 
-  **Given** that I am a `User` in the checkout page and I press the `Complete Order` button
-  **When** the form data is not valid, 
-  **when** the database transaction has failed 
+  **Given** that I am a `User` in the checkout page and I press the `Buy Now` button
+  **When** the form data is not valid,
+  **when** the database transaction has failed
   **when** the payment gateway transaction has failed
   **Then** cancel the order transactions on the database and payment gateway
   **Then** notify me of the problem
@@ -853,18 +855,16 @@ As  **User**, I can **send the completed purchase form**, so that **the payment 
 - Acceptance Criteria 1
 
   **Given** that I am a `User`
-  **When** in the checkout page with a valid checkout form, I press the `Complete Order` button 
+  **When** in the checkout page with a valid checkout form, I press the `Buy Now` button
   **Then** the order is submited for payment to the external payment gateway.
-
 - Acceptance Criteria 2
 
   **Given** that, an order has been submitted for payment to the external payment gateway.
   **When** the transaction is accepted
   **Then** The new purchase order is finally committed to the database
-  **Then** An e-mail with the confirmation of the purchase is sent to the address that the user filled in the purchase form.  
+  **Then** An e-mail with the confirmation of the purchase is sent to the address that the user filled in the purchase form.
   **Then** The shopping cart is cleaned of all shopping items
   **Then** the user is redirected to the checkout_success page where all the details of the purchase order is displayed
-
 
 ###### Tasks
 
@@ -876,32 +876,135 @@ As  **User**, I can **send the completed purchase form**, so that **the payment 
 ###### Story Points: 8
 
 #### [#30](https://github.com/Juanma1313/diyshop/issues/30) EPIC: User Profiles
-As a **Registered user**, I can **set my billing information into a profile**, to **be able to use that profile for future checkouts**.
 
-##### [#27](https://github.com/Juanma1313/diyshop/issues/27) USER STORY: Create a profile
+As a **Registered User**, I can **set my billing information into a profile**, to **be able to use that profile for future checkouts**.
 
-As **User**, I can **start the checkout process for the content of my sopping cart**, so that **I can show the order sumary and the payment methods**
+##### [#31](https://github.com/Juanma1313/diyshop/issues/31) USER STORY: Create a user profile
+
+As **Registered User**, I can **save my billing information under my account**, so that **I can review, change and reuse it for future checkouts**
 
 ###### Acceptance Criteria
 
 - Acceptance Criteria 1
 
   **Given** that I am a `User`
-  **When** in the shoping cart detail page (Shopping Bag), I press the `Secure Checkout` button
-  **Then** I am redirected to the checkout page were the order form and order summary are presented.
+  **When** I sign up to the website
+  **Then** An empty profile is created.
+- Acceptance Criteria 2
+
+  **Given** that I am a `Registered User`
+  **When** loading the checkout page
+  **Then** the billing information (telephone, delivery address) is automatically filled in from my user profile
+  **Then** a check button `save the delivery information to my profile` is checked by default
+- Acceptance Criteria 3
+
+  **Given** that I am a `Registered User`
+  **When** in the checkout page
+  **Then** I can change
+  **Then** I have the option toggle the check button `save the delivery information to my profile`
+- Acceptance Criteria 4
+
+  **Given** that I am a `Registered User`
+  **Given** that from the checkout page, I have successfully submitted a purchase order
+  **When** the check button `save the delivery information to my profile` is checked
+  **Then** The delivery information from the purchase order (telephone and address) is saved to my user profile
 
 ###### Tasks
 
-- [X] Task 1 – Create the checkout application
+- [X] Task 1 – Create the profiles application
+- [X] Task 2 – Create the profiles.UserProfile class to instantiate user profile objects in a one-to-one relation with the User class
+- [X] Task 3 – Create the profiles/views.profile view to access the database user profile
+- [X] Task 4 – Update checkout/views.checkout view to read user profile information and feed it to new checkouts
+- [X] Task 5 – Update checkout/models.Order class to include a user profile member
 
 ###### Story Points: 13
 
+##### [#32](https://github.com/Juanma1313/diyshop/issues/32) USER STORY: View and Manage my Profile
 
-[EPIC: Messages and notifications]()
+As **Registered User**, I can **view and change my profile information under my account**, so that **I can adapt the information to future checkouts**
 
-[EPIC: Social Media and marketing]()
+###### Acceptance Criteria
 
-[EPIC: Production deployment]()
+- Acceptance Criteria 1
+
+  **Given** that I am a `Registered User`
+  **When** I am in my user profile page
+  **Then** I can view and change the delivery information
+  **Then** I can view all my previous successfully submitted orders
+- Acceptance Criteria 2
+
+  **Given** that I am a `Registered User`
+  **When** in my user profile page, I press the `Update InFormation` button
+  **Then** The information shown in the `my profile` form is updated in the database
+
+###### Tasks
+
+- [X] Task 1 – Create the profiles/views.order_history to access to all the user orders
+- [X] Task 2 – Create the profile/forms.UserProfileForm to accommodate the profile data into a template
+- [X] Task 3 – Create the profile template to present the user profile as a web page
+
+###### Story Points: 5
+
+#### [#33](https://github.com/Juanma1313/diyshop/issues/33) EPIC: User Messages and Notifications
+
+As a **User**, I can **be informed about results of my operations**, so that **I get confirmations, information, warnings and errors about my interaction with the website**.
+
+##### [#34](https://github.com/Juanma1313/diyshop/issues/34) USER STORY: User Messages and Notifications
+
+As a **User**, I can **be informed about results of my operations**, so that **I get confirmations, information, warnings and errors about my interaction with the website**.
+
+###### Acceptance Criteria
+
+- Acceptance Criteria 1
+
+  **Given** that I am a `User`
+  **When** I request sign up, sign in or sign out
+  **Then** I receive a pop-up message that notifies me of the result of the request
+- Acceptance Criteria 2
+
+  **Given** that I am a `Registered User`
+  **When** I request to modify my email or password
+  **Then** I receive a pop-up message that notifies me of the result of the request
+- Acceptance Criteria 3
+
+  **Given** that I am a `User`
+  **When** I request DIY Project ordering, filtering or searching
+  **Then** I receive a pop-up message whenever there is an error in the request
+- Acceptance Criteria 4
+
+  **Given** that I am a `Registered User`
+  **When** I create, edit or delete a DIY Project
+  **Then** I receive a pop-up message with the result of the operation
+- Acceptance Criteria 5
+
+  **Given** that I am a `User`
+  **When** I modify my shopping cart, adding or deleting products
+  **Then** I receive a pop-up message with the result of the operation
+- Acceptance Criteria 6
+
+  **Given** that I am a `User`
+  **When** I receive a pop-up message with a success result of a shopping cart operation
+  **Then** the pop-up message contains a summary of my shopping cart
+  **Then** the pop-up provides the button `Go To Secure Chakout` to directly go to the checkout page.
+- Acceptance Criteria 7
+
+  **Given** that I am a `User`
+  **When** I request a checkout
+  **Then** I receive a pop-up message that notifies me of the result of the request
+- Acceptance Criteria 8
+
+  **Given** that I am a `User`
+  **When** I modify my profile
+  **Then** I receive a pop-up message with the result of the operation
+
+###### Tasks
+
+- [X] Task 1 – Set up Django messages framework to use flash messages for user notification
+- [X] Task 2 – Add messages of type Success, Info, Warning and Error for the results of all the user operations
+- [X] Task 3 – Create a Shopping Cart template for all the messages related to the shopping Cart
+- [X] Task 4 – Modify the Base template to Incorporate Bootstrap-Toasts to the Django message system
+
+###### Story Points: 8
 
 
 #### Web Site Sketches
