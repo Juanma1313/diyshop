@@ -1,4 +1,7 @@
-# ![DIY Site logo](static/diy-logo.png) **DIY Shop**
+# ![DIY Site logo](static/diy-logo.png)  **DIY Shop** 
+
+>|by Juan Manuel de las Heras Arroyo|
+>|:---:|
 
 # Introduction
 
@@ -14,7 +17,8 @@ In this second fase, we expand the initial implementation to include E-Commerce 
 
 From a technical standpoint, this site is implemented in Python, JavaScript, HTML and CSS languages, on the Django framework and using MVC design. It includes user authentication, email validation and full CRUD functionality to manage the content of the repository.
 
-Access the website [DIY Shop](https://diyshop-e5a99a0c89cb.herokuapp.com/) Deployed on Heroku service
+- Access the website [DIY Shop](https://diyshop-e5a99a0c89cb.herokuapp.com/) Deployed on Heroku service
+- Access the repository [diyshop](https://github.com/Juanma1313/diyshop) stored in Github
 
 # Table of Contents
 
