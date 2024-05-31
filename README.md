@@ -223,6 +223,24 @@ The following are the customer requirements that are part of the user stories li
 | [#30](https://github.com/Juanma1313/diyshop/issues/30) | [#32](https://github.com/Juanma1313/diyshop/issues/32) | USER STORY: View and Manage my Profile                              |           | X       | X       | X     |
 | [#33](https://github.com/Juanma1313/diyshop/issues/33) | [#34](https://github.com/Juanma1313/diyshop/issues/34) | USER STORY: User Messages and Notifications                         | X         | X       | X       | X     |
 
+#### Additional requirements
+
+In addition to the [initial customer requirements](#other-requirements), the following list of requirements has been issued in this second phase.
+
+- Admin pages should add Category, Profile and Order management. 
+- Multimedia content (images, videos, data files, etc.) should be stored in scalable cloud-based storage (AWS S3 services).
+- DIY projects should be categorized.
+- Users should have the ability to search, sort and filter published DIY projects.
+- Users should have a shopping cart with session persistence where they can store the products they wish to purchase.
+- There must be an online payment functionality provided by a payment gateway service (Stripe Payments with Elements).
+- The website must keep a record of all payment transactions.
+- Users should have a customizable profile where they can store default delivery information.
+- Payments should be confirmed to the user by email.
+- Users should be able to create and manage the content of their own DIY projects ** not ** using the Django-admin framework.
+- Users must be informed of the result of their interactions with the website via a pop-up messaging system (Django-messages + Bootstrap-Toasts).
+- The website must have a link to its Facebook social network page.
+- The website must have a News Letter registration service.
+
 ### Development plan
 
 [Development plan for first stage (DIY Site)](https://github.com/Juanma1313/diyshop#development-plan)
