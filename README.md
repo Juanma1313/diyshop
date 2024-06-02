@@ -646,67 +646,34 @@ In a future implementation, the following capabilities would be desired:
 
 ### Testing Strategy
 
-Since the webpages for the unknown or regular users that are the  
-webpages handled from scratch by the project which are minimalistic and  
-simple, and the administrative pages are mostly handled by a well tested  
-Django Allauth extensions, I decided that a manual testing strategy for  
-the application can be easier to deploy and more effective in terms of  
-time and human efforts.
+Since the webpages for the unknown or regular users that are the webpages handled from scratch by the project which are minimalistic and simple, and the administrative pages are mostly handled by a well tested Django Allauth extensions, I decided that a manual testing strategy for the application can be easier to deploy and more effective in terms of time and human efforts.
 
-As for the code validation, I use online applications to check that the  
-source code for all the languages used are in line with the required  
-standards.
+As for the code validation, I use online applications to check that the source code for all the languages used are in line with the required standards.
 
 ### Validating the Source
 
 #### Django Python code
 
-In order to validate the python code as PEP8 compliant, I have run it  
-througt "CI Python Linter" online tool and checked the results
-
-The only PEP8 error I systematically allow is the "E501 line too long".  
-This is a personal decision and the reason I allow this error is because  
-nowadays developers' monitors no longer have a limit of 80 characters  
-per line and following this rule is extremely annoying for me.
-
-| diy_project |   |   |   |   |
-| Done | File | Result | Pass | Additional info |
-| x | asgi.py | No errors | x |   |
-| x | settings.py | 9 errors - E501 Line too long | x | E501 ignored |
-| x | urls.py | No errors | x |   |
-| x | wsgi.py | No errors | x |   |
-| diy |   |   |   |   |
-| x | admin.py | 16 errors - E501 Line too long | x | E501 ignored |
-| x | apps.py | No errors | x |   |
-| x | models.py | 5 errors - E501 Line too long | x | E501 ignored |
-| x | tests.py | No errors | x |   |
-| x | urls.py | No errors | x |   |
-| x | views.py | 2 errors - E501 Line too long | x | E501 ignored |
+In order to validate the python code as PEP8 compliant, I have run it througt "Flacke8" tool and checked the results
+There was no error found in any of my python files.
 
 #### CSS code
 
-In order to validate the CSS code, I tried to pass the url of the  
-deployed website to the CSS validator from W3C, but there where many  
-warnings related to the many third party extensions used by Bootstrap  
-and others.
+In order to validate the CSS code, I tried to pass the url of the deployed website to the CSS validator from W3C, but there where many warnings related to the many third party extensions used by Bootstrap and others.
 
-I decide to validate only the style.css file that is really the only one  
-I have customized. The result is as follows:
+I decide to validate only the style.css file that is really the only one I have customized. The result is as follows:
 
-![](assets/media/image28.png)
+![CSS code validation](assets/media/image28.png)
 
-Unfortunately the result is in spanish, but translates to  
-"Congratulations!, No errors found" and "This document is CSS version 3
+Unfortunately the result is in spanish, but translates to "Congratulations!, No errors found" and "This document is CSS version 3
 
 - SVG Valid!",
 
-The validator only reported 2 warnings regarding two features from a  
-vendor extension, which its no problem.
+The validator only reported 2 warnings regarding two features from a vendor extension, which its no problem.
 
 #### HTML code
 
-In order to validate HTML, I pass the deployed website urls that I want  
-to test to the HTML validator from W3C.
+In order to validate HTML, I pass the deployed website urls that I want to test to the HTML validator from W3C.
 
 ![](assets/media/image29.png)
 
