@@ -11,9 +11,9 @@ The DIY Shop, as the second stage, implementes a fully functional E-Commerce sol
 
 Public access to this website can be made completely anonymous, allowing the users to browse the entire published repository, and encouraging them to register on a permanent basis, which will also allow users to mark which projects are their favourites.
 
-In the first stage of implementation, people of any age and skill level could explore the projects named "Things" that are publicly presented in this repository, and use the DIY project published instructions to replicate them. The contents of the projects (things) were uploaded into the repository by the creator users whom require private access with certain privileges, assigned by an administrator, in order to access the repository management system.
+In the first stage of implementation (**DIY Site**), people of any age and skill level could explore the projects named "Things" that are publicly presented in this repository, and use the DIY project published instructions to replicate them. The contents of the projects (things) were uploaded into the repository by the creator users whom require private access, with certain privileges assigned by an administrator, in order to access the repository management system.
 
-In this second fase, we expand the initial implementation to include E-Commerce functionality, including features like user profiles, shopping kart, online payment, e-mail confirmation, allow users to add content trough website pages, sofisticated message notification for the user, product search capabilities, product navigation using categories, links to Facebook busines page and newsleter subscription.
+In this second fase (**DIY Shop**), we expand the initial implementation to include E-Commerce functionality, including features like user profiles, shopping kart, online payment, e-mail confirmation, allow users to add content trough website pages, sofisticated message notification for the user, product search capabilities, product navigation using categories, links to Facebook busines page and newsleter subscription.
 
 From a technical standpoint, this site is implemented in Python, JavaScript, HTML and CSS languages, on the Django framework and using MVC design. It includes user authentication, email validation and full CRUD functionality to manage the content of the repository.
 
@@ -98,7 +98,7 @@ The target customer of this business is a retail customer, which is why a busine
 
 ## Marketing Strategy
 
-In our case, the product being sold is not really the product being offered, since what is offered on this website is information on how to carry out small do-it-yourself (DIY) projects, but what is really being sold are the parts and kits to carry out these projects.  
+In our case, the product being sold is not really the product being advertised, since what is promoted on this website is information on how to carry out small do-it-yourself (DIY) projects, but what is really being sold are the parts and kits to carry out these projects.
 So the main strategy is to make DIY projects attractive so that customers are compelled to buy the necessary parts and pieces, which in normal conditions, to find them individually in the conventional market, is a major inconvenience for the customer.
 
 ### Market Target
@@ -123,23 +123,30 @@ In choosing the words and phrases, we have taken into account the clients, the p
 
 This busines would be operating in Spain, so a set of this words in spanish should be also included, but since the website default lenguage is English, and currently does not support multilanguage. We will avoid this part for now.
 
->##### SEO Keywords and Sentences
+>##### SEO Keywords and phrases
 >
 >| Client      | Busines         | Miscelaneous  | Sentences                   |
 >|:-----------:| --------------- | ------------- | --------------------------- |
->| tinkerer    | DIY Project     | open hardware | expand your mind            |
->| electronics | Shared projects | open software | feeling of achievement      |
->| robotics    | fun and usefull | DIY Tools     | a project for everyone      |
+>| tinkerer    | DIY Project     | open hardware | expand my mind              |
+>| electronics | Shared projects | open software | feel achievement            |
+>| robotics    | fun and usefull | DIY Tools     | a project for me            |
 >| maker       | DIY upload      | circuits      | activity for your free time |
->| Hobby       | DIY download    | actuators     | projects are fun            |
+>| Hobby       | DIY download    | actuators     | projects that are fun       |
 >| animatronics| DIY Shop        | woodwork      | Learn while building        |
->| bricolage   | DIY Shop        | woodwork      | do it yourself              |
+>| bricolage   | DIY build       | woodwork      | do it yourself              |
+
+#### Social Media
+
+One of the customer requirements is to have a link to a DIY Shop Facebook webpage. 
+- Link to [DIY Shop in Facebook](https://www.facebook.com/people/DIY-Site/61559945799160/)
+
+![Screen capture of DIY Shop Facebook Page](assets/doc/screencaptures/screenshot-facebook-diyshop.png)
 
 # User experience (UX)
 
 DIY Site aims to be a friendly public site for users to access DIY style projects that they can replicate. The presentation of the content is dynamic and attractive, and the information about the projects is clear and easy to read.
 
-Registered project creators will also be able to add and edit their own creations. This administrative interface is geared towards a more functional purpose, so that project content can be easily edited and expanded.
+Registered users will also be able to add and edit their own creations. This administrative interface is geared towards a more functional purpose, so that project content can be easily edited and expanded.
 
 ## Functional specifications
 
@@ -149,7 +156,7 @@ There are four types of users segregated by their role and purpose.
 
 - **Anonymous:** A non registered user
 - **Regular:** A registered user
-- **Creator:** A user with privileges to add/edit/publish content
+- **Creator:** A user with privileges to add/edit/publish owners content
 - **Administrator:** User that can validate users and perform all  
   actions.
 
@@ -270,15 +277,18 @@ In addition to the [initial customer requirements](#other-initial-requirements),
 
 ### Development plan
 
-- Link to [Development plan for first stage (DIY Site)](https://github.com/Juanma1313/diyshop#development-plan)
+- Link to [**Development plan for first stage (DIY Site)**](https://github.com/Juanma1313/diyshop#development-plan)
 
-Following the same guidelines applied to the first phase of development, the development must be managed under the **AGILE** methodology.  
+Following the same guidelines applied to the first phase of development, the development must be managed under the **AGILE** methodology.
 _**Epics**_, and their corresponding _**user stories**_ must be defined and, when needed, meet a consensus between the developers and the project owner through agreed acceptance criteria. Also, from a more technical point of view, development tasks and their corresponding _**story points**_ are defined in order to better evaluate the development effort.  
-The following information lists all these issues. Please follow the links to access the full information stored on github.
+The following information lists all these issues. 
+
+> [!NOTE]
+> Please follow the links fro `epics` and `user stories` to access the full information stored on github.
 
 #### DIY Shop User Stories
 
-Since the detailed list of the `epics` and `user stories` is too longwinded to be usefull in this doccument, I have written it in a separated doccument. here is a link to the [DIY Shop Stories](assets/doc/diy-shop-user-stories.md) document.
+Since the detailed list of the `epics` and `user stories` is too longwinded to be usefull in this doccument, I have written it in a separated doccument. here is a link to the [**DIY Shop Stories**](assets/doc/diy-shop-user-stories.md) document.
 
 #### Backlogs and Kanban boards
 
@@ -294,101 +304,84 @@ Since the detailed list of the `epics` and `user stories` is too longwinded to b
 
 #### Web Site Sketches
 
-To outline the design of the website, I have created the following  
-sketches to guide the development of the user interface. But, since for  
-the administration of the website I will mainly rely on the Django  
-administration interface, and even though it will be customized, I  
-didn't find the need to design the wireframes of those pages, since the  
-style is already defined in the framework and regular users will not  
-access it anyways.
+To outline the design of the website, I have created the following sketches to guide the development of the user interface. 
 
-For this type of website content, I assume that the authors will produce  
-descriptions and instructions with long texts, so the main design is  
-also oriented towards large screens. I then adapt this content so that  
-it can also be viewed by an eventual user of a small screen device.
+Since for the administration of the website I will mainly rely on the Django administration interface, and even though it will be customized, I didn't find the need to design the wireframes of those pages, since the style is already defined in the framework and regular users will not access it anyways. 
+Likewise, the ***user profile*** and ***edit product*** pages are based on the Django-forms and Django-Crispy frameworks, so their aesthetics are already pre-established.
 
-##### ![](assets/media/image2.png)Base Page
+For this type of website content, I assume that the DIY Projects authors will produce descriptions and instructions with long texts, so the main design is also oriented towards large screens. I then adapted this contents so that it can also be viewed by an eventual user of a small screen device.
 
-This design only sketches the header and footer of the pages. This  
-should be consistent across all pages.
 
-##### Home page and DIY projects list
 
-This page is the landing page and displays a carousel of images and  
-phrases that define the website and shows the list of available DIY  
-projects as well as inviting the users to register to allow them to  
-select their favourite projects.
+##### Base Page 
 
-![](assets/media/image3.png)
+This design only sketches the header and footer of the pages. This should be consistent across all webpages of the website.
+it displays logo and brand, all the navegation options, access to the user menus and the sopping cart. In the footer it is intended to display company information and bring access to the company social media networks.
 
-##### DIY project Details
+![Base Page](assets/media/image2.png)
 
-![](assets/media/image4.png)
+##### Home page
 
-#### Database
+This page is the landing page and displays a carousel of images and phrases that define the website. 
+It also brings acces to the rest of the webpages as well as the Facebook DIY shop webpage and the Newsletter subscription form.
 
-It is a customer requirement to use the services of Elephant as an  
-external SQL service to host the website database. This service provider  
-has servers running PostgreSQL servers.
+![Home Page](assets/media/image3.png)
 
-Since the development framework is based on Django, we will use its  
-built in user management functionality from its allauth package.
+##### DIY projects page
 
-Django's Allauth uses a database user table that its represented on the  
-leeft of the following figure, which is included in this figure tu  
-identify the relations with the website non built in database model.
+This page shows the list of available DIY projects and bring access to the details of each one.
 
-![](assets/media/image5.png)
+![DIY projects page](assets/media/image30.png)
 
-The table named `diy_thing` stores the details of DIY projects and  
-DIY components. A special detail of the implementation is that this  
-table has a cyclic reference to itself in order to accommodate a tree  
-structure for the DIY components, which in turn are DIY projects  
-themselves.
 
-The table named 'diy_instructions' stores the details of the DIY  
-Project Instructions and a 'one-to-many' relationship with its  
-corresponding DIY Project.
+##### DIY project Details page
+This page is where the chosen DIY Project is displayed, with all its `Components` and `Instructions` to be followed by the user.
 
-The table called `diy_thing_likes` functions as an intermediate  
-table that stores references to all of each user's favourite DIY  
-Projects as a `many to many` relationship.
+![DIY project Details page](assets/media/image4.png)
 
-All these tables are automatically created by Django from the  
-application model classes `Thing` and `Instructions`, so with only  
-two classes, all the necessary database structure is created.
+#### Database Schema
 
-Although there is no specific class for the diy_thing_likes table, it  
-is also produced by Django when it recognizes the `many-to-many`  
-relationship in the `Thing` class in the application model.
+It is a customer requirement to use the services of Elephant as an external SQL service to host the website database. This service provider has servers running PostgreSQL servers.
+
+Since the development framework is based on Django, we will take advantage of its built in user management functionality from its allauth package, which deployes its own database structures.
+
+Django's Allauth uses, among others, the `auth_user`, `account_emailconfirmation` and `account_emailaddress` database tables depicted on the left of the following figure, which are included in this figure in order to identify their relationships with the database structures specific to the DIY Shop website.
+
+To store the user's billing preferences, the `profiles-userprofile` table stores user information such as phone number or delivery address, and maintains a ***one-to-one*** relationship with the `auth_user` table, which means that there can only be one profile for each user. This table is very important for billing, as it is the only connection between users and their orders.
+
+The table `products_thing` stores the details of the DIY projects and components. A special detail of the implementation is that this table has a **cyclic reference to itself** in order to accommodate a tree structure for the DIY components, which in turn are DIY projects themselves. So, in reality, this structure is two models in one. Allowing, in my opinion, greater flexibility with greater simplicity.
+
+The table `products_instructions` stores the details of the DIY Project Instructions and a ***one-to-many*** relationship with its corresponding DIY Project.
+
+The table `products_thing_likes` functions as an intermediate table that stores references to all of each user's favourite DIY Projects as a ***many to many*** relationship.
+
+To classify DIY products, the `products_categoty` table stores all classification categories with a **many-to-one** relationship with the `products_thing` table. This means that each DIY product can belong to only one category. Maybe in a third iteration of this project we can change that, to allow DIY projects to have multiple categories, and thus improve the search tool for the user.
+
+In order to keep track of all user purchases, the `checkout_order` table stores all successfully submitted orders, and the `checkout_orderlineitem` table stores all DIY Projects purchased in each order, with a ***many-to-one*** relationship between the two tables. The `checkout_order` table, in turn, maintains a ***many-to-one*** relationship with the `profiles_userprofile` table to identify the owner of the order, while the `checkout_orderlineitem` table maintains a ***many-to-one*** relationship with the `products_thing` table to identify each DIY project purchased.
+
+All these tables are automatically created by Django from the application model classes `Thing`, `Instructions`, `Category`, `UserProfile`, `Order` and `OrderLineItem`, so with a few classes, all the necessary database structures are created.
+
+Although there is no specific class for the `diy_thing_likes table`, it is also produced by Django when it recognizes the ***many-to-many*** relationship between the `Thing` class and the `User` class in the `products` application model.
+
+#### Database ERD Model
+
+![Database Schema](assets/media/image5.png)
 
 ## Features
 
 #### Users Home page
 
-The home page or landing page is presented on the root page of the  
-site's domain. Since the sole purpose of this website is to share  
-personal DIY projects, I designed it in a minimalist way with a single  
-carousel banner that explains the purpose of the site and a paginated  
-list of DIY projects available for sharing, where each of the DIY  
-projects is represented by a link showing its title, featured image,  
-author, time of publication and number of likes.
+The ***home page** or **landing page** is presented on the root page of the site's domain. Since the main purpose of this page is to welcome users and provide them access to the rest of the site, I designed it in a minimalist way, with a simple carousel banner advertising the benefits of the website.
 
-When an unregistered user browses the site, a link at the top of the  
-page encourages them to register and redirects them to the registration  
-page. On the other hand, if the user is already logged in, the link will  
-encourage them to view and rate the DIY projects, and this link will  
-redirect them to the list of DIY projects below..
+A large black button redirects the user to the DIY projects page, while the Facebook link opens the DIY Shop Facebook page and the newsletter form allows the user to sign up for the DIY Shop newsletter service.
 
 ![](assets/media/image6.png)
 
 #### Footer
 
-The main navigation bar appears at the top of all user web pages  
-containing links to the social media sites where the website owner have  
-presence.
+This bar appears at the BOTTOM of all user web pages containing breaf company information, and links to the social media sites where the owner busine have presence.
 
-![](assets/media/image7.png)
+![Footer bar](assets/media/image7.png)
 
 #### Users Navigation Bar
 
@@ -430,6 +423,7 @@ its drop-down content varies depending on the user's context.
 ###### Drop-down Menu content.
 
 | Anonimous User | Regular User | Administrators/Content Creators |
+|----------------|--------------|---------------------------------|
 | ![](assets/media/image9.png) | ![](assets/media/image10.png) | ![](assets/media/image11.png) |
 
 #### Sign Up
