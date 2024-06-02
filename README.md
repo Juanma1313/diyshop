@@ -380,305 +380,267 @@ A large black button redirects the user to the DIY projects page, while the Face
 #### Footer
 
 This bar appears at the BOTTOM of all user web pages containing breaf company information, and links to the social media sites where the owner busine have presence.
+This bar will not be presented to small screen devices since takes too much screen realstate and provides little utilitie.
+
+There is also an icon, allways present, at the bottom right corner at the footer, that will scroll the web page to the top, which it is usefull with long pages.
 
 ![Footer bar](assets/media/image7.png)
 
 #### Users Navigation Bar
 
-The main navigation bar appears at the top of all user web pages, and  
-maintains the minimalist style. It displays only the site's logo and  
-name, as a link to the home page, and a drop-down menu that allows the  
-user to access registration, login, logout and other functions.
+The main navigation bar appears at the top of all user web pages, and maintains the minimalist style. It provides the following features:
+- Brand logo and name which works as a link to the home page. 
+- Search bar, where users can search DIY projects using words or phrases that may be in their name or description.
+- Main navigation bar with options to bring up the DIY product list in particular order or categories.
+- white user icon that opens a user drop-down menu, which changes to yellow and displays the username underneath, when the user is logged in.
+- White shopping bag icon that opens the shopping bag page, which changes to yellow and shows underneath it the total cost of the shopping bag when the cost is greater that 0.00.
 
-The drop-down menu is located in the top right corner and is represented  
-by a user icon containing the user's name if signed in.
+![normal nav bar](assets/media/image8.png)
 
-![](assets/media/image8.png)
+When the device's screen is not large enough, this bar changes to save space and make it clearer for the user, and the main navegation bar changes to a dropdown menu.
+
+| Small Screen Device Navigation Bar | Small Screen Device Main Navigation dropdown menu|
+|:-:|:-:|
+| ![small nav bar](assets/media/image31.png) | ![small main nav bar](assets/media/image32.png) |
+
+##### User Main Navigation Menu
+This menu, sitting in the center of the Navigation bar, and under the search bar, provides a serie of menus from where the user can choose to order and filter the Project list. 
+
+| All Projects sorting Menu | Electronics filtering Menu | Crafts and Workshop filtering menu | Other sorting/filtering menu |
+|:-:|:-:|:-:|:-:|
+| ![All Projects sorting Menu](assets/media/image33.png) | ![Electronics filtering Menu](assets/media/image34.png) | ![Crafts and Workshop filtering menu](assets/media/image35.png) | ![Other sorting/filtering menu](assets/media/image36.png) |
+||
+
 
 ##### User Dropdown Menu
 
-This menu is located at the top right of the user's navigation bar, and  
-its drop-down content varies depending on the user's context.
+Clicking on the user icon displays the user menu as a drop-down menu, and its content varies depending on the user's context.
 
 ###### User Menu options:
 
-> **Sign Up:** This menu option redirects the user to the  
-> accounts/registration web page so that he/she can self-register on  
-> the website.
+> **Admin:** This menu option redirects the administrator to the admin web page so that he/she can perform administrative tasks.
 
-> **Sign In:** This menu option redirects the user to the  
-> accounts/login webpage so that the user can sign in the website  
-> with an email address
+> **Add Project:** This menu option redirects the registered user to the add_product web page so that he/she can create a new DIY project.
 
-> **Sign Out:** This menu option redirects the user to the  
-> accounts/logout webpage so that the user can sign out the website.
+> **My Profile** This menu option redirects the registered user to his/her profile page so that he/she can edit the default delivery information.
 
-> **E-mail:** This menu option redirects the user to the  
-> accounts/email webpage so that the user can self-manage his/her  
-> email addresses.
+> **E-mail:** This menu option redirects the registered user to the accounts/email webpage so that the user can self-manage his/her email addresses.
 
-> **Admin:** This menu option redirects the user to the admin web  
-> page so that he/she can perform administrative tasks.
+> **Sign Up:** This menu option redirects the non registered user to the accounts/registration web page so that he/she can self-register on the website.
+
+> **Sign In:** This menu option redirects the non registered user to the accounts/login webpage so that the user can sign in the website with an email address.
+
+> **Sign Out:** This menu option redirects the registered user to the accounts/logout webpage so that the user can sign out the website.
 
 ###### Drop-down Menu content.
 
-| Anonimous User | Regular User | Administrators/Content Creators |
-|----------------|--------------|---------------------------------|
-| ![](assets/media/image9.png) | ![](assets/media/image10.png) | ![](assets/media/image11.png) |
+| Anonymous User menu |  Registered User menu | Administrators/Content Creators user menu|
+|:-:|:-:|:-:|
+| ![Anonymous user menu](assets/media/image9.png) | ![Regular user menu](assets/media/image10.png) | ![Administrators user menu ](assets/media/image11.png) |
+||
 
-#### Sign Up
+#### Sign Up Webpage
 
-![](assets/media/image12.png)
+![sign up webpage](assets/media/image12.png)
 
-#### Sign In
+#### Sign In Webpage
 
-![](assets/media/image13.png)
+![sign in webpage](assets/media/image13.png)
 
-#### Sign Out
+#### Sign Out Webpage
 
-![](assets/media/image14.png)
+![sign out webpage](assets/media/image14.png)
 
-#### Email
+#### Email Webpage
 
-![](assets/media/image15.png)
+![email webpage](assets/media/image15.png)
 
-#### DIY Project details
+#### DIY Projects List
 
-Once the user has selected a DIY project link, the details web page is  
-displayed giving access to the details, the DIY components and the  
-Instructions, so that the user can follow them to reproduce the object  
-described in the project..
+This page displays a list of DIY projects according to the filter, order or search options selected by the user.
+There are few options to land on this page:
+- Selecting the `check out our latest projects` button from the `Home Page` will bring the list of DIY projects ordered by date (new to old)
+- Selecting one of the options of the `All Project` from the main navigation menu will bring the list of DIY projects ordered by Price (low to high),  Rating (high to low), Category (A to Z), or All (unsorted).
+- Selecting one of the options of any other option from the main navigation menu will bring the list of DIY projects ordered by the corresponding assiciated categories to that option. 
+- Selecting one of the sorting options in the `Sort By` dropdown list
+- After finishing with a checkout or shopping bag operation will bring the list of DIY projects unordered by default.
 
-The layout of this page is highly dependent on the design of the DIY  
-project content creator, as the description fields and instructions are  
-displayed as HTML documents that can be fully customized with colours  
-and images, allowing for a very flexible result.The order in which the  
-information is presented is one of the few limitations that have been  
-set when displaying the DIY project.
+If the user is the author of any of the DIY Projects, both `Edit` and `Delete` buttons will apear at the bottom of those DIY Projects.
+If the user is an administrator or a registered Content Creator, both 'Edit' and 'Delete' buttons will apear at the bottom of all DIY Projects.
 
-![](assets/media/image16.png)
+Clicking on any DIY Project will bring up that DIY project detail page.
+
+>[!NOTE]
+> For the time being, the ‘Delete’ option will only be available to administrators, even when the `Delete` link is available to other users. This is a design decision under discussion with the customer. :-)
+
+![diy projects list](assets/media/image37.png)
+
+
+#### DIY Project Details
+
+Once the user has selected a DIY project link, the details webpage is displayed, giving access to the details, the DIY components and the Instructions, so that the user can follow them to reproduce the object described in the project.
+
+The layout of this page is highly dependent on the design of the DIY project author, as the description fields and instructions are displayed as HTML documents that can be fully customized with colours, images, videos, etc., allowing for a very flexible result.The order in which the information is presented is one of the few limitations that have been set when displaying the DIY project. Starting with the Projets details, then the list of components followed by the list of instructions ordered by title.
+
+Clicking on the `Heart Icon` the registered user can toggle the `like` flag fro this DIY project, and the likes counter will be updated
+
+If the current DIY project has price greater that €0.00, the the button `Add to bag` will be displayed, otherwise, the `Free Access` label will be display instead of the price.
+
+By clicking on the `Add to bag` button, the current DIY project will be added to the shopping bag as many times as indicated by the step control next to it.
+
+If the user is an administrator, a content creator or  the author og the DIY project, the buttons `Edit`and `Delete` will be available.
+
+
+>[!NOTE]
+> For the time being, the ‘Delete’ option will only be available to administrators, even when the `Delete` link is available to other users. This is a design decision under discussion with the customer. :-)
+
+
+![diy project details ](assets/media/image16.png)
+
+#### User Shopping Bag
+This page shows de details of the DIY projects that the user has added to the shopping cart.
+
+It is possible to change the amount of a DIY Project you want to order by changing the value of the step control next to int, and the clicking the `Update` link.
+
+It is also possible to delete the item from the list clicking on the 'Delete'link next to it.
+
+Pressing the `Secure Checkout` button will bring up the **Checkout Page** to purchase the items from the list.
+
+Pressing the `keep shopping` button will bring up the **DIY projects list page**
+
+![User shopping bag](assets/media/image38.png)
+
+#### Checkout Page
+
+When the user decide to purchase the content of the Shopping bag, he/she will be redirected to this **checkout page** where the default delivery information from the user profile will populate the delivery form, and a list of the shopping bag items to purchase and all the cost and totals will be displayed.
+
+The user can modify any information from the `Details` or `Delivery` forms, and fill up a valid credit card information 
+
+Whe the user clicks the `Buy Now` button, the forms will be checked for valid information, and if all is ok, the order will be submitted to the payment gateway service that will perform the transaction. If the information is not valid, a message indicating the problem will be displayed, requesting the user to correct the problem. 
+
+The the transaction has been aprooved, the **Checkout Success page** will be shown presenting the purchase order information.
+
+![checkout page](assets/media/image39.png)
+
+![checkout success](assets/media/image40.png)
 
 #### Administration pages
 
-All the administrative tasks have been delegated to Django Allauth  
-extensions, wich brings a lot of development releaf, but also comes with  
-layout design limitations. Only the logo, website name and color schemas  
-are customized using a modified copy of the original Django Allouth  
-templates.
+All the administrative tasks have been delegated to Django Allauth extensions, wich brings a lot of development releaf, but also comes with layout design limitations. Only the logo, website name and color schemas are customized using a modified copy of the original Django Allouth templates.
 
 ##### Content Creators homepage
 
-This page gives the content creators access to all DIY project (Things),  
-individual instructions documents or any document attachment stored by  
-Django's Sumernote extension.
+This page gives the content creators access to all DIY project (Things), individual instructions documents or any document attachment stored by Django's Sumernote extension.
 
-![](assets/media/image17.png)
+![Content Creators homepage](assets/media/image17.png)
 
 ##### DIY-Things webpage
 
-This page provides a list of the DIY projects (Things) created. The  
-filter pannel will allow the creator to narrow down the list based on  
-its parent project, the published status and the creation date. We can  
-also search a particular text in the title or description text of the  
-DIY projects if we want to locate a particular project.
+This page provides a list of the DIY projects (Things) created. The filter pannel will allow the creator to narrow down the list based on its parent project, the published status and the creation date. We can also search a particular text in the title or description text of the DIY projects if we want to locate a particular project.
 
-Marking the desired Things we can use the Delete/Publish/Set as draft  
-actions on any number of selected Things at once.
+Marking the desired Things we can use the Delete/Publish/Set as draft actions on any number of selected Things at once.
 
-Clicking on any Thing's tytle from the list will present the Change  
-Thing page for the selected Thing, where all the DIY Project data can be  
-edited
+Clicking on any Thing's tytle from the list will present the Change Thing page for the selected Thing, where all the DIY Project data can be edited
 
-![](assets/media/image18.png)
+![DIY-Things webpage](assets/media/image18.png)
 
 ##### Change Thing webpages
 
-This is probably the most complex administrative web page on this  
-website. It combines the functions of adding/deleting/modifying DIY  
-project details, components and instructions on a single page. It is  
-designed so that the Creator can manage the DIY project information  
-without having to navigate through many pages or make unnecessary  
-clicks.
+This is probably the most complex administrative web page on this website. It combines the functions of adding/deleting/modifying DIY project details, components and instructions on a single page. It is designed so that the Creator can manage the DIY project information without having to navigate through many pages or make unnecessary clicks.
 
-Once you have made changes to your DIY Project, there are three ways to  
-save. Save all changes and return to the list, save all changes and  
-continue editing in the current DIY Project, or save all changes and  
-create a new blank DIY Project. Exiting this page or reloading without  
-saving, will immediately delete all changes made to the DIY Project.
+Once you have made changes to your DIY Project, there are three ways to save. Save all changes and return to the list, save all changes and continue editing in the current DIY Project, or save all changes and create a new blank DIY Project. Exiting this page or reloading without saving, will immediately delete all changes made to the DIY Project.
 
-On this web page we can distinguish three areas: the details of the DIY  
-Project at the top, followed by the list of components called "Things",  
-and at the bottom, the list of instructions called "Instructions".
+On this web page we can distinguish three areas: the details of the DIY Project at the top, followed by the list of components called "Things", and at the bottom, the list of instructions called "Instructions".
 
-![](assets/media/image19.png)
+![Change Thing webpages](assets/media/image19.png)
 
 ###### Change the DIY Project details
 
-This upper area of the "Change Thing webpage" allows the content creator  
-to change the Title, the Author, and the Status (Draft/Published). It  
-allows also to assign a Featured Image that will be used in the list of  
-DIY Projects at the home page.
+This upper area of the "Change Thing webpage" allows the content creator to change the Title, the Author, and the Status (Draft/Published). It allows also to assign a Featured Image that will be used in the list of DIY Projects at the home page.
 
-The most important element that can be modified in this area areis the  
-Description. This field has an embebded WSIWYG editor from the Django  
-Sumernote extension, that allows to insert text, images, videos, links  
-and any HTML/CSS needed to present the project. It is the responsability  
-of the creator to write a description that will be displayed correctly  
-to the final user .
+The most important element that can be modified in this area areis the Description. This field has an embebded WSIWYG editor from the Django Sumernote extension, that allows to insert text, images, videos, links and any HTML/CSS needed to present the project. It is the responsability of the creator to write a description that will be displayed correctly to the final user .
 
 ![](assets/media/image20.png)
 
 ###### Change the DIY Project _**Components (Things)**_
 
-The DIY Components (Things) of a DIY Project (Thing) are in fact  
-themselves Thing elements, so they can also be edited like a normal DIY  
-Project. The only difference is that DIY Components have a "parent"  
-object to which they belong.
+The DIY Components (Things) of a DIY Project (Thing) are in fact themselves Thing elements, so they can also be edited like a normal DIY Project. The only difference is that DIY Components have a "parent" object to which they belong.
 
-New DIY Components can be added using the "Add another Thing" link at  
-the bottom of the list.
+New DIY Components can be added using the "Add another Thing" link at the bottom of the list.
 
-![](assets/media/image21.png)
+![Change the DIY Project_1](assets/media/image21.png)
 
-On the Change Thing web page, each of its DIY Components are listed  
-under "Things", and only their Title, Author, Status and Description are  
-shown. To minimize screen space and rendering time, the Description is  
-hidden by default, but can be displayed and edited using the `show`  
-link next to the 'DESCRIPTION' label.
+On the Change Thing web page, each of its DIY Components are listed under "Things", and only their Title, Author, Status and Description are shown. To minimize screen space and rendering time, the Description is hidden by default, but can be displayed and edited using the `show` link next to the 'DESCRIPTION' label.
 
-![](assets/media/image22.png)
+![Change the DIY Project_2](assets/media/image22.png)
 
-The rest of the information about a DIY component is not displayed, but  
-can be edited by clicking on the 'change' link next to the DIY component  
-name, which will bring up a new, separate modal Change Thing page for  
-this DIY component.
+The rest of the information about a DIY component is not displayed, but can be edited by clicking on the 'change' link next to the DIY component name, which will bring up a new, separate modal Change Thing page for this DIY component.
 
 ###### Change the DIY Project _**Instructions**_
 
-On the Change Thing website, each of your DIY Instructions is listed  
-under "INSTRUCTIONSS", and only its Title is displayed. To minimise  
-screen space and rendering time, the Description is hidden by default,  
-but can be displayed and edited using the `show` link next to the  
-'INSTRUCTIONS' label.
+On the Change Thing website, each of your DIY Instructions is listed under "INSTRUCTIONSS", and only its Title is displayed. To minimise screen space and rendering time, the Description is hidden by default, but can be displayed and edited using the `show` link next to the 'INSTRUCTIONS' label.
 
-Note: The list name "INSTRUCTIONSS" is automatically created by Django  
-admin based on the name assigned to the class model. More research on  
-Django is needed to modify this name or further customize the layout of  
-the list.
+Note: The list name "INSTRUCTIONSS" is automatically created by Django admin based on the name assigned to the class model. More research on Django is needed to modify this name or further customize the layout of the list.
 
-The list of Instructions is ordered by Title. This is useful if you need  
-to maintain a particular order in the instructions, so assigning titles  
-such as "Step 01", "Step 02", etc. could be used to maintain a strict  
-order.
+The list of Instructions is ordered by Title. This is useful if you need to maintain a particular order in the instructions, so assigning titles such as "Step 01", "Step 02", etc. could be used to maintain a strict order.
 
-New Instructions elements can be added using the "Add another  
-Instructions" link at the bottom of the list.
+New Instructions elements can be added using the "Add another Instructions" link at the bottom of the list.
 
-![](assets/media/image23.png)
+![Change the DIY Project_1](assets/media/image23.png)
 
-Instructions field, like the Description fields, has an embebded WSIWYG  
-editor from the Django Sumernote extension, that allows to insert text,  
-images, videos, links and any HTML/CSS needed to present the  
-instructions. It is the responsability of the creator to write a  
-Instructions element that will be displayed correctly to the final user  
-.
+Instructions field, like the Description fields, has an embebded WSIWYG editor from the Django Sumernote extension, that allows to insert text, images, videos, links and any HTML/CSS needed to present the instructions. It is the responsability of the creator to write a Instructions element that will be displayed correctly to the final user.
 
-![](assets/media/image24.png)
+![Change the DIY Project_2](assets/media/image24.png)
 
-The Instructions element can be also edited by clicking on the 'change'  
-link next to the DIY Instructions element title, which will bring up a  
-new, separate modal Change Instructions page.
+The Instructions element can be also edited by clicking on the 'change' link next to the DIY Instructions element title, which will bring up a new, separate modal Change Instructions page.
 
 ##### DIY-Instructions webpage
 
-This page provides a list of the Instruction items created, and is a  
-convenient way to access a particular Instruction item without having to  
-open the DIY Project to which it belongs.
+This page provides a list of the Instruction items created, and is a convenient way to access a particular Instruction item without having to open the DIY Project to which it belongs.
 
-The filtering panel will allow the creator to narrow down the list  
-according to their DIY Project (By Thing) or by the parent of the DIY  
-Project. It is also possible to search on a specific text in the title  
-or in the text of the DIY Project Instructions if we want to locate a  
-specific Instructions element.
+The filtering panel will allow the creator to narrow down the list according to their DIY Project (By Thing) or by the parent of the DIY Project. It is also possible to search on a specific text in the title or in the text of the DIY Project Instructions if we want to locate a specific Instructions element.
 
-By marking the desired Instruction items, the Delete action can be used  
-on any number of selected Instruction items at the same time.
+By marking the desired Instruction items, the Delete action can be used on any number of selected Instruction items at the same time.
 
-Clicking on the title of any Instructions item in the list opens its  
-Change Instructions page, where the Instructions data can be edited.
+Clicking on the title of any Instructions item in the list opens its Change Instructions page, where the Instructions data can be edited.
 
-![](assets/media/image25.png)
+![DIY-Instructions webpage](assets/media/image25.png)
 
-##### Change `**<span class="underline">**`**Instructions** webpage
+##### Change Instructions webpage
 
 In this page Instructions item data can be edited.
 
-Once all the required changes to the Instructions item have been made,  
-there are three ways to save the data. Save all changes and return to  
-the list, save all changes and continue editing in the current  
-Instructions item, or save all changes and create a new blank  
-Instructions item. Exiting this page or reloading without saving, will  
-immediately delete all changes made to the Instructions item.
+Once all the required changes to the Instructions item have been made, there are three ways to save the data. Save all changes and return to the list, save all changes and continue editing in the current Instructions item, or save all changes and create a new blank Instructions item. Exiting this page or reloading without saving, will immediately delete all changes made to the Instructions item.
 
-![](assets/media/image26.png)
+![Change Instructions webpage](assets/media/image26.png)
 
-The Instructions field has an embebded WSIWYG editor from the Django  
-Sumernote extension, that allows to insert text, images, videos, links  
-and any HTML/CSS needed to present the instructions. It is the  
-responsability of the creator to write a Instructions element that will  
-be displayed correctly to the final user .
+The Instructions field has an embebded WSIWYG editor from the Django Sumernote extension, that allows to insert text, images, videos, links and any HTML/CSS needed to present the instructions. It is the responsability of the creator to write a Instructions element that will be displayed correctly to the final user.
 
-The Instructions elements are presented to the end user sorted by Title.  
-This is useful if a particular order needs to be maintained in the  
-instructions, so assigning titles such as "Step 01", "Step 02", etc.  
-could be used to maintain a strict order. Special care should be taken  
-when changing the Title, as it may affect the order in which the  
-instructions are presented to the end-user.
+The Instructions elements are presented to the end user sorted by Title. This is useful if a particular order needs to be maintained in the instructions, so assigning titles such as "Step 01", "Step 02", etc. could be used to maintain a strict order. Special care should be taken when changing the Title, as it may affect the order in which the instructions are presented to the end-user.
 
 ##### Administrators webpage
 
-This web page is only available when the user is an administrator, and  
-provides full access to all website settings.
+This web page is only available when the user is an administrator, and provides full access to all website settings.
 
-This documentation only shows the main admin page, as the DIY pages are  
-the same as described for content creators, and the rest can be found in  
-the Django documentation.
+This documentation only shows the main admin page, as the DIY pages are the same as described for content creators, and the rest can be found in the Django documentation.
 
-![](assets/media/image27.png)
+![Administrators webpage](assets/media/image27.png)
 
 ## Future Enhancements
 
-In the current project it is assumed that content creation is done by  
-administrators and staff, who have unrestricted access to all content in  
-the system, and that users can only browse a master list of DIY  
-projects. In a future implementation, the following capabilities would  
-be desired:
+In a future implementation, the following capabilities would be desired:
 
-- Users should be able to browse the list of their favorite DIY  
-  Projects
-- The list of DIY projects should be prioritised based on user  
-  ratings.
-- Users should be able to filter and search the DIY project database
-- Projects should be clasified by DIY Project type
-- Users should be able to comment on any DIY Project
-- There should be a moderator function, automatic or manual, to  
-  validate and control user comments.
+- Users should be able to browse the list of their favorite DIY Projects
+- User creating DIY Project should be able to upload data files for sharing (STL, CAD, Gerber, etc.)
+- There should be a supervisor, automatic or manual, to validate new user DIY Projects.
+- Users should be able to comment on and rate any DIY Project
+- There should be a moderator function, automatic or manual, to validate and control user comments.
 - Users should be able to loging using their social networks accounts
-- The user should be able to exchange messages directly with other  
-  users.
-- Users should be able to upload and modify their own DIY projects by  
-  becoming content creators.
-- Users should be able to modify their own DIY projects
-- A shopping bag should be implemented for user to buy published  
-  DIY-Projects
-- A online payment system should be added to the website.
-- Grant access to free content and restrict user access to pay per  
-  view content
-- Users should be able to put a price on their DIY projects
-- Users should be able to buy DIY Projects
-- Users should be able to receive compensation for their DIY projects  
-  sold.
+- The user should be able to exchange messages directly with other users.
+- Users should be able to receive compensation for their DIY projects sold.
 - Users should have the option to donate for any free shared content
+- There should be other payment methods like Paypal, Scrow, Bank transfer, etc.
+
 
 ## Testing
 
