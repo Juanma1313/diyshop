@@ -2,11 +2,15 @@
 
     // Disable +/- buttons outside 1-99 range
     function handleEnableDisable(itemId) {
-        var currentValue = parseInt($(`#id_qty_${itemId}`).val());
+        var currentValue = parseInt($(`.id_qty_${itemId}`).val());
         var minusDisabled = currentValue < 2;
         var plusDisabled = currentValue > 98;
-        $(`#decrement-qty_${itemId}`).prop('disabled', minusDisabled);
-        $(`#increment-qty_${itemId}`).prop('disabled', plusDisabled);
+        $(`.decrement-qty_${itemId}`).each(function(){
+            $(this).prop('disabled', minusDisabled);
+        });
+        $(`.increment-qty_${itemId}`).each(function(){
+            $(this).prop('disabled', plusDisabled);
+        });
     }
 
     // Ensure proper enabling/disabling of all inputs on page load
@@ -17,18 +21,37 @@
     }
 
     // Check enable/disable every time the input is changed
-    $('.qty_input').change(function() {
-        var itemId = $(this).data('item_id');
+    $('.qty_input').change(function(e) {
+        e.preventDefault();
+        // Get product_id
+        var itemId = $(this).data('item_id');   
+        // Get current value of the steper
+        var currentValue = parseInt($(this).val());
+        if  (currentValue<1) {
+            currentValue=1
+        } 
+        if  (currentValue>99) {
+            currentValue=99
+        } 
+        // set all stepers with same product_id to the changed value
+        $(`.id_qty_${itemId}`).each(function(){
+           $(this).val(currentValue); 
+        });
+        // go and check if we need to enable or disable a button
         handleEnableDisable(itemId);
-    });
+    }); 
 
     // Increment quantity
     $('.increment-qty').click(function(e) {
        e.preventDefault();
        var closestInput = $(this).closest('.input-group').find('.qty_input')[0];
        var currentValue = parseInt($(closestInput).val());
-       $(closestInput).val(currentValue + 1);
+       $(closestInput).val(currentValue + 1); // in theory, this is not needed
        var itemId = $(this).data('item_id');
+        // set all stepers with same product_id to the changed value
+        $(`.id_qty_${itemId}`).each(function(){
+           $(this).val(currentValue + 1); 
+        });
        handleEnableDisable(itemId);
     });
 
@@ -37,8 +60,12 @@
        e.preventDefault();
        var closestInput = $(this).closest('.input-group').find('.qty_input')[0];
        var currentValue = parseInt($(closestInput).val());
-       $(closestInput).val(currentValue - 1);
+       $(closestInput).val(currentValue - 1); // in theory, this is not needed
        var itemId = $(this).data('item_id');
+        // set all stepers with same product_id to the changed value
+        $(`.id_qty_${itemId}`).each(function(){
+           $(this).val(currentValue - 1); 
+        });
        handleEnableDisable(itemId);
     });
 </script>

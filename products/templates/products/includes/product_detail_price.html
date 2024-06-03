@@ -38,22 +38,22 @@
                     <div class="input-group">
                         <!-- Minus button-->
                         <div class="input-group-prepend">
-                            <button class="decrement-qty btn btn-black rounded-start-1 rounded-end-0 btn-sm" 
-                                data-item_id="{{ product.id }}" id="decrement-qty_{{ product.id }}">
+                            <button class="decrement-qty btn btn-sm btn-black rounded-start-1 rounded-end-0 decrement-qty_{{ product.id }}" 
+                                data-item_id="{{ product.id }}">
                                 <span class="icon">
                                     <i class="fas fa-minus"></i>
                                 </span>
                             </button>
                         </div>
                         <!-- Quantity field-->
-                        <input class="form-control qty_input text-end px-1 py-0" type="number"
-                            name="quantity" value="1" min="1" max="99"
-                            data-item_id="{{ product.id }}"
-                            id="id_qty_{{ product.id }}">
+                        <input class="form-control qty_input text-end px-1 py-0 id_qty_{{ product.id }}" 
+                            type="number" name="quantity" 
+                            value="1" min="1" max="99"
+                            data-item_id="{{ product.id }}">
                         <!-- Plus button-->
                         <div class="input-group-append">
-                            <button class="increment-qty btn btn-black rounded-start-0 rounded-end-1 btn-sm"
-                                data-item_id="{{ product.id }}" id="increment-qty_{{ product.id }}">
+                            <button class="increment-qty btn btn-black rounded-start-0 rounded-end-1 btn-sm increment-qty_{{ product.id }}"
+                                data-item_id="{{ product.id }}">
                                 <span class="icon">
                                     <i class="fas fa-plus"></i>
                                 </span>

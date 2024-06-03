@@ -25,7 +25,7 @@
 
 <!--USER ACCOUNT MENU-->
 <li class="list-inline-item dropdown">
-    <a class="{% if request.user.is_authenticated %}text-warning fw-bold{% else %}text-white{% endif %} nav-link d-block d-lg-none" href="#" id="user-options" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    <a class="{% if request.user.is_authenticated %}text-warning fw-bold{% else %}text-white{% endif %} nav-link d-block d-lg-none" href="#" id="user-options-mobile" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         <div class="text-center">
             <div><i class="fas fa-user fa-lg"></i></div>
             {% if request.user.is_authenticated %}
@@ -36,7 +36,7 @@
         </div>
     </a>
     <!--user menu-->
-    <div class="dropdown-menu border-0" aria-labelledby="user-options">
+    <div class="dropdown-menu border-0" aria-labelledby="user-options-mobile">
         {% if request.user.is_authenticated %}
             {% if request.user.is_superuser or request.user.is_staff %}
                 <!--management option-->
