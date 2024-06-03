@@ -135,6 +135,13 @@ This busines would be operating in Spain, so a set of this words in spanish shou
 >| animatronics| DIY Shop        | woodwork      | Learn while building        |
 >| bricolage   | DIY build       | woodwork      | do it yourself              |
 
+#### GDPR
+Concerning the General Data Protection Regulation, I have generated the privacy policy with a generic **Privacy Policy Generator** and attach the resulting document as a link on the base footer of the website.
+
+* The [GDPR Generator](https://www.privacypolicygenerator.info/)
+* The [GDPR document](https://www.termsfeed.com/live/cbea6af5-9e7f-4028-be6e-babac606f61d)
+
+
 #### Social Media
 
 One of the customer requirements is to have a link to a DIY Shop Facebook webpage. 
@@ -673,18 +680,22 @@ The validator only reported 2 warnings regarding two features from a vendor exte
 
 #### HTML code
 
-In order to validate HTML, I pass the deployed website urls that I want to test to the HTML validator from W3C.
+In order to validate HTML, I pass the following deployed website urls to the HTML validator from W3C:
+- [Home page](https://diyshop-e5a99a0c89cb.herokuapp.com/)
+- [products page]( https://diyshop-e5a99a0c89cb.herokuapp.com/products/)
+- [product detail page](https://diyshop-e5a99a0c89cb.herokuapp.com/products/1/)
+- [user profile page](https://diyshop-e5a99a0c89cb.herokuapp.com/profile/)
+- [user shopping bag](https://diyshop-e5a99a0c89cb.herokuapp.com/bag/)
+- [checkout page](https://diyshop-e5a99a0c89cb.herokuapp.com/checkout/)
 
-![](assets/media/image29.png)
+Only "Warning: The type attribute is unnecessary for JavaScript resources. " were detected.
+
 
 ### Testing the application
 
-Most of the bugs have been detected and fixed in the development  
-process. And Deployment in Heroku counts for me as a Smoke Test for the  
-application. Then all the specific features can be tested.
+Most of the bugs have been detected and fixed in the development process. And Deployment in Heroku counts for me as a Smoke Test for the application. Then all the specific features can be tested.
 
-In order to test most of the developed features, I created a list of  
-test cases to run in the deployed website
+In order to test most of the developed features, I created a list of test cases to run in the deployed website
 
 <table><tbody><tr><td><strong>TC-01 - user website navigation</strong></td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr><tr><td><strong>Done</strong></td><td><strong>Step</strong></td><td><strong>Description</strong></td><td><strong>Expectations</strong></td><td><strong>Result</strong></td><td><strong>Pass</strong></td><td><strong>Additional info</strong></td></tr><tr><td>x</td><td>1</td><td>Navigate to the home page</td><td>Home page is shown</td><td>OK</td><td>x</td><td>-</td></tr><tr><td>x</td><td>2</td><td>The banner carrousel</td><td>automatically move left one picture every 3 seconds</td><td>OK</td><td>x</td><td>&nbsp;</td></tr><tr><td>x</td><td>3</td><td>In any page click on header brand logo</td><td>redirects to home page</td><td>OK</td><td>x</td><td>&nbsp;</td></tr><tr><td>x</td><td>4</td><td>In any page click on header brand name</td><td>redirects to home page</td><td>OK</td><td>x</td><td>&nbsp;</td></tr><tr><td>x</td><td>5</td><td>Anonymous user in any page click on user menu button</td><td>offers `Sign Up` and `Sign In` options</td><td>OK</td><td>x</td><td>&nbsp;</td></tr><tr><td>x</td><td>6</td><td>Regular signed-in user in any page click on user menu button</td><td>offers `E-mail` and `Sign Out` options</td><td>OK</td><td>x</td><td>&nbsp;</td></tr><tr><td>x</td><td>7</td><td>Administrator or creator signed-in user in any page click on user menu button</td><td>offers `Admin`, `E-mail`, and `Sign Out` options</td><td>OK</td><td>x</td><td>&nbsp;</td></tr><tr><td>x</td><td>8</td><td>In any page click on `Sign Up` option menu</td><td>redirects to the sign-up page</td><td>OK</td><td>x</td><td>&nbsp;</td></tr><tr><td>x</td><td>9</td><td>In any page Click on `Sign In` option menu</td><td>redirects to the sign-in page</td><td>OK</td><td>x</td><td>&nbsp;</td></tr><tr><td>x</td><td>10</td><td>Anonymous user In Home page click on 'Join us..' link</td><td>redirects to the sign-in page</td><td>OK</td><td>x</td><td>&nbsp;</td></tr><tr><td>X</td><td>11</td><td>Signed in user In Home page click on 'Check out ...' link</td><td>Redirects to the DIY project list below</td><td>OK</td><td>x</td><td>&nbsp;</td></tr><tr><td>x</td><td>12</td><td>In Home page click on `&lt;` on the banner carrousel</td><td>moves the carrousel one picture left</td><td>OK</td><td>x</td><td>&nbsp;</td></tr><tr><td>x</td><td>13</td><td>In Home page click on `&gt;` on the banner carrousel</td><td>Moves the carrousel one picture right</td><td>OK</td><td>x</td><td>&nbsp;</td></tr><tr><td>x</td><td>14</td><td>In Home page click on any DIY project picture</td><td>redirects to the selected DIY Project details page</td><td>OK</td><td>x</td><td>&nbsp;</td></tr><tr><td>x</td><td>15</td><td>In Home page click on any DIY project Title</td><td>redirects to the selected DIY Project details page</td><td>OK</td><td>x</td><td>&nbsp;</td></tr><tr><td>x</td><td>16</td><td>In DIY Project details page click on heart icon (likes)</td><td><p>The heart icon toggles the fill colour</p><p>The number of likes change accordingly</p></td><td>OK</td><td>x</td><td>&nbsp;</td></tr><tr><td>x</td><td>17</td><td>In any page click on any social media icon at the footer</td><td>Opens the new webpage to the corresponding social network</td><td>OK</td><td>x</td><td>Action works correctly but does not point to any particular social account.</td></tr></tbody></table>
 
@@ -698,50 +709,45 @@ test cases to run in the deployed website
 
 ## The development environment
 
-For the development of this application the following list of  
-frameworks, services and resources where used
+For the development of this application the following list of frameworks, services and resources where used
 
-> Microsoft Visual Studio Code v1.87 for linux was used as de IDE  
-> for the development.
+> Microsoft Visual Studio Code v1.87 for linux was used as de IDE for the development.
 
-> Git was used for version control and file transfer between the IDE  
-> and the repository in GitHub.
+> Git was used for version control and file transfer between the IDE and the repository in GitHub.
 
 > GitHub is the online service that stores the development project
 
-> Moqups.com is the online service I used to create the UI sketches  
-> for the website
+> Moqups.com is the online service I used to create the UI sketches for the website
 
 > GIMP 2.10 used for all the image manipulation.
 
-> PGAdmin IV was used to verify and generate the ERD representation  
-> for the SQL database
+> PGAdmin IV was used to verify and generate the ERD representation for the SQL database
 
 > Django v3.2.24 was used for the runtime frameworks
 
-> Bootstrap v5.3.3 is used for the front end development as a CDN  
-> service
+> Bootstrap v5.3.3 is used for the front end development as a CDN service
 
-> ElephantSQL is the online service that hosts the SQL database for  
-> development and the deployed version
+> ElephantSQL is the online service that hosts the SQL database for development and the deployed version
 
-> Cloudinary is the online service that hosts the media files for  
-> the deployed version
+> AWS S3 services from Amazon to host the media files for the deployed version
 
-> Fontawesome is the service that provides with fonts and icons as a  
-> CDN service
+> Fontawesome is the service that provides with fonts and icons as a CDN service
 
-> Heroku is the online service that hosts the web site for the  
-> deployed version.
+> Stripe is the online payment gateway service
+
+> Gmail smtp services for sending E-mail messages to users.
+
+> Heroku is the online service that hosts the web site for the deployed version.
 
 ### Resources
 
 > Ghithub online documentation
 
-> The Django and its extensions (Allauth, Sumernote, etc) online  
-> documentation
+> The Django and its extensions (Allauth, Sumernote, etc) online documentation
 
 > The HTML and CSS documentation
+
+> Bootstrap 3 online documentation
 
 > Bootstrap 5 online documentation
 
@@ -787,121 +793,89 @@ Images: Juan Manuel de las Heras
 
 ## Deployment
 
-The site was deployed via Heroku. Access the site using the following  
-link -[`<span class="underline">`DIY](https://dys-1c0dad79f0a0.herokuapp.com/)  
-[Site](https://dys-1c0dad79f0a0.herokuapp.com/)
+The site was deployed via Heroku. Access the site using the following link -[**DIY Shop**](https://diyshop-e5a99a0c89cb.herokuapp.com/)  
 
-For the deployment in Heroku, we assume that the media files server and  
-the database server is already defined and a base database is restored  
-from a backup. Otherwise, the process of deployment must be done using a  
-development environment first, and use the fixtures from Django to  
-populate the database with the minimum information. In that scenario,  
-first clonning the repository could be a better choice.
+For the deployment in Heroku, we assume that the media files server and the database server is already defined and a base database is restored from a backup. Otherwise, the process of deployment must be done using a development environment first, and use the fixtures from Django to populate the database with the minimum information. In that scenario, first clonning the repository could be a better choice.
+
+There is a set of fixtures files under [products/fixtures/] and the corresponding media files under [media]. They can be used to populate the database with initial example data. 
 
 ### How to deploy the project on Heroku
 
 Sign up / Log in to [Heroku](https://www.heroku.com/)
 
-From the main Heroku Dashboard page select 'New' and then 'Create  
-New App'
+From the main Heroku Dashboard page select 'New' and then 'Create New App'
 
-Give the project a name and select the region, then select create  
-app.
+Give the project a name and select the region, then select create app.
 
-I used ‘dys’ as the name for my Heroku app
+I used ‘diyshop’ as the name for my Heroku app
 
-Once finished creating the app, navigate to the setting tab, and  
-select the `Reveal Config Vars` in the config vars section. And  
-create the following variables:
+Once finished creating the app, navigate to the setting tab, and select the `Reveal Config Vars` in the config vars section. And create the following variables:
 
-ALLOWED_HOSTS = \[the address for the deployed application  
-host\]
+- DEVELOPMENT
+  - Values: "True" or "False"
+- SECRET_KEY
+  - Example: "9087zxcv98z798bv^=098zxcv098xzcv09*u2dsd2u+&hddf0^^uj"
+- ALLOWED_HOSTS
+  - Example: "127.0.0.1,localhost, diyshop-1c0dad79f0a0.herokuapp.com"
+- DATABASE_URL
+  - Example: "postgres://cmftklgz:gYdAbasasdasdasdsadsad234@dumbo.db.elephantsql.com/cmftklgz"
+- ACCOUNT_EMAIL_VERIFICATION
+  - Values: "none" or "mandatory"
+- EMAIL_FROM_DEFAULT
+  - Example: "sales-dep@diyshop.com"
+- EMAIL_HOST
+  - Example: "smtp.gmail.com"
+- EMAIL_HOST_USER
+  - Example: "diyshop@gmail.com"
+- EMAIL_HOST_PASSWORD
+  - Example: "asldknlmalsm"
+  - Note:  gmail smtp servers do not accept user passwords but application passwords can be used.
+- STRIPE_PUBLIC_KEY
+  - Example: "pk_test_51PasdfASDFasdfasDFasdFASDFasdfag$%234weADSfGzdgLg9vUarbSvl1IBriGElYtCE0PIjVDJCkVwCM7v4hascasdcSD43"
+- STRIPE_SECRET_KEY
+  - Example: "sk_test_51PGzdg23re0987asdlkj34ot5245098uwrve09jvlñkwevkjwgSERVWERVwervwerfQErvñmekfvoieLg9vUarbSvaBPVn0TH8"
+- STRIPE_WH_SECRET
+  - Example: "whsec_9ff13b16lñknsadvTWsdafvadv299106f445ef6f269b02236aa87180952ecf8387046f2322cee5d28f"
+  - Note:To run application in local enironment use stripe cli tool command
 
-usually, after the deployment, this variable can be found in the  
-application Settings tab, under Domains section
+        $ ./stripe listen --forward-to 127.0.0.1:8000/checkout/wh
+- USE_AWS
+  - Values: "True" or "False"
+- AWS_STORAGE_BUCKET_NAME
+  - Example: "diyshop"
+- AWS_S3_REGION_NAME
+  - Example: "us-west-1"
+- AWS_ACCESS_KEY_ID
+  - Example: "KAIAXYKJQI5SCKKCUDVN"
+- AWS_SECRET_ACCESS_KEY
+  - Example: "iP87W4SDFD/6RWQyiasdf134134feqwwef4EU86U"
 
-DEVELOPMENT = False
 
-This is a very important variable. If it is not present, the  
-application will asume False, but if it is specifically set to  
-True, the deployed application will be in debug mode, and could  
-be vulnerable for hackers.
+This variables would have to be defined in the env.py file of the project if the application runs in the local computer of a development environment.
 
-SECRET_KEY = \[your secret key\]
-
-With Python, get_random_secret_key() from  
-django.core.management.utils can be used to create this variable
-
-DATABASE_URL =\[your database service url\]
-
-This variable is provided by the database server, in my case its  
-ElepantSQL. And it looks like :
-
-“postgres://kjsdhf:sdfçsdafsadfsdfg987dgfs987fdg@dumbo.db.elefantsql.com/kjsdhf”
-
-CLOUDINARY_URL = \[your media file service url\]
-
-This variable is provided by the media files server, in my case  
-its Cloudinary. And it looks like :
-
-“cloudinary://826348763248682436:5dc5sd5f5sdf5fd5dfs5@klhjsadkhdfsag”
-
-EMAIL_HOST = \[your email service host\]
-
-In my case I use google host “smtp.gmail.com”
-
-EMAIL_HOST_USER = \[your website email account username\]
-
-in my case I use “pruebasdeprogramacion13@gmail.com”
-
-EMAIL_HOST_PASSWORD = \[your website email account password\]
-
-Be careful with his password, because some email service  
-providers do not support user password, but a special  
-application password.
-
-This variables would have to be defined in the env.py file of  
-the project if the application runs in the local computer of a  
-development environment.
-
-In Heroku, navigate to the “Deploy” tab and use the option “GitHub  
-(connect to GitHub)”
+In Heroku, navigate to the “Deploy” tab and use the option “GitHub (connect to GitHub)”
 
 Scroll down and click on “Connect to GitHub”
 
-In the repository search option, type the name of this repository or  
-your own repository name if you have cloned it, and then use the  
-“Connect” option and wait for the new “Deploy Branch” option  
-appear.
+In the repository search option, type the name of this repository or your own repository name if you have cloned it, and then use the “Connect” option and wait for the new “Deploy Branch” option appear.
 
-Use the “Deploy Branch” option and wait until the deployment is  
-complete.
+Use the “Deploy Branch” option and wait until the deployment is complete.
 
-Once you receive the message “The app was successfully deployed” you  
-can access the deployed applications
+Once you receive the message “The app was successfully deployed” you can access the deployed applications
 
-Once the application is deployed, do not forget to assign the  
-ALLOWED_HOSTS variable from the step 4 if it was not assigned  
-earlier.
+Once the application is deployed, do not forget to assign the ALLOWED_HOSTS variable from the step 4 if it was not assigned earlier.
 
 ### Create a clone of this repository
 
 Creating a clone enables you to make a copy of the repository allowing  
 you to run the application in your local development environment:
 
-1.  Navigate to [This repository](https://github.com/Juanma1313/diyshop)
-2.  click on the arrow on the green ‘code’ button at the top of the list  
-    of files
-3.  select the ‘HTTP’ option to clone using the web URL and copy the URL  
-    to your clipboard.
-4.  At you local computer, use the console and change your directory to  
-    the disk directory where you want the application to be cloned.
-5.  At the console prompt, type 'git clone ' and paste the https link  
-    from your clipboard, followed by enter
-6.  once the git command has finished, you should have a local copy of  
-    the repository that can be opened by a IDE of your choice and for  
-    example, push it to a new repository in GitHub to deploy it from  
-    your own repository
+1. Navigate to [This repository](https://github.com/Juanma1313/diyshop)
+2. click on the arrow on the green ‘code’ button at the top of the list of files
+3. select the ‘HTTP’ option to clone using the web URL and copy the URL to your clipboard.
+4. At you local computer, use the console and change your directory to the disk directory where you want the application to be cloned.
+5. At the console prompt, type 'git clone ' and paste the https link from your clipboard, followed by enter
+6. once the git command has finished, you should have a local copy of the repository that can be opened by a IDE of your choice and for  example, push it to a new repository in GitHub to deploy it from your own repository
 
 ## Acknowledgements
 
