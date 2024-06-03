@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /accounts/
+Disallow: /bag/
+Sitemap: https://diyshop-e5a99a0c89cb.herokuapp.com/sitemap.xml
+
