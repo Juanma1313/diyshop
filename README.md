@@ -647,7 +647,8 @@ In a future implementation, the following capabilities would be desired:
 - Users should be able to receive compensation for their DIY projects sold.
 - Users should have the option to donate for any free shared content
 - There should be other payment methods like Paypal, Scrow, Bank transfer, etc.
-
+- Include a FAQs section specially for new users
+- Include a section with links to other websites related
 
 ## Testing
 
